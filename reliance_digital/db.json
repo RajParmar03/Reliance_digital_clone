@@ -1,0 +1,99 @@
+{
+  "mobile": [
+    {
+      "id": 1,
+      "Name": "mobile1",
+      "price": 1000,
+      "discountedPrice": 800
+    },
+    {
+      "id": 2,
+      "Name": "mobile2",
+      "price": 1200,
+      "discountedPrice": 1100
+    },
+    {
+      "id": 3,
+      "Name": "mobile3",
+      "price": 5000,
+      "discountedPrice": 4600
+    }
+  ],
+  "television": [
+    {
+      "id": 1,
+      "Name": "television1",
+      "price": 1000,
+      "discountedPrice": 800
+    },
+    {
+      "id": 2,
+      "Name": "television2",
+      "price": 1200,
+      "discountedPrice": 1100
+    },
+    {
+      "id": 3,
+      "Name": "television3",
+      "price": 5000,
+      "discountedPrice": 4600
+    }
+  ],
+  "computer": [
+    {
+      "id": 1,
+      "Name": "computer1",
+      "price": 1000,
+      "discountedPrice": 800
+    },
+    {
+      "id": 2,
+      "Name": "computer2",
+      "price": 1200,
+      "discountedPrice": 1100
+    },
+    {
+      "id": 3,
+      "Name": "computer3",
+      "price": 5000,
+      "discountedPrice": 4600
+    }
+  ],
+  "camera": [
+    {
+      "id": 1,
+      "Name": "camera1",
+      "price": 1000,
+      "discountedPrice": 800
+    },
+    {
+      "id": 2,
+      "Name": "camera2",
+      "price": 1200,
+      "discountedPrice": 1100
+    },
+    {
+      "id": 3,
+      "Name": "camera3",
+      "price": 5000,
+      "discountedPrice": 4600
+    }
+  ],
+  "home-appliance": [
+    {
+      "id": 1,
+      "title": "home-appliance1",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "title": "home-appliance2",
+      "author": "typicode"
+    },
+    {
+      "id": 3,
+      "title": "home-appliance3",
+      "author": "typicode"
+    }
+  ]
+}  
