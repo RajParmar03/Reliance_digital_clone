@@ -13,7 +13,7 @@ import "react-slideshow-image/dist/styles.css";
 
 const ItemCard7 = ({ type, heading, src }) => {
   return (
-    <Box justifyContent="left" w="95%" m="auto" mt="6">
+    <Box justifyContent="left" w="95%" m="auto" mt="6" cursor="pointer">
       <Flex>
         <Center>
           <Text fontSize="2xl">
@@ -37,7 +37,7 @@ const ItemCard7 = ({ type, heading, src }) => {
             <Flex>
               {type.map((i, index) => (
                 <Box>
-                  <Square key={index} m="auto">
+                  <Square key={index} m="auto" _hover={{ transform: "scale(1.1)" }}>
                     <Image src={`${i.url}`} alt={i.caption} boxSize="160px" />
                   </Square>
                   <Box p="2" mt="4">
@@ -46,6 +46,7 @@ const ItemCard7 = ({ type, heading, src }) => {
                       noOfLines={2}
                       textAlign="left"
                       fontSize="15px"
+                      _hover={{color:"red"}}
                     >
                       Apple Watch SE GPS - 44 mm Silver Aluminium Case with
                       White 2nd Generation Sport Band

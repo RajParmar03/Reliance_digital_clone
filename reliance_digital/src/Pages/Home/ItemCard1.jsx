@@ -5,7 +5,7 @@ import "react-slideshow-image/dist/styles.css";
 
 const ItemCard1 = ({ type }) => {
   return (
-    <Box>
+    <Box cursor="pointer">
       <Box>
         <Slide>
           {type.map((i, index) => (

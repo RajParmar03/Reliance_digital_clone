@@ -13,7 +13,13 @@ import "react-slideshow-image/dist/styles.css";
 
 const ItemCard8 = ({ type, heading }) => {
   return (
-    <Box justifyContent="left" m="auto" mt="6" backgroundColor="#f7f7f7">
+    <Box
+      justifyContent="left"
+      m="auto"
+      mt="6"
+      backgroundColor="#f7f7f7"
+      cursor="pointer"
+    >
       <Center>
         <Text fontSize="2xl" fontWeight="bold" mt="5">
           {heading}
@@ -33,7 +39,9 @@ const ItemCard8 = ({ type, heading }) => {
                 <br />
                 <br />
                 <Center>
-                  <Text fontSize="xl">Smartphone</Text>
+                  <Text fontSize="xl" _hover={{ color: "#003380" }}>
+                    {i.categories}
+                  </Text>
                 </Center>
               </Box>
             ))}
@@ -46,7 +54,16 @@ const ItemCard8 = ({ type, heading }) => {
           background="#003380"
           color="whiteAlpha.900"
           borderRadius="3xl"
+          border="1px"
           p="5"
+          _hover={{
+            background: "whiteAlpha.900",
+            color: "#003380",
+            borderRadius: "3xl",
+            p: "5",
+            border: "1px",
+            variant: "outline",
+          }}
         >
           <Text fontSize="xl" fontWeight="200">
             View All
