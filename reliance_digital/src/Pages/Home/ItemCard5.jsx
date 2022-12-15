@@ -80,6 +80,7 @@ const ItemCard5 = ({ type, heading }) => {
                       color="green.500"
                       bg="green.50"
                       mt="2"
+                      textAlign="center"
                     >
                       <Text fontSize="10px" fontWeight="500">
                         OFFERS AVAILABLE

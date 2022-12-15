@@ -1,12 +1,11 @@
-
 import "./App.css";
 import Home from "./Pages/Home/Home";
-import MainCartPage from "./pages/cartPage/MainCartPage";
+import Footer from "./Components/Footer.jsx/Footer";
 function App() {
   return (
     <div className="App">
       <Home />
-      <MainCartPage />
+      <Footer />
     </div>
   );
 }

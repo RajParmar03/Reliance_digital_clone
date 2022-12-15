@@ -11,7 +11,7 @@ const ItemCard4 = ({ type, heading }) => {
       </Box>
       <br />
       <br />
-      <Grid  templateColumns='repeat(4, 1fr)' gap={6} w="95%" m="auto">
+      <Grid templateColumns="repeat(4, 1fr)" gap={6} w="95%" m="auto">
         {type.map((i, index) => (
           <Box key={index}>
             <Image src={`${i.url}`} alt={i.caption} w="100%" />
