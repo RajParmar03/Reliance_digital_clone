@@ -1,4 +1,4 @@
-export const slideImages1 = [
+export const ItemDetails1 = [
   {
     url: "https://www.reliancedigital.in/medias/Year-End-Sale-5000-Instant-Discount-Carousel-Banner-05-12-2022.jpg?context=bWFzdGVyfGltYWdlc3wxNDcwODh8aW1hZ2UvanBlZ3xpbWFnZXMvaDkzL2hiNS85OTI4MTY1NTg5MDIyLmpwZ3w4NDk3ZDFhZTM1YzUxYTg3MDFiMWZkZjhmMGE0ZWI2ZWZmYjU0MWNmOGJkMTAzZTYwMTdlNjI5MGNjYzZiOTIx",
     caption: "Slide 1",
@@ -9,7 +9,7 @@ export const slideImages1 = [
   },
 ];
 
-export const slideImages2 = [
+export const ItemDetails2 = [
   {
     url: "https://www.reliancedigital.in/medias/Smartwatch-Carnival-Carousel-Banner-D.jpg?context=bWFzdGVyfGltYWdlc3w5MTMyMnxpbWFnZS9qcGVnfGltYWdlcy9oYmYvaGFmLzk5Mjk4MzI1NjI3MTguanBnfDBkOTJjZDk5YTI1MTU3NWU5MDc1NGQ0ZDg2YjFlOWRhOGRhN2FiMzgxMDY3YWI5Y2M1NDk0MjNjZjU1MzNjYjY",
     caption: "Slide 1",
@@ -48,7 +48,7 @@ export const slideImages2 = [
   },
 ];
 
-export const slideImages3 = [
+export const ItemDetails3 = [
   {
     url: "https://www.reliancedigital.in/medias/Apple-Ultra-Sports-Fitness-Watches-493177945-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w2NTIwNXxpbWFnZS9qcGVnfGltYWdlcy9oZGIvaDA1Lzk4OTE5NjUwNDI3MTguanBnfGQ5YzE2NGM4OGU1MWM3ZDM3NDc2ODQyNDQzNzljMWU1NmM1NmFhZTQ0YzY3MDUxODlhYmVhMTA1MGQ0YjgzZjA",
     caption: "Slide 1",
@@ -67,7 +67,7 @@ export const slideImages3 = [
   },
 ];
 
-export const slideImages4 = [
+export const ItemDetails4 = [
   {
     url: "https://www.reliancedigital.in/medias/43-inch-UHD-TV-Small-Banner-05-12-2022.jpg?context=bWFzdGVyfGltYWdlc3w2MTc5NXxpbWFnZS9qcGVnfGltYWdlcy9oZDcvaGM2Lzk5MjgxNjcyNjAxOTAuanBnfDg4MjdjN2IwZWViMTNlNmM2ODdiOWZjNzU2M2RkZmVlZTMxMmM4ODRlZWQ3MWNhMWIwYWI3NmNhMDcxNjkxY2M",
     caption: "Slide 1",
@@ -86,7 +86,7 @@ export const slideImages4 = [
   },
 ];
 
-export const slideImages5 = [
+export const ItemDetails5 = [
   {
     url: "https://www.reliancedigital.in/medias/Orient-Electric-HC2004D-Heater-493627165-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wyMzU1OXxpbWFnZS9qcGVnfGltYWdlcy9oOWUvaDQwLzk5MTgwMDc0MTA3MTguanBnfDczODc4NDQzMzc2MTU3MDc0ZDA1ODFhMWM2NDU5YTViNGIwYjhlYTliN2QxOWQyYjBkNDhmMjE4NThmZTNkMTM",
     caption: "Slide 1",
@@ -109,7 +109,7 @@ export const slideImages5 = [
   },
 ];
 
-export const slideImages6 = [
+export const ItemDetails6 = [
   {
     url: "https://www.reliancedigital.in/medias/Smartwatches-Small-Banners-01.jpg?context=bWFzdGVyfGltYWdlc3w0NDA0MnxpbWFnZS9qcGVnfGltYWdlcy9oNTAvaGRiLzk5MjgzNzA5MTMzMTAuanBnfGYwOWU2ZjQ3Y2Y0OWI2NmVhZGVkYWM2M2ZiMzQ4YTlhODRkZDY4ODZmODA1OGQyZWNiYWVhODNmNWM2YWMwMmY",
     caption: "Slide 1",
@@ -144,7 +144,7 @@ export const slideImages6 = [
   },
 ];
 
-export const slideImages7 = [
+export const ItemDetails7 = [
   {
     url: "https://www.reliancedigital.in/medias/airpods-pro-2nd-gen-Buy-now-NPI-Banner-01-11-2022.jpg?context=bWFzdGVyfGltYWdlc3wxMDM4NjB8aW1hZ2UvanBlZ3xpbWFnZXMvaDQ2L2g2Ny85OTIyNDU2MTkxMDA2LmpwZ3w0MGQxZjFhYjQ0ZjU1NTQzZjJiOGJmYzZhMDg5NTY5M2Y3NzIxZDkzOTQ2Yjg4YmNmOWZlMzc4OWM0YjlkMjA2",
     caption: "Slide 1",
@@ -159,7 +159,7 @@ export const slideImages7 = [
   },
 ];
 
-export const slideImages8 = [
+export const ItemDetails8 = [
   {
     url: "https://www.reliancedigital.in/medias/Apple-iPhone-13-Smartphones-491997702-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3w1NTA2NXxpbWFnZS9qcGVnfGltYWdlcy9oZGIvaDUzLzk4NzgxMDI4MDI0NjIuanBnfDEzY2UxMTNmZjQ4MGM2MmRjY2U2NGNmZDJhNjhkZDM3YmJkOThhYjhkZWViMDJjNjYyZjQyZjYwYjM4NzAyZTA",
     caption: "Slide 1",
