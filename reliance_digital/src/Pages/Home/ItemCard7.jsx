@@ -11,7 +11,7 @@ import {
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
-const ItemCard2 = ({ type, heading, src }) => {
+const ItemCard7 = ({ type, heading, src }) => {
   return (
     <Box justifyContent="left" w="95%" m="auto" mt="6">
       <Flex>
@@ -32,15 +32,6 @@ const ItemCard2 = ({ type, heading, src }) => {
         </Center>
       </Flex>
       <Flex mt="7">
-        <Box boxSize="sm" w="24%">
-          <Image
-            src={src}
-            boxSize="340px"
-            border="1px"
-            borderColor="gray.200"
-          />
-        </Box>
-        <Spacer />
         <Box w="75%">
           <Slide>
             <Flex>
@@ -111,9 +102,18 @@ const ItemCard2 = ({ type, heading, src }) => {
             </Flex>
           </Slide>
         </Box>
+        <Spacer />
+        <Box boxSize="sm" w="24%">
+          <Image
+            src={src}
+            boxSize="340px"
+            border="1px"
+            borderColor="gray.200"
+          />
+        </Box>
       </Flex>
     </Box>
   );
 };
 
-export default ItemCard2;
+export default ItemCard7;
