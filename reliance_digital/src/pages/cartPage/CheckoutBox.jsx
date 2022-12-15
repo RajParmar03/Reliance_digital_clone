@@ -58,7 +58,7 @@ const CheckoutBox = () => {
             </Box>
           </Flex>
           <Divider width={"90%"} marginTop={"20px"} />
-          <Flex flexDirection={"column"}>
+          <Flex flexDirection={"column"} gap="10px">
             <Box width="90%" margin="auto" marginTop={"20px"}>
               <Text fontWeight="bold" textAlign="left">
                 PRICE DETAILS
