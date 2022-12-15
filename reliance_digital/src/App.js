@@ -1,9 +1,12 @@
-import './App.css';
-
+import "./App.css";
+import Home from "./Pages/Home/Home";
+import Footer from "./Components/Footer.jsx/Footer";
 function App() {
   return (
     <div className="App">
-      {/* <Products typeOfProduct="kitchen" /> */}
+      <Home />
+      <Footer />
+
     </div>
   );
 }
