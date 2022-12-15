@@ -3,7 +3,7 @@ import { Box, Grid, Flex, Text, Image, Center } from "@chakra-ui/react";
 
 const ItemCard6 = ({ type, heading }) => {
   return (
-    <Box mb="2">
+    <Box mb="2" cursor="pointer">
       <Center>
         <Text fontSize="xl" color="#003380" fontWeight="700" p="4">
           {heading}

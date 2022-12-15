@@ -6,12 +6,14 @@ import { CiYoutube } from "react-icons/ci";
 
 export const FooterCard1 = ({ type, heading }) => {
   return (
-    <Box>
+    <Box cursor="pointer">
       <Text fontWeight="700">{heading}</Text>
       <Box>
         {type.map((i, index) => (
           <Box key={index}>
-            <Text fontSize="15px">{i.labels}</Text>
+            <Text fontSize="15px" _hover={{ color: "whiteAlpha.600" }}>
+              {i.labels}
+            </Text>
           </Box>
         ))}
       </Box>
@@ -34,9 +36,15 @@ export const FooterCard2 = () => {
               backgroundColor="#003380"
               color="white"
             >
-              <AiFillFacebook size="20px" />
-              <TfiTwitter size="20px" />
-              <CiYoutube size="20px" />
+              <Box _hover={{ color: "whiteAlpha.600" }} cursor="pointer">
+                <AiFillFacebook size="20px" />
+              </Box>
+              <Box _hover={{ color: "whiteAlpha.600" }} cursor="pointer">
+                <TfiTwitter size="20px" />
+              </Box>
+              <Box _hover={{ color: "whiteAlpha.600" }} cursor="pointer">
+                <CiYoutube size="20px" />
+              </Box>
             </Grid>
           </Box>
         </Box>
@@ -44,7 +52,7 @@ export const FooterCard2 = () => {
           <Text fontWeight="700">
             EXPERIENCE RELIANCE DIGITAL APP ON MOBILE
           </Text>
-          <Flex justifyContent="left" gap="2" mt="2">
+          <Flex justifyContent="left" gap="2" mt="2" cursor="pointer">
             <Image
               src="https://www.reliancedigital.in/build/client/images/google_play_store.png"
               alt="Google Play Store"
