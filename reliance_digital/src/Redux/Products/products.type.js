@@ -1,0 +1,1 @@
+export const PRODUCTS_GET = "products/get";

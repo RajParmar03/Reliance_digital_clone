@@ -1,7 +1,9 @@
 import { Box, Button, Flex, Grid, GridItem, Heading, Image, Input, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { Navigate, useParams } from 'react-router-dom';
+import { useNavigate , useParams } from 'react-router-dom';
+
+
 
 
 const getSingleData = async(type, id) => {
@@ -31,6 +33,8 @@ const SingleProduct = (props) => {
 
     const [singleData, setSingleData] = useState({});
 
+    const navigate = useNavigate();
+
     const handlePost = (data) => {
         let newData = {};
         for(let i in data){
@@ -41,16 +45,16 @@ const SingleProduct = (props) => {
         }
         console.log("newData is :-" , newData);
         console.log("in the handlePost function and viewing the data before the post request",data);
-        postSingleData(newData).then((res) => {
-            // console.log("in the handlePost function and viewing the data after the post request", res);
-            <Navigate to="/cart" />
-        });
+        postSingleData(newData).then((res) => (
+            // console.log("in the handlePost function and viewing the data after the post request", res)
+            navigate("/cart")
+        ));
     }
 
 
-    const handleDelete = async(id) => {
-        let response = await axios.delete(`https://rus-digital-televisions.onrender.com/cart/${id}`).then((res) => console.log(res));
-    }
+    // const handleDelete = async(id) => {
+    //     let response = await axios.delete(`https://rus-digital-televisions.onrender.com/cart/${id}`).then((res) => console.log(res));
+    // }
 
     useEffect(() => {
         getSingleData(typeOfProduct, params.id).then((res) => setSingleData(res));
@@ -61,22 +65,22 @@ const SingleProduct = (props) => {
     return (
         <Box marginTop={12}>
             <Grid
-                h='600px'
-                templateRows='repeat(8, 1fr)'
-                templateColumns='repeat(10, 1fr)'
+                h={['1300px','1100px','600px']}
+                templateRows={['repeat(8, 1fr)','repeat(8, 1fr)','repeat(8, 1fr)']}
+                templateColumns={['repeat(4, 1fr)','repeat(6, 1fr)','repeat(10, 1fr)']}
             >
-                <GridItem rowSpan={4} colSpan={4} display="flex" justifyContent="center" alignitem="center" style={{boxShadow:"rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"}}>
+                <GridItem rowSpan={[1,2,4]} colSpan={[4,6,4]} display="flex" justifyContent="center" alignitem="center" style={{boxShadow:"rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"}}>
                     <Image src={singleData.img} alt={singleData.name} _hover={{cursor:"crosshair"}}/>
                 </GridItem>
 
 
-                <GridItem colSpan={6} rowSpan={1} p={5}  style={{boxShadow:"rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"}}>
+                <GridItem colSpan={[4,6,6]} rowSpan={1} p={5}  style={{boxShadow:"rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"}}>
                     <Text color="gray.500" marginBottom={5}>Article ID: {singleData.id}</Text>
                     <Heading size="md" marginBottom={5}>{singleData.name}</Heading>
                 </GridItem>
 
 
-                <GridItem colSpan={3} rowSpan={7} style={{boxShadow:"rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"}} p={5}>
+                <GridItem colSpan={[4,3,3]} rowSpan={7} style={{boxShadow:"rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"}} p={5}>
                     <Heading size="sm" marginBottom={3}>Gain more with offers (4)</Heading>
                     <UnorderedList color="gray.600" fontSize="sm" marginBottom={4}>
                         <ListItem>Wall mount bracket is on chargeable basis. <span style={{ color: "#2871c4" }}>Read T&C</span></ListItem>
@@ -95,7 +99,7 @@ const SingleProduct = (props) => {
                     <Heading size="sm" marginBottom={3}>Additional Services & Warranties (3) <span style={{ fontWeight: "bold", fontSize: "14px", color: "#2871c4" }}>View All</span></Heading>
 
                 </GridItem>
-                <GridItem colSpan={3} rowSpan={7}  p={5} style={{boxShadow:"rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"}}>
+                <GridItem colSpan={[4,3,3]} rowSpan={7}  p={5} style={{boxShadow:"rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px"}}>
                     <Heading size="lg" marginBottom={5} color="blue.700">₹{singleData.price}</Heading>
                     <Text fontSize="lg" marginBottom={3}>MRP: <span style={{textDecoration:"line-through"}}>{singleData.mrp}</span> <span style={{fontSize:"12px"}}>(Inclusive of all taxes)</span></Text>
 
@@ -113,7 +117,7 @@ const SingleProduct = (props) => {
                         <Button w="49%" color="white" bg='orangered' borderRadius="sm" fontSize="lg"  p={6} _hover={{backgroundColor:"orangered"}}>BUY NOW</Button>
                     </Flex>
                 </GridItem>
-                <button onClick={() => handleDelete(singleData.id)}>delete</button>
+                {/* <button onClick={() => handleDelete(singleData.id)}>delete</button> */}
             </Grid>
         </Box>
     )
