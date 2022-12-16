@@ -8,6 +8,8 @@ const getData = async (typeOfProduct) => {
     return response.data;
 }
 
+const Products = ({typeOfProduct}) => {
+
 const category = {
     mobilesandtablets: "MOBILES AND TABLETS",
     televisions: "TELEVISIONS",
@@ -21,9 +23,8 @@ const category = {
 
 }
 
-const Products = (props) => {
+const Products = ({typeOfProduct}) => {
 
-    const { typeOfProduct } = props;
 
     const [productArr, setProductArr] = useState([]);
 
