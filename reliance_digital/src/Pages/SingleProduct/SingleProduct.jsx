@@ -11,7 +11,7 @@ const getSingleData = async(type, id) => {
 
 const postSingleData = async(data) => {
     try {
-        let response = await axios.post(`https://rus-digital-api.vercel.app/cart`,data,{
+        let response = await axios.post(`https://rus-digital-televisions.onrender.com/cart`,data,{
             headers: {'Content-Type': 'application/json'}
           });
         return response.data;
@@ -20,6 +20,7 @@ const postSingleData = async(data) => {
     }
    
 }
+
 
 const SingleProduct = (props) => {
 
@@ -30,10 +31,22 @@ const SingleProduct = (props) => {
     const [singleData, setSingleData] = useState({});
 
     const handlePost = (data) => {
+        let newData = {};
+        for(let i in data){
+            if(i === "id"){
+                continue;
+            }
+            newData[i] = data[i];
+        }
+        console.log("newData is :-" , newData);
         console.log("in the handlePost function and viewing the data before the post request",data);
-        postSingleData(data).then((res) => console.log("in the handlePost function and viewing the data after the post request", res));
+        postSingleData(newData).then((res) => console.log("in the handlePost function and viewing the data after the post request", res));
     }
 
+
+    const handleDelete = async(id) => {
+        let response = await axios.delete(`https://rus-digital-televisions.onrender.com/cart/${id}`).then((res) => console.log(res));
+    }
 
     useEffect(() => {
         getSingleData(typeOfProduct, params.id).then((res) => setSingleData(res));
@@ -96,6 +109,7 @@ const SingleProduct = (props) => {
                         <Button w="49%" color="white" bg='orangered' borderRadius="sm" fontSize="lg"  p={6} _hover={{backgroundColor:"orangered"}}>BUY NOW</Button>
                     </Flex>
                 </GridItem>
+                <button onClick={() => handleDelete(singleData.id)}>delete</button>
             </Grid>
         </Box>
     )
