@@ -8,30 +8,45 @@ const getData = async (typeOfProduct) => {
     return response.data;
 }
 
-const Products = (props) => {
+const Products = ({typeOfProduct}) => {
 
-    const { typeOfProduct } = props;
+const category = {
+    mobilesandtablets: "MOBILES AND TABLETS",
+    televisions: "TELEVISIONS",
+    headphones: "HEADPHONES",
+    homeappliances: "HOME-APPLIANCES",
+    computers: "COMPUTERS",
+    cameras: "CAMERAS",
+    kitchen: "KITCHEN-APPLIANCES",
+    personalcare: "PERSONAL-CARE",
+    accessories: "ACCESSORIES"
+
+}
+
+// const Products = ({typeOfProduct}) => {
+
 
     const [productArr, setProductArr] = useState([]);
 
     useEffect(() => {
         getData(typeOfProduct).then((res) => setProductArr(res));
-    }, []);
+    }, [typeOfProduct]);
 
 
     return (
         <Box p="5">
-            <Heading p="5">{typeOfProduct}</Heading>
-            <Grid templateColumns='repeat(5, 1fr)' gap={3}>
-            {
-                productArr.map((elem,i) => {
-                    return (
-                        <GridItem key={elem.name+i} w='100%' bg='white.500' boxShadow="rgba(99, 99, 99, 0.2) 0px 2px 8px 0px" padding="25px 25px 0px 25px">
-                        <Product data={elem} />
-                        </GridItem>
-                    )
-                })
-            }
+            <Heading p="5" marginBottom={5}>{ category[typeOfProduct]}</Heading>
+            <Grid templateColumns={['repeat(1, 1fr)', "repeat(2,1fr)", "repeat(3,1fr)", "repeat(4,1fr)", "repeat(5,1fr)"]} gap={3}>
+                {
+                    productArr.map((elem, i) => {
+                        // console.log("in the products page in the map method and elem is :- ", elem);
+                        return (
+                            <GridItem key={elem.name + i} w='100%' bg='white.500' boxShadow="rgba(0, 0, 0, 0.15) 0px 2px 8px" padding="25px 25px 0px 25px" _hover={{ boxShadow: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px", cursor: "pointer" }}>
+                                <Product data={elem} typeOfProduct={typeOfProduct}/>
+                            </GridItem>
+                        )
+                    })
+                }
             </Grid>
         </Box>
     )
