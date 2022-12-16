@@ -42,7 +42,7 @@ const ItemCard2 = ({ type, heading, src }) => {
         </Box>
         <Spacer />
         <Box w="75%">
-          <Slide>
+        <Slide>
             <Flex>
               {type.map((i, index) => (
                 <Box>
