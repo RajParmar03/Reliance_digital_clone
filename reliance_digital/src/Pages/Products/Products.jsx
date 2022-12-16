@@ -8,15 +8,13 @@ const getData = async (typeOfProduct) => {
     return response.data;
 }
 
-const Products = (props) => {
-
-    const { typeOfProduct } = props;
+const Products = ({typeOfProduct}) => {
 
     const [productArr, setProductArr] = useState([]);
 
     useEffect(() => {
         getData(typeOfProduct).then((res) => setProductArr(res));
-    }, []);
+    }, [typeOfProduct]);
 
 
     return (
