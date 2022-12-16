@@ -1,7 +1,7 @@
 import { Box, Button, Flex, Grid, GridItem, Heading, Image, Input, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Navigate, useParams } from 'react-router-dom';
 
 
 const getSingleData = async(type, id) => {
@@ -41,7 +41,10 @@ const SingleProduct = (props) => {
         }
         console.log("newData is :-" , newData);
         console.log("in the handlePost function and viewing the data before the post request",data);
-        postSingleData(newData).then((res) => console.log("in the handlePost function and viewing the data after the post request", res));
+        postSingleData(newData).then((res) => {
+            // console.log("in the handlePost function and viewing the data after the post request", res);
+            <Navigate to="/cart" />
+        });
     }
 
 
