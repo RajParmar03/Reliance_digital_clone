@@ -27,7 +27,7 @@ const MyCartLength = () => {
           position: "top",
         });
       });
-  }, [data.length]);
+  }, []);
   return (
     <div>
       <Flex

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import MainCartPage from '../Pages/cartPage/MainCartPage';
-import Home from '../Pages/Home/Home';
-import Products from '../Pages/Products/Products';
-import SingleProduct from '../Pages/SingleProduct/SingleProduct';
+import MainCartPage from '../pages/cartPage/MainCartPage';
+import Home from '../pages/Home/Home';
+import Products from "../pages/Products/Products";
+import SingleProduct from "../pages/SingleProduct/SingleProduct";
 
 const AllRoutes = () => {
   return (

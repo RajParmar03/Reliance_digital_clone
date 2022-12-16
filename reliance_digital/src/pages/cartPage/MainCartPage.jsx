@@ -13,7 +13,7 @@ import { useState } from "react";
       `https://rus-digital-televisions.onrender.com/cart`
     );
 
-    return await response.data[0];
+    return await response.data;
   } catch (err) {
     return err;
   }
@@ -29,6 +29,7 @@ const MainCartPage = () => {
       .then((res) => {
         setData(res);
         setLoading(false);
+        console.log(res)
       })
       .catch((err) => {
         toast({
@@ -44,7 +45,7 @@ const MainCartPage = () => {
   }, []);
   return (
     <div>
-      <Box border={"1px solid black"} height="140px"></Box>
+      {/* <Box border={"0px solid black"} height="140px"></Box> */}
       <Flex
         border={"0px solid red"}
         margin="auto"

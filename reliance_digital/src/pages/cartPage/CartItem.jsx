@@ -64,6 +64,7 @@ const CartItem = ({ name, img, price, id }) => {
       width={"90%"}
       boxShadow={"rgb(0 0 0 / 6%) 0px 2px 2px"}
       borderRadius="4px"
+      
     >
       <Flex
         p={"16px"}
@@ -192,8 +193,9 @@ const CartItem = ({ name, img, price, id }) => {
         fontWeight={"500"}
         background="transparent"
         textAlign={"center"}
+        
       >
-        <Box width={"49%"} borderRight="1px solid rgb(224, 224, 225)">
+        <Box width={"49%"} borderRight="1px solid rgb(224, 224, 225)" >
           <Button
             backgroundColor={"white"}
             color=" rgb(23, 116, 239)"
