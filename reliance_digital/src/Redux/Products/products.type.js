@@ -1,1 +1,3 @@
-export const PRODUCTS_GET = "products/get";
+export const GET_PRODUCTS_LOADING = "products/loading";
+export const GET_PRODUCTS_SUCCESS = "products/success";
+export const GET_PRODUCTS_ERROR = "products/error";
