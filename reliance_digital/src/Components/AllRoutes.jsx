@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import MainCartPage from '../Pages/cartPage/MainCartPage';
 import Home from '../Pages/Home/Home';
+import Login from '../Pages/Login/Login';
 import Product from '../Pages/Products/Product';
 import Products from '../Pages/Products/Products';
 
@@ -29,8 +30,8 @@ const AllRoutes = () => {
             <Route path="/accessories" element={<Products typeOfProduct="accessories" />}></Route>
             <Route path="/accessories/:id" element={<Product typeOfProduct="accessories" />}></Route>
             <Route path="/cart" element={<MainCartPage/>}></Route>
-            {/* <Route path="/login" element={<Products typeOfProduct={"login"}/>}></Route>
-            <Route path="/payment" element={<Products typeOfProduct={"payment"}/>}></Route>
+            <Route path="/login" element={<Login/>}></Route>
+            {/* <Route path="/payment" element={<Products typeOfProduct={"payment"}/>}></Route>
             <Route path="/order" element={<Products typeOfProduct={"order"}/>}></Route>
             <Route path="/contactus" element={<Products typeOfProduct={"contactus"}/>}></Route>
             <Route path="/profile" element={<Products typeOfProduct={"profile"}/>}></Route> */}
