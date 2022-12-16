@@ -1,11 +1,64 @@
 import React from "react";
 import { Flex, Box, Image, Button, Heading } from "@chakra-ui/react";
 import { FcPlus } from "react-icons/fc";
-import {TbTruckDelivery} from "react-icons/tb";
+import { TbTruckDelivery } from "react-icons/tb";
 
-const CartItem = () => {
+const CartItem = ({ name, img, price, id }) => {
+  var months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  var tomorrow = new Date();
+  tomorrow.setTime(tomorrow.getTime() + 1000 * 3600 * 24);
+  var dayName = new Array(
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  );
+  var monName = new Array(
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  );
+  var now = new Date();
+  var dtString =
+    dayName[now.getDay()] +
+    ", " +
+    monName[now.getMonth()] +
+    " " +
+    now.getDate();
+  var change =
+    months[tomorrow.getMonth()] +
+    " " +
+    tomorrow.getDate() +
+    ", " +
+    tomorrow.getFullYear();
   return (
     <Flex
+      key={id}
       border={"1px solid rgb(224, 224, 225)"}
       flexDirection="column"
       width={"90%"}
@@ -41,17 +94,13 @@ const CartItem = () => {
           gap="2"
         >
           <Box>
-            <Image
-              src="https://www.reliancedigital.in/medias/One-Plus-10T-Mobile-Phone-493177297-i-1?context=bWFzdGVyfGltYWdlc3wxMjc4NzV8aW1hZ2UvanBlZ3xpbWFnZXMvaGI2L2hkNi85ODY5OTI1NDQ5NzU4LmpwZ3wxN2IyZDRmOTdjYWRmMTNhOTRkZWM5ODE1YTJjYTM5MTM4OGU3YTJjY2RjMjM0YzdmNjhjZDUxYzZjYTA4ODI1"
-              alt="Image"
-              width="200px"
-            />
+            <Image src={img} alt={name} width="200px" />
           </Box>
           <Box display={"flex"} gap="2">
             <Button>-</Button>
             <Button
               backgroundColor={"white"}
-              disabled="true"
+              disabled={true}
               fontWeight={"bold"}
             >
               1
@@ -78,7 +127,7 @@ const CartItem = () => {
             fontWeight="600"
             lineHeight={"1.1"}
           >
-            OnePlus 10T 5G 128 GB, 8 GB RAM, Moonstone Black, Mobile Phone
+            {name}
           </Heading>
           <Heading
             fontSize="14px"
@@ -86,13 +135,13 @@ const CartItem = () => {
             fontWeight="600"
             lineHeight={"1.1"}
           >
-            1234567789
+            {Date.now()}
           </Heading>
           <Flex>
-            <FcPlus/>
-          <Heading fontSize="14px" color={"red"}>
-           RECOMMENDED SERVICES/WARRANTY
-          </Heading>
+            <FcPlus />
+            <Heading fontSize="12px" color={"red"}>
+              RECOMMENDED SERVICES/WARRANTY
+            </Heading>
           </Flex>
         </Flex>
         {/* //part3- line 71 to 99*/}
@@ -109,7 +158,7 @@ const CartItem = () => {
           fontWeight="500"
         >
           <Heading fontSize="18px" color={"rgb(0, 0, 0)"}>
-            ₹49,999
+            {price}
           </Heading>
           <Heading
             fontSize="14px"
@@ -120,14 +169,14 @@ const CartItem = () => {
             Free Shipping
           </Heading>
           <Flex justifyContent="flex-end">
-            <TbTruckDelivery size={20}/>
-          <Heading
-            fontSize="13px"
-            color={"rgb(0, 51, 128)"}
-            lineHeight={"20px"}
-          >
-            Standard Delivery: 18 Dec (Sun)-20 Dec (Tue)
-          </Heading>
+            <TbTruckDelivery size={20} />
+            <Heading
+              fontSize="13px"
+              color={"rgb(0, 51, 128)"}
+              lineHeight={"20px"}
+            >
+              Standard Delivery: {dtString} - {change}
+            </Heading>
           </Flex>
           <Heading fontSize="12px" color={"rgb(102, 102, 102)"}>
             *Delivery assurance is subject to our delivery locations staying
@@ -142,6 +191,7 @@ const CartItem = () => {
         fontSize="13px"
         fontWeight={"500"}
         background="transparent"
+        textAlign={"center"}
       >
         <Box width={"49%"} borderRight="1px solid rgb(224, 224, 225)">
           <Button
