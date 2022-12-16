@@ -3,4 +3,4 @@ Reliance Digital Retail Ltd. sells electronic products. The Company retails a wi
 
 group-code : deafening-harbor-167
 
-Reliance Digital-Api  :  https://rus-digital-api.vercel.app/
+Reliance Digital-Api  :  https://rus-digital-televisions.onrender.com/
