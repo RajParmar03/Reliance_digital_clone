@@ -23,7 +23,7 @@ const category = {
 
 }
 
-const Products = ({typeOfProduct}) => {
+// const Products = ({typeOfProduct}) => {
 
 
     const [productArr, setProductArr] = useState([]);
@@ -39,6 +39,7 @@ const Products = ({typeOfProduct}) => {
             <Grid templateColumns={['repeat(1, 1fr)', "repeat(2,1fr)", "repeat(3,1fr)", "repeat(4,1fr)", "repeat(5,1fr)"]} gap={3}>
                 {
                     productArr.map((elem, i) => {
+                        // console.log("in the products page in the map method and elem is :- ", elem);
                         return (
                             <GridItem key={elem.name + i} w='100%' bg='white.500' boxShadow="rgba(0, 0, 0, 0.15) 0px 2px 8px" padding="25px 25px 0px 25px" _hover={{ boxShadow: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px", cursor: "pointer" }}>
                                 <Product data={elem} typeOfProduct={typeOfProduct}/>

@@ -5,8 +5,9 @@ import { useParams } from 'react-router-dom';
 
 
 const getSingleData = async(type, id) => {
-    let response = await axios.get(`https://rus-digital-api.vercel.app/${type}?name=${id}`);
-    return response.data[0];
+    let response = await axios.get(`https://rus-digital-api.vercel.app/${type}/${id}`);
+    // console.log("in the singleproduct page in the getsingleData function and response.data is :-",response.data);
+    return response.data;
 }
 
 const postSingleData = async(data) => {
