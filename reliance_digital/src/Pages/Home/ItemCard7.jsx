@@ -11,7 +11,7 @@ import {
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 
-const ItemCard2 = ({ type, heading, src }) => {
+const ItemCard7 = ({ type, heading, src }) => {
   return (
     <Box justifyContent="left" w="95%" m="auto" mt="6" cursor="pointer">
       <Flex>
@@ -32,25 +32,12 @@ const ItemCard2 = ({ type, heading, src }) => {
         </Center>
       </Flex>
       <Flex mt="7">
-        <Box boxSize="sm" w="24%" cursor="pointer">
-          <Image
-            src={src}
-            boxSize="340px"
-            border="1px"
-            borderColor="gray.200"
-          />
-        </Box>
-        <Spacer />
         <Box w="75%">
-        <Slide>
+          <Slide>
             <Flex>
               {type.map((i, index) => (
                 <Box>
-                  <Square
-                    key={index}
-                    m="auto"
-                    _hover={{ transform: "scale(1.1)" }}
-                  >
+                  <Square key={index} m="auto" _hover={{ transform: "scale(1.1)" }}>
                     <Image src={`${i.url}`} alt={i.caption} boxSize="160px" />
                   </Square>
                   <Box p="2" mt="4">
@@ -59,7 +46,7 @@ const ItemCard2 = ({ type, heading, src }) => {
                       noOfLines={2}
                       textAlign="left"
                       fontSize="15px"
-                      _hover={{ color: "red" }}
+                      _hover={{color:"red"}}
                     >
                       Apple Watch SE GPS - 44 mm Silver Aluminium Case with
                       White 2nd Generation Sport Band
@@ -116,9 +103,18 @@ const ItemCard2 = ({ type, heading, src }) => {
             </Flex>
           </Slide>
         </Box>
+        <Spacer />
+        <Box boxSize="sm" w="24%">
+          <Image
+            src={src}
+            boxSize="340px"
+            border="1px"
+            borderColor="gray.200"
+          />
+        </Box>
       </Flex>
     </Box>
   );
 };
 
-export default ItemCard2;
+export default ItemCard7;

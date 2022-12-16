@@ -5,7 +5,7 @@ import "react-slideshow-image/dist/styles.css";
 
 const ItemCard5 = ({ type, heading }) => {
   return (
-    <Box justifyContent="left" w="95%" m="auto" mt="6">
+    <Box justifyContent="left" w="95%" m="auto" mt="6" cursor="pointer">
       <Flex>
         <Center>
           <Text fontSize="2xl">
@@ -28,7 +28,11 @@ const ItemCard5 = ({ type, heading }) => {
           <Flex>
             {type.map((i, index) => (
               <Box>
-                <Square key={index} m="auto">
+                <Square
+                  key={index}
+                  m="auto"
+                  _hover={{ transform: "scale(1.1)" }}
+                >
                   <Image src={`${i.url}`} alt={i.caption} boxSize="160px" />
                 </Square>
                 <Box p="2" mt="4">
@@ -37,6 +41,7 @@ const ItemCard5 = ({ type, heading }) => {
                     noOfLines={2}
                     textAlign="left"
                     fontSize="15px"
+                    _hover={{ color: "red" }}
                   >
                     Orient Convector HC2004D Fan-based Room Heater with
                     Twin-Fans, Black
@@ -80,6 +85,7 @@ const ItemCard5 = ({ type, heading }) => {
                       color="green.500"
                       bg="green.50"
                       mt="2"
+                      textAlign="center"
                     >
                       <Text fontSize="10px" fontWeight="500">
                         OFFERS AVAILABLE

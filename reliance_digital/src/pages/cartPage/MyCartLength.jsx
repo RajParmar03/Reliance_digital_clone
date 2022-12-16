@@ -14,7 +14,6 @@ const MyCartLength = () => {
         width={"90%"}
         justifyContent="space-between"
         marginTop={"20px"}
-        marginLeft="40px"
       >
         <Box>
           <Heading fontWeight={600} fontSize="16px">
