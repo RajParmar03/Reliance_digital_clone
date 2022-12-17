@@ -11,7 +11,8 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-const CheckoutBox = () => {
+const CheckoutBox = ({items}) => {
+
   return (
     <div>
       <Flex
@@ -65,7 +66,7 @@ const CheckoutBox = () => {
               </Text>
 
               <Flex justifyContent="space-between">
-                <Text>Price (3 Items)</Text>
+                <Text>Price ({items} Items)</Text>
                 <Text>₹141,398</Text>
               </Flex>
 

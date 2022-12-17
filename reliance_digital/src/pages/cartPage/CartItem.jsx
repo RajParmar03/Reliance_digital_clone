@@ -1,9 +1,44 @@
-import React from "react";
-import { Flex, Box, Image, Button, Heading } from "@chakra-ui/react";
+import React, { useState } from "react";
+import { Flex, Box, Image, Button, Heading, useToast } from "@chakra-ui/react";
 import { FcPlus } from "react-icons/fc";
 import { TbTruckDelivery } from "react-icons/tb";
+import { INC, DEC } from "../../Redux/Cart/cart.types";
+import { useDispatch, useSelector } from "react-redux";
+import { store } from "../../Redux/store";
+import axios from "axios";
+import {Blocks} from "react-loader-spinner"
 
 const CartItem = ({ name, img, price, id }) => {
+  const toast = useToast();
+
+  const [count, setCount] = useState(1);
+  const dispatch = useDispatch();
+
+  // const count = useSelector(store => store.cart.count)
+
+  const handleInc = () => {
+    setCount(count + 1);
+    //dispatch({type:INC})
+  };
+  const handleDec = () => {
+    count > 1 && setCount(count - 1);
+    //dispatch({type:DEC})
+  };
+
+  const DeleteRequest = async (id) => {
+    try {
+      let response = await axios.delete(
+        `https://rus-digital-televisions.onrender.com/cart/${id}`
+      );
+
+    
+
+      return response;
+    } catch (err) {
+      return err;
+    }
+  };
+
   var months = [
     "January",
     "February",
@@ -18,6 +53,7 @@ const CartItem = ({ name, img, price, id }) => {
     "November",
     "December",
   ];
+
   var tomorrow = new Date();
   tomorrow.setTime(tomorrow.getTime() + 1000 * 3600 * 24);
   var dayName = new Array(
@@ -97,15 +133,15 @@ const CartItem = ({ name, img, price, id }) => {
             <Image src={img} alt={name} width="200px" />
           </Box>
           <Box display={"flex"} gap="2">
-            <Button>-</Button>
+            <Button onClick={handleDec}>-</Button>
             <Button
               backgroundColor={"white"}
               disabled={true}
               fontWeight={"bold"}
             >
-              1
+              {count}
             </Button>
-            <Button>+</Button>
+            <Button onClick={handleInc}>+</Button>
           </Box>
         </Flex>
         {/* //part2-line 46 to 71 */}
@@ -198,6 +234,28 @@ const CartItem = ({ name, img, price, id }) => {
             backgroundColor={"white"}
             color=" rgb(23, 116, 239)"
             _hover={"backgroundColor:white"}
+            onClick={() => {
+              DeleteRequest(id)
+                .then((response) => {
+                  toast({
+                    title: "Delete Item Successfully",
+                    status: "success",
+                    duration: 4000,
+                    isClosable: true,
+                    position: "top",
+                  });
+                })
+                .catch((reject) => {
+                  toast({
+                    title: "Something Went Wrong",
+                    description: `${reject.message}`,
+                    status: "error",
+                    duration: 5000,
+                    isClosable: true,
+                    position: "bottom-right",
+                  });
+                });
+            }}
           >
             Remove
           </Button>
