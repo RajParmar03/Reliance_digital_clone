@@ -15,17 +15,16 @@ import {
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
-import { useToast } from '@chakra-ui/react'
-import React, { useEffect, useState } from "react";
+import React, {  useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
-import { Navigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { login } from "../../redux/Auth/auth.action";
 
 function Login() {
   const [loginCreds, setLoginCreds] = useState({});
   const dispatch = useDispatch();
   const { isAuth } = useSelector((store) => store.AuthManager);
-  const toast = useToast()
+  const navigate=useNavigate()
   const hanldeChange = (e) => {
     const { name, value } = e.target;
     setLoginCreds({
@@ -38,16 +37,13 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(loginCreds));
-    if(isAuth){
-      toast({
-        title: 'Account created.',
-        description: "We've created your account for you.",
-        status: 'success',
-        duration: 9000,
-        isClosable: true,
-      })
-    }
   };
+
+  useEffect(()=>{
+      if(isAuth){
+        navigate("/")
+      }
+  },[isAuth])
 
   return (
     <>

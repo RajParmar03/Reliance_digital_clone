@@ -21,7 +21,6 @@ import {
   VStack,
   MenuItem,
   Button,
-  useToast,
 } from "@chakra-ui/react";
 import React from "react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
@@ -33,7 +32,7 @@ import { MdConnectWithoutContact } from "react-icons/md";
 import { FaTruck } from "react-icons/fa";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrLogin, GrReturn, GrServices } from "react-icons/gr";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../redux/Auth/auth.action";
 function Navbar() {
@@ -44,10 +43,11 @@ function Navbar() {
   const btnRef = React.useRef();
   const { isAuth } = useSelector((store) => store.AuthManager);
   const dispatch = useDispatch();
-  const toast = useToast()
+  const navigate=useNavigate()
   const handleLogout = () => {
     dispatch(logout());
     alert("We will miss you 😭")
+    navigate("/login")
   };
   if (isLargerThan1100) {
     return (
