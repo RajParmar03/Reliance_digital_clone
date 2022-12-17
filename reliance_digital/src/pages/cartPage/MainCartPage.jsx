@@ -1,13 +1,13 @@
 import React from "react";
-import { Box, Flex, useToast } from "@chakra-ui/react";
+import { Box, Center, Flex, useToast } from "@chakra-ui/react";
 import MyCartLength from "./MyCartLength";
 import CartItem from "./CartItem";
 import CheckoutBox from "./CheckoutBox";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-
- export const GetData = async () => {
+import { RotatingLines } from "react-loader-spinner";
+export const GetData = async () => {
   try {
     let response = await axios.get(
       `https://rus-digital-televisions.onrender.com/cart`
@@ -21,15 +21,18 @@ import { useState } from "react";
 
 const MainCartPage = () => {
   const toast = useToast();
+  const [count, setCount] = useState(1);
+
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     setLoading(true);
     GetData()
       .then((res) => {
         setData(res);
         setLoading(false);
-        console.log(res)
+        console.log(res);
       })
       .catch((err) => {
         toast({
@@ -43,6 +46,7 @@ const MainCartPage = () => {
         });
       });
   }, []);
+  console.log(data);
   return (
     <div>
       {/* <Box border={"0px solid black"} height="140px"></Box> */}
@@ -74,6 +78,17 @@ const MainCartPage = () => {
           gap={"4"}
         >
           <MyCartLength />
+          {loading && (
+            <Center>
+              <RotatingLines
+                strokeColor="grey"
+                strokeWidth="5"
+                animationDuration="0.75"
+                width="96"
+                visible={true}
+              />
+            </Center>
+          )}
           {data &&
             data.map(({ name, img, price, id }) => {
               return (
@@ -83,6 +98,8 @@ const MainCartPage = () => {
                   img={img}
                   price={price}
                   id={id}
+                  setCount={setCount}
+                  count={count}
                 />
               );
             })}
@@ -98,7 +115,7 @@ const MainCartPage = () => {
             "2xl": "30%",
           }}
         >
-          <CheckoutBox />
+          <CheckoutBox items={data.length} />
         </Flex>
       </Flex>
     </div>
