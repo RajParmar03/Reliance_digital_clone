@@ -13,7 +13,7 @@ import { useState } from "react";
       `https://rus-digital-televisions.onrender.com/cart`
     );
 
-    return await response.data[0];
+    return await response.data;
   } catch (err) {
     return err;
   }

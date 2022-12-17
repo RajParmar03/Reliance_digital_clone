@@ -7,8 +7,6 @@ import { getSingleProduct } from '../../Redux/SingleProduct/SingleProduct.action
 
 
 
-
-
 const getSingleData = async (type, id) => {
     let response = await axios.get(`https://rus-digital-api.vercel.app/${type}/${id}`);
     // console.log("in the singleproduct page in the getsingleData function and response.data is :-",response.data);
