@@ -13,6 +13,7 @@ import {
   Stack,
   Text,
   useColorModeValue,
+  useToast,
   VStack,
 } from "@chakra-ui/react";
 import React, {  useEffect, useState } from "react";
@@ -23,6 +24,7 @@ import { login } from "../../Redux/Auth/auth.action";
 function Login() {
   const [loginCreds, setLoginCreds] = useState({});
   const dispatch = useDispatch();
+  const toast = useToast()
   const { isAuth } = useSelector((store) => store.AuthManager);
   const navigate=useNavigate()
   const hanldeChange = (e) => {
@@ -37,11 +39,19 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(login(loginCreds));
+
   };
 
   useEffect(()=>{
       if(isAuth){
         navigate("/")
+        toast({
+          title: 'Account created.',
+          description: "We've created your account for you.",
+          status: 'success',
+          duration: 9000,
+          isClosable: true,
+        })
       }
   },[isAuth])
 

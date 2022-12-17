@@ -21,6 +21,7 @@ import {
   VStack,
   MenuItem,
   Button,
+  useToast,
 } from "@chakra-ui/react";
 import React from "react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
@@ -44,10 +45,17 @@ function Navbar() {
   const { isAuth } = useSelector((store) => store.AuthManager);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const toast = useToast()
   const handleLogout = () => {
     dispatch(logout());
-    alert("We will miss you 😭");
     navigate("/login");
+    toast({
+      title: 'Logout  success.',
+      description: "We will miss you 😭",
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+    })
   };
   if (isLargerThan1100) {
     return (
@@ -153,7 +161,7 @@ function Navbar() {
         >
           <Link to="/">
             <Box>
-              <Image src="RUS DIGITAL (1).png" alt="logo" w="190px" h="70px" />
+              <Image src="RUS DIGITAL.png" alt="logo" w="190px" h="70px" />
             </Box>
           </Link>
           <Flex
@@ -257,7 +265,7 @@ function Navbar() {
               Mobiles & Tablets <ChevronDownIcon />
             </MenuButton>
             <Link to="mobilesandtablets">
-              <MenuList bg="blue">
+              <MenuList bg="#013380">
                 <Grid
                   p="15px"
                   gridTemplateColumns={"repeat(3,1fr)"}
@@ -483,7 +491,7 @@ function Navbar() {
             >
               Televisions <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="blue">
+            <MenuList bg="#013380">
               <Link to="televisions">
                 <Grid
                   p="15px"
@@ -678,7 +686,7 @@ function Navbar() {
             >
               Audio <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="blue">
+            <MenuList bg="#013380">
               <Link to="headphones">
                 <Grid
                   p="15px"
@@ -884,7 +892,7 @@ function Navbar() {
             >
               Home Appliances <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="blue">
+            <MenuList bg="#013380">
               <Link to="homeappliances">
                 <Grid
                   p="15px"
@@ -1159,7 +1167,7 @@ function Navbar() {
             >
               Computers <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="blue">
+            <MenuList bg="#013380">
               <Link to="computers">
                 <Grid
                   p="15px"
@@ -1557,7 +1565,7 @@ function Navbar() {
             >
               Cameras <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="blue">
+            <MenuList bg="#013380">
               <Link to="cameras">
                 <Grid
                   p="15px"
@@ -1701,7 +1709,7 @@ function Navbar() {
             >
               Kitchen Appliances <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="blue">
+            <MenuList bg="#013380">
               <Link to="kitchen">
                 <Grid
                   p="15px"
@@ -1961,7 +1969,7 @@ function Navbar() {
             >
               Personal Care <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="blue">
+            <MenuList bg="#013380">
               <Link to="personalcare">
                 <Grid
                   p="15px"
@@ -2084,7 +2092,7 @@ function Navbar() {
             >
               Acessories <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="blue">
+            <MenuList bg="#013380">
               <Link to="accessories">
                 <Grid
                   p="15px"
@@ -2475,7 +2483,7 @@ function Navbar() {
       >
         <Link to="/">
           <Box>
-            <Image src="RUS DIGITAL (1).png" alt="logo" w="120px" h="50px" />
+            <Image src="RUS DIGITAL.png" alt="logo" w="120px" h="50px" />
           </Box>
         </Link>
         <Flex
@@ -2669,7 +2677,7 @@ function Navbar() {
       >
         <Link to="/">
           <Box>
-            <Image src="RUS DIGITAL (1).png" alt="logo" w="120px" h="50px" />
+            <Image src="RUS DIGITAL.png" alt="logo" w="120px" h="50px" />
           </Box>
         </Link>
         <Flex
