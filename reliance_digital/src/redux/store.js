@@ -6,9 +6,13 @@ import {
   } from "redux";
   import thunk from "redux-thunk";
 import { Authreducer } from "./Auth/auth.reducer";
+import { productsReducer } from "./Products/products.reducer";
+import { SingleProductReducer } from "./SingleProduct/SingleProduct.reducer";
   
   const rootReducer = combineReducers({
     AuthManager: Authreducer,
+    singleProduct:SingleProductReducer,
+    product:productsReducer
   });
   
   const composer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

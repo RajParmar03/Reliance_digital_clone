@@ -5,7 +5,7 @@ import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
 import Products from '../Pages/Products/Products';
 import SingleProduct from '../Pages/SingleProduct/SingleProduct';
-
+import Wishlist from '../Pages/Wishlist/Wishlist';
 
 const AllRoutes = () => {
   return (
@@ -32,6 +32,8 @@ const AllRoutes = () => {
             <Route path="/accessories/:id" element={<SingleProduct typeOfProduct="accessories" />}></Route>
             <Route path="/cart" element={<MainCartPage/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
+            <Route path="/whishlist" element={<Wishlist/>}></Route>
+            <Route path="/whishlist/:id" element={<SingleProduct typeOfProduct="whishlist"/>}></Route>
             {/* <Route path="/order" element={<Products typeOfProduct={"order"}/>}></Route>
             <Route path="/contactus" element={<Products typeOfProduct={"contactus"}/>}></Route>
             <Route path="/profile" element={<Products typeOfProduct={"profile"}/>}></Route> */}
