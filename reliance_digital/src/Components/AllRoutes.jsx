@@ -6,6 +6,7 @@ import Login from '../Pages/Login/Login';
 import Products from '../Pages/Products/Products';
 import SingleProduct from '../Pages/SingleProduct/SingleProduct';
 
+
 const AllRoutes = () => {
   return (
     <div>

@@ -11,7 +11,7 @@ const Product = (props) => {
 
 
   return (
-    <Link to={`/${typeOfProduct}/${name}`}>
+    <Link to={`/${typeOfProduct}/${id}`}>
       <Box> 
         <Image src={img} alt={name} p="5" h="200" _hover={{p:"0"}}/>
         <Box h="10" w="100%" color="blue.700" lineHeight="120%" marginBottom="3" textOverflow="ellipsis" overflow="hidden" _hover={{color:"red"}}>{name}</Box>

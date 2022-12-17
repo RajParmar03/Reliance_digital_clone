@@ -1,13 +1,51 @@
 import React from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, useToast } from "@chakra-ui/react";
 import MyCartLength from "./MyCartLength";
 import CartItem from "./CartItem";
 import CheckoutBox from "./CheckoutBox";
+import axios from "axios";
+import { useEffect } from "react";
+import { useState } from "react";
+
+ export const GetData = async () => {
+  try {
+    let response = await axios.get(
+      `https://rus-digital-televisions.onrender.com/cart`
+    );
+
+    return await response.data;
+  } catch (err) {
+    return err;
+  }
+};
 
 const MainCartPage = () => {
+  const toast = useToast();
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    GetData()
+      .then((res) => {
+        setData(res);
+        setLoading(false);
+        console.log(res)
+      })
+      .catch((err) => {
+        toast({
+          title: "Something Went Wrong",
+          description: `${err.message}`,
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+          variant: "top-accent",
+          position: "top",
+        });
+      });
+  }, []);
   return (
     <div>
-      <Box border={"1px solid black"} height="140px"></Box>
+      {/* <Box border={"0px solid black"} height="140px"></Box> */}
       <Flex
         border={"0px solid red"}
         margin="auto"
@@ -36,16 +74,18 @@ const MainCartPage = () => {
           gap={"4"}
         >
           <MyCartLength />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
-          <CartItem />
+          {data &&
+            data.map(({ name, img, price, id }) => {
+              return (
+                <CartItem
+                  key={id}
+                  name={name}
+                  img={img}
+                  price={price}
+                  id={id}
+                />
+              );
+            })}
         </Flex>
         <Flex
           border={"0px solid green"}

@@ -1,7 +1,33 @@
-import React from "react";
-import { Box, Heading, Flex } from "@chakra-ui/react";
+import React, { useEffect } from "react";
+import { Box, Heading, Flex, useToast } from "@chakra-ui/react";
+import { GetData } from "./MainCartPage";
+import { useState } from "react";
 
 const MyCartLength = () => {
+  const toast = useToast();
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    GetData()
+      .then((res) => {
+        setData(res);
+        console.log("running");
+        setLoading(false);
+      })
+      .catch((err) => {
+        toast({
+          title: "Something Went Wrong",
+          description: `${err.message}`,
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+          variant: "top-accent",
+          position: "top",
+        });
+      });
+  }, []);
   return (
     <div>
       <Flex
@@ -17,7 +43,7 @@ const MyCartLength = () => {
       >
         <Box>
           <Heading fontWeight={600} fontSize="16px">
-            My Cart (3 Items)
+            My Cart ({data.length} Items)
           </Heading>
         </Box>
         <Box>
