@@ -6,7 +6,7 @@ export const getProducts = (typeOfProduct) => async(dispatch) => {
         // console.log("in the logi func");
         dispatch({type :GET_PRODUCTS_LOADING });
         try {
-            let responce = await axios.get(`https://rus-digital-api.vercel.app/${typeOfProduct}`);
+            let responce = await axios.get(`https://rus-digital-televisions.onrender.com/${typeOfProduct}`);
             console.log("in the logi func try",responce.data);
             dispatch({type:GET_PRODUCTS_SUCCESS,payload : responce.data});
         } catch (error) {

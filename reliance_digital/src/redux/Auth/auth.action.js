@@ -11,7 +11,6 @@ export const login = (creds) => async (dispatch) => {
   try {
     let res = await axios.post("https://reqres.in/api/login", creds);
     dispatch({ type: LOGIN_SUCCESS, payload: res.data });
-    alert(" LOGIN_SUCCESS")
     console.log(res.data);
   } catch (e) {
     dispatch({ type: LOGIN_ERROR, payload: e.message });
