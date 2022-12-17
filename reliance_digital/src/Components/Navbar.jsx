@@ -34,7 +34,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { GrLogin, GrReturn, GrServices } from "react-icons/gr";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { logout } from "../redux/Auth/auth.action";
+import { logout } from "../Redux/Auth/auth.action";
 function Navbar() {
   const [isLargerThan1100] = useMediaQuery("(min-width: 1100px)");
   const [isLargerThan750px] = useMediaQuery("(min-width: 750px)");
@@ -43,11 +43,11 @@ function Navbar() {
   const btnRef = React.useRef();
   const { isAuth } = useSelector((store) => store.AuthManager);
   const dispatch = useDispatch();
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const handleLogout = () => {
     dispatch(logout());
-    alert("We will miss you 😭")
-    navigate("/login")
+    alert("We will miss you 😭");
+    navigate("/login");
   };
   if (isLargerThan1100) {
     return (
@@ -184,7 +184,7 @@ function Navbar() {
               Deliver to Mumbai 400059
             </Heading>
           </Flex>
-          <Link to="cart">
+          <Link to="/cart">
             <Flex cursor={"pointer"}>
               <BsFillCartFill color="white" fontSize="20px" />
               <Heading
@@ -225,7 +225,10 @@ function Navbar() {
                 <MenuItem>My Profile</MenuItem>
                 <MenuItem>My Order</MenuItem>
                 <MenuItem>My Address</MenuItem>
-                <MenuItem>My Wishlist</MenuItem>
+                <Link to="whishlist">
+                  {" "}
+                  <MenuItem>My Wishlist</MenuItem>
+                </Link>
                 <MenuItem onClick={handleLogout}>Logout</MenuItem>
               </MenuList>
             </Menu>
@@ -254,7 +257,7 @@ function Navbar() {
               Mobiles & Tablets <ChevronDownIcon />
             </MenuButton>
             <Link to="mobilesandtablets">
-              <MenuList bg="skyblue">
+              <MenuList bg="blue">
                 <Grid
                   p="15px"
                   gridTemplateColumns={"repeat(3,1fr)"}
@@ -263,12 +266,12 @@ function Navbar() {
                   alignContent={"center"}
                   textAlign="center"
                   w="95%"
+                  color="white"
                 >
                   <Box>
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -282,7 +285,6 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -296,7 +298,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -310,7 +312,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -321,7 +323,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -330,7 +332,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -342,7 +344,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -353,7 +355,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -362,7 +364,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -374,7 +376,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -388,7 +390,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -399,7 +401,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -408,7 +410,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -417,7 +419,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -426,7 +428,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -435,7 +437,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -444,7 +446,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -455,7 +457,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -481,7 +483,7 @@ function Navbar() {
             >
               Televisions <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="skyblue">
+            <MenuList bg="blue">
               <Link to="televisions">
                 <Grid
                   p="15px"
@@ -490,12 +492,13 @@ function Navbar() {
                   justifyContent="space-around"
                   alignContent={"center"}
                   textAlign="center"
+                  color="white"
                 >
                   <Box>
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -509,7 +512,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -523,7 +526,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -537,7 +540,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -548,7 +551,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -557,7 +560,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -566,7 +569,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -575,7 +578,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -584,7 +586,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -596,7 +598,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -607,7 +609,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -616,7 +618,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -625,7 +627,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -637,7 +639,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -650,7 +652,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -676,7 +678,7 @@ function Navbar() {
             >
               Audio <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="skyblue">
+            <MenuList bg="blue">
               <Link to="headphones">
                 <Grid
                   p="15px"
@@ -685,12 +687,13 @@ function Navbar() {
                   justifyContent="space-around"
                   alignContent={"center"}
                   textAlign="center"
+                  color="white"
                 >
                   <Box>
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -701,7 +704,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -710,7 +713,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -719,7 +722,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -728,7 +731,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -737,7 +740,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -748,7 +751,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -759,7 +762,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -768,7 +771,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -779,7 +782,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -790,7 +793,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -799,7 +802,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -808,7 +811,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -817,7 +820,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -828,7 +831,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -839,7 +842,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -848,7 +851,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -857,7 +860,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -881,7 +884,7 @@ function Navbar() {
             >
               Home Appliances <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="skyblue">
+            <MenuList bg="blue">
               <Link to="homeappliances">
                 <Grid
                   p="15px"
@@ -890,12 +893,13 @@ function Navbar() {
                   justifyContent="space-around"
                   alignContent={"center"}
                   textAlign="center"
+                  color="white"
                 >
                   <Box>
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -906,7 +910,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -915,7 +919,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -924,7 +928,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -933,7 +937,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -942,7 +946,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -952,7 +956,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -962,7 +966,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -972,7 +976,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -982,7 +986,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -994,7 +998,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -1005,7 +1009,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1014,7 +1018,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1023,7 +1027,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1032,7 +1036,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1041,7 +1045,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1051,7 +1055,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1061,7 +1065,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1071,7 +1075,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1083,7 +1087,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -1094,7 +1098,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1103,7 +1107,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1112,7 +1116,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1121,7 +1125,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1130,7 +1134,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1155,7 +1159,7 @@ function Navbar() {
             >
               Computers <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="skyblue">
+            <MenuList bg="blue">
               <Link to="computers">
                 <Grid
                   p="15px"
@@ -1164,12 +1168,13 @@ function Navbar() {
                   justifyContent="space-around"
                   alignContent={"center"}
                   textAlign="center"
+                  color="white"
                 >
                   <Box>
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -1180,7 +1185,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1189,7 +1194,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1198,7 +1203,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1207,7 +1212,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1216,7 +1221,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1226,7 +1231,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1236,7 +1241,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1246,7 +1251,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1259,7 +1264,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -1270,7 +1275,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1279,7 +1284,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1288,7 +1293,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1297,7 +1302,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1306,7 +1311,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1316,7 +1321,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1326,7 +1331,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1336,7 +1341,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1346,7 +1351,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1356,7 +1361,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1366,7 +1371,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1376,7 +1381,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1389,7 +1394,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -1400,7 +1405,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1409,7 +1414,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1418,7 +1423,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1427,7 +1432,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1436,7 +1441,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1446,7 +1451,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1456,7 +1461,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1466,7 +1471,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1476,7 +1481,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1486,7 +1491,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1499,7 +1504,7 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -1510,7 +1515,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1519,7 +1524,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1528,7 +1533,7 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
+
                         cursor: "pointer",
                       }}
                     >
@@ -1552,7 +1557,7 @@ function Navbar() {
             >
               Cameras <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="skyblue">
+            <MenuList bg="blue">
               <Link to="cameras">
                 <Grid
                   p="15px"
@@ -1561,12 +1566,12 @@ function Navbar() {
                   justifyContent="space-around"
                   alignContent={"center"}
                   textAlign="center"
+                  color="white"
                 >
                   <Box>
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -1577,7 +1582,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1586,7 +1590,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1595,7 +1598,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1604,7 +1606,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1613,7 +1614,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1623,7 +1623,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1636,7 +1635,6 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -1647,7 +1645,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1656,7 +1653,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1665,7 +1661,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1674,7 +1669,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1683,7 +1677,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1708,7 +1701,7 @@ function Navbar() {
             >
               Kitchen Appliances <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="skyblue">
+            <MenuList bg="blue">
               <Link to="kitchen">
                 <Grid
                   p="15px"
@@ -1717,12 +1710,12 @@ function Navbar() {
                   justifyContent="space-around"
                   alignContent={"center"}
                   textAlign="center"
+                  color="white"
                 >
                   <Box>
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -1733,7 +1726,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1742,7 +1734,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1751,7 +1742,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1760,7 +1750,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1769,7 +1758,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1779,7 +1767,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1789,7 +1776,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1799,7 +1785,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1809,7 +1794,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1822,7 +1806,6 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -1833,7 +1816,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1842,7 +1824,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1851,7 +1832,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1860,7 +1840,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1869,7 +1848,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1879,7 +1857,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1889,7 +1866,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1899,7 +1875,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1912,7 +1887,6 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -1923,7 +1897,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1932,7 +1905,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1941,7 +1913,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1950,7 +1921,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -1959,7 +1929,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1969,7 +1938,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -1993,7 +1961,7 @@ function Navbar() {
             >
               Personal Care <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="skyblue">
+            <MenuList bg="blue">
               <Link to="personalcare">
                 <Grid
                   p="15px"
@@ -2002,12 +1970,12 @@ function Navbar() {
                   justifyContent="space-around"
                   alignContent={"center"}
                   textAlign="center"
+                  color="white"
                 >
                   <Box>
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -2018,7 +1986,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2027,7 +1994,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2036,7 +2002,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2045,7 +2010,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2056,7 +2020,6 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -2067,7 +2030,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2076,7 +2038,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2085,7 +2046,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2094,7 +2054,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2103,7 +2062,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2126,7 +2084,7 @@ function Navbar() {
             >
               Acessories <ChevronDownIcon />
             </MenuButton>
-            <MenuList bg="skyblue">
+            <MenuList bg="blue">
               <Link to="accessories">
                 <Grid
                   p="15px"
@@ -2135,12 +2093,12 @@ function Navbar() {
                   justifyContent="space-around"
                   alignContent={"center"}
                   textAlign="center"
+                  color="white"
                 >
                   <Box>
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -2151,7 +2109,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2160,7 +2117,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2169,7 +2125,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2178,7 +2133,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2187,7 +2141,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2197,7 +2150,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2207,7 +2159,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2217,7 +2168,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2227,7 +2177,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2237,7 +2186,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2247,7 +2195,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2257,7 +2204,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2270,7 +2216,6 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -2281,7 +2226,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2290,7 +2234,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2299,7 +2242,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2308,7 +2250,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2317,7 +2258,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2327,7 +2267,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2337,7 +2276,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2347,7 +2285,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2357,7 +2294,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2367,7 +2303,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2377,7 +2312,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2387,7 +2321,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2397,7 +2330,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2410,7 +2342,6 @@ function Navbar() {
                     <Heading
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                       my="8px"
@@ -2421,7 +2352,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2430,7 +2360,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2439,7 +2368,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2448,7 +2376,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                       }}
                     >
@@ -2457,7 +2384,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2467,7 +2393,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2477,7 +2402,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2487,7 +2411,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2497,7 +2420,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2507,7 +2429,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2517,7 +2438,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2527,7 +2447,6 @@ function Navbar() {
                     <Text
                       _hover={{
                         textDecoration: "underline",
-                        color: "blue",
                         cursor: "pointer",
                         fontWeight: "bold",
                       }}
@@ -2576,7 +2495,7 @@ function Navbar() {
           />
           <FcSearch fontSize={"42px"} />
         </Flex>
-        <Link to="cart">
+        <Link to="/cart">
           <Flex cursor={"pointer"}>
             <BsFillCartFill color="white" fontSize="20px" />
             <Heading
@@ -2616,7 +2535,10 @@ function Navbar() {
               <MenuItem>My Profile</MenuItem>
               <MenuItem>My Order</MenuItem>
               <MenuItem>My Address</MenuItem>
-              <MenuItem>My Wishlist</MenuItem>
+              <Link to="whishlist">
+                {" "}
+                <MenuItem>My Wishlist</MenuItem>
+              </Link>
               <MenuItem onClick={handleLogout}>Logout</MenuItem>
             </MenuList>
           </Menu>
@@ -2817,31 +2739,34 @@ function Navbar() {
                     </Link>
                   )}
 
-                 {(!isAuth)? <Link to="/login">
-                    <Heading
-                      cursor={"pointer"}
-                      fontSize={"24px"}
-                      _hover={{ bg: "red", textDecoration: "underline" }}
-                      fontWeight="bold"
-                      color="black"
-                    >
-                      Login
-                    </Heading>
-                  </Link>: <Link to="/login">
-                    <Heading
-                      cursor={"pointer"}
-                      fontSize={"24px"}
-                      _hover={{ bg: "red", textDecoration: "underline" }}
-                      fontWeight="bold"
-                      color="black"
-                      onClick={handleLogout}
-                    >
-                      Logout
-                    </Heading>
-                  </Link>}
+                  {!isAuth ? (
+                    <Link to="/login">
+                      <Heading
+                        cursor={"pointer"}
+                        fontSize={"24px"}
+                        _hover={{ bg: "red", textDecoration: "underline" }}
+                        fontWeight="bold"
+                        color="black"
+                      >
+                        Login
+                      </Heading>
+                    </Link>
+                  ) : (
+                    <Link to="/login">
+                      <Heading
+                        cursor={"pointer"}
+                        fontSize={"24px"}
+                        _hover={{ bg: "red", textDecoration: "underline" }}
+                        fontWeight="bold"
+                        color="black"
+                        onClick={handleLogout}
+                      >
+                        Logout
+                      </Heading>
+                    </Link>
+                  )}
 
-
-                  <Link to="cart">
+                  <Link to="/cart">
                     <Heading
                       cursor={"pointer"}
                       fontSize={"24px"}

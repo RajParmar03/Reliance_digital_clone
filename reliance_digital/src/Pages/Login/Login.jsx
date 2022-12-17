@@ -18,7 +18,7 @@ import {
 import React, {  useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
 import {  useNavigate } from "react-router-dom";
-import { login } from "../../redux/Auth/auth.action";
+import { login } from "../../Redux/Auth/auth.action";
 
 function Login() {
   const [loginCreds, setLoginCreds] = useState({});
