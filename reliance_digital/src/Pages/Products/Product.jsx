@@ -1,13 +1,13 @@
 import React from 'react';
 import { Badge, Box, Button, Flex, Heading, Image, Text } from '@chakra-ui/react';
 import { BsSuitHeart } from 'react-icons/bs';
-import { Link, Navigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 const Product = (props) => {
 
   const { data ,typeOfProduct} = props;
-  const { id, name, img, price, mrp } = data;
+  const {  name, img, price, mrp } = data;
 
 
   return (
