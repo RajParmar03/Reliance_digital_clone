@@ -68,3 +68,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+Online Electronic Shopping Store in India - Reliance Digital
+
+https://content3.jdmagicbox.com/comp/gwalior/l1/9999px751.x751.170612143338.d6l1/catalogue/reliance-digital-lashkar-gwalior-reliance-digital-0oiq6as01e.jpg

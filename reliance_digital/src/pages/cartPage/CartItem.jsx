@@ -4,6 +4,7 @@ import { FcPlus } from "react-icons/fc";
 import { TbTruckDelivery } from "react-icons/tb";
 
 const CartItem = ({ name, img, price, id }) => {
+  const removeItem = (id) => {};
   var months = [
     "January",
     "February",
@@ -18,6 +19,7 @@ const CartItem = ({ name, img, price, id }) => {
     "November",
     "December",
   ];
+  
   var tomorrow = new Date();
   tomorrow.setTime(tomorrow.getTime() + 1000 * 3600 * 24);
   var dayName = new Array(
@@ -198,6 +200,7 @@ const CartItem = ({ name, img, price, id }) => {
             backgroundColor={"white"}
             color=" rgb(23, 116, 239)"
             _hover={"backgroundColor:white"}
+            onClick={() => removeItem(id)}
           >
             Remove
           </Button>
