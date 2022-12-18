@@ -24,7 +24,7 @@ export const FooterCard1 = ({ type, heading }) => {
 export const FooterCard2 = () => {
   return (
     <Box p={2} justifyContent="center">
-      <Flex mt="-2%" gap="2">
+      <Flex mt="-2%" gap="2" wrap="wrap">
         <Box w="18%" m="auto">
           <Box>
             <Text fontWeight="700">FOLLOW US</Text>

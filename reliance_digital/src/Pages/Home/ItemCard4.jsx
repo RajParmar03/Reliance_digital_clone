@@ -1,20 +1,35 @@
 import React from "react";
 import { Box, Grid, Image, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const ItemCard4 = ({ type, heading }) => {
   return (
     <Box>
-      <Box justifyContent="left" w="95%" m="auto" mt="6" >
+      <Box justifyContent="left" w="95%" m="auto" mt="6">
         <Text fontSize="2xl" borderColor="black.900" textAlign={"left"}>
           {heading}
         </Text>
       </Box>
       <br />
       <br />
-      <Grid templateColumns="repeat(4, 1fr)" gap={6} w="95%" m="auto" cursor="pointer">
+      <Grid
+        templateColumns={{
+          base: "repeat(1,1fr)",
+          md: "repeat(2,1fr)",
+          lg: "repeat(3,1fr)",
+          xl: "repeat(4,1fr)",
+          "2xl": "repeat(4,1fr)",
+        }}
+        gap={6}
+        w="95%"
+        m="auto"
+        cursor="pointer"
+      >
         {type.map((i, index) => (
-          <Box key={index}>
-            <Image src={`${i.url}`} alt={i.caption} w="100%" />
+          <Box key={i + 1}>
+            <Link to="/">
+              <Image src={`${i.img}`} alt={i.caption} w="100%" />
+            </Link>
           </Box>
         ))}
       </Grid>
