@@ -46,6 +46,10 @@ function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const toast = useToast()
+  const [text,setText]=React.useState("")
+  const handleSearch=()=>{
+    console.log(text)
+  }
   const handleLogout = () => {
     dispatch(logout());
     navigate("/login");
@@ -57,6 +61,7 @@ function Navbar() {
       isClosable: true,
     })
   };
+
   if (isLargerThan1100) {
     return (
       <Box>
@@ -178,8 +183,9 @@ function Navbar() {
               borderRadius="full"
               fontWeight="bold"
               placeholder="Find Your Favorite Product"
+              onChange={(e)=>setText(e.target.value)}
             />
-            <FcSearch fontSize={"42px"} />
+            <FcSearch onClick={handleSearch} fontSize={"42px"} />
           </Flex>
           <Flex cursor={"pointer"}>
             <ImLocation2 color="white" fontSize="20px" />
@@ -2500,8 +2506,9 @@ function Navbar() {
             borderRadius="full"
             fontWeight="bold"
             placeholder="Find Your Favorite Product"
+            onChange={(e)=>setText(e.target.value)}
           />
-          <FcSearch fontSize={"42px"} />
+          <FcSearch onClick={handleSearch} fontSize={"42px"} />
         </Flex>
         <Link to="/cart">
           <Flex cursor={"pointer"}>
@@ -2694,8 +2701,9 @@ function Navbar() {
             borderRadius="full"
             fontWeight="bold"
             placeholder="Find Your Favorite Product"
+            onChange={(e)=>setText(e.target.value)}
           />
-          <FcSearch fontSize={"42px"} />
+          <FcSearch onClick={handleSearch} fontSize={"42px"} />
         </Flex>
         <Box mx="20px">
           <Box ref={btnRef} colorScheme="teal" onClick={onOpen}>

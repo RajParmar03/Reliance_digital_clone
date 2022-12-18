@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import MainCartPage from '../pages/cartPage/MainCartPage';
-import Home from "../pages/Home/Home";
-import Login from '../pages/Login/Login';
-import Products from '../pages/Products/Product';
-import SingleProduct from '../pages/SingleProduct/SingleProduct';
-import Wishlist from '../pages/Wishlist/Wishlist';
-
+import Home from '../Pages/Home/Home';
+import Login from '../Pages/Login/Login';
+import Products from '../Pages/Products/Products';
+import SingleProduct from '../Pages/SingleProduct/SingleProduct';
+import Wishlist from '../Pages/Wishlist/Wishlist';
+import MainCartPage from  "../Pages/cartPage/MainCartPage"
+import SearchPage from '../Pages/SearchPage/SearchPage';
 const AllRoutes = () => {
   return (
     <div>
@@ -33,6 +33,9 @@ const AllRoutes = () => {
             <Route path="/cart" element={<MainCartPage/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/whishlist" element={<Wishlist typeOfProduct={"whishlist"}/>}></Route>
+            <Route path="/searchpage" element={<SearchPage/>}></Route>
+            {/* <Route path="/checkout" element={<Checkout/>}></Route> */}
+            {/* <Route path="/payments" element={<Payments/>}></Route> */}
             {/* <Route path="/order" element={<Products typeOfProduct={"order"}/>}></Route>
             <Route path="/contactus" element={<Products typeOfProduct={"contactus"}/>}></Route>
             <Route path="/profile" element={<Products typeOfProduct={"profile"}/>}></Route> */}

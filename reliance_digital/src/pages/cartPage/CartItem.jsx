@@ -6,7 +6,6 @@ import { INC, DEC } from "../../Redux/Cart/cart.types";
 import { useDispatch, useSelector } from "react-redux";
 import { store } from "../../Redux/store";
 import axios from "axios";
-import {Blocks} from "react-loader-spinner"
 
 const CartItem = ({ name, img, price, id }) => {
   const toast = useToast();

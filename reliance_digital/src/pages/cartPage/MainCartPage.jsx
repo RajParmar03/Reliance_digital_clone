@@ -1,12 +1,12 @@
 import React from "react";
-import { Box, Center, Flex, useToast } from "@chakra-ui/react";
+import {  Center, Flex, useToast } from "@chakra-ui/react";
 import MyCartLength from "./MyCartLength";
 import CartItem from "./CartItem";
 import CheckoutBox from "./CheckoutBox";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-import { RotatingLines } from "react-loader-spinner";
+import  {RotatingLines}  from "react-loader-spinner";
 export const GetData = async () => {
   try {
     let response = await axios.get(
