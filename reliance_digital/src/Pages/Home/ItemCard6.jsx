@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid, Flex, Text, Image, Center } from "@chakra-ui/react";
+import uuid from "react-uuid";
 
 const ItemCard6 = ({ type, heading }) => {
   return (
@@ -9,10 +10,21 @@ const ItemCard6 = ({ type, heading }) => {
           {heading}
         </Text>
       </Center>
-      <Grid templateColumns="repeat(4, 1fr)" gap={6} w="98%" m="auto">
-        {type.map((i, index) => (
+      <Grid
+        templateColumns={{
+          base: "repeat(1,1fr)",
+          md: "repeat(2,1fr)",
+          lg: "repeat(3,1fr)",
+          xl: "repeat(4,1fr)",
+          "2xl": "repeat(4,1fr)",
+        }}
+        gap={6}
+        w="98%"
+        m="auto"
+      >
+        {type.map((i) => (
           <Flex
-            key={index}
+            key={uuid()}
             border="1px"
             borderColor="gray.200"
             flexDirection="column"
@@ -21,7 +33,7 @@ const ItemCard6 = ({ type, heading }) => {
             p="1"
           >
             <Center>
-              <Image boxSize="40px" src={`${i.url}`} alt={i.caption} />
+              <Image boxSize="40px" src={`${i.img}`} alt={i.name} />
             </Center>
             <Center>
               <Text color="#003380" fontSize="sm" fontWeight="700">
