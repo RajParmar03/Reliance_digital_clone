@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid, Flex, Text, Image, Center } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
 const ItemCard6 = ({ type, heading }) => {
   return (
@@ -9,10 +10,21 @@ const ItemCard6 = ({ type, heading }) => {
           {heading}
         </Text>
       </Center>
-      <Grid templateColumns="repeat(4, 1fr)" gap={6} w="98%" m="auto">
+      <Grid
+        templateColumns={{
+          base: "repeat(1,1fr)",
+          md: "repeat(2,1fr)",
+          lg: "repeat(3,1fr)",
+          xl: "repeat(4,1fr)",
+          "2xl": "repeat(4,1fr)",
+        }}
+        gap={6}
+        w="98%"
+        m="auto"
+      >
         {type.map((i, index) => (
           <Flex
-            key={index}
+            key={i + 1}
             border="1px"
             borderColor="gray.200"
             flexDirection="column"
@@ -20,19 +32,21 @@ const ItemCard6 = ({ type, heading }) => {
             borderRadius="md"
             p="1"
           >
-            <Center>
-              <Image boxSize="40px" src={`${i.url}`} alt={i.caption} />
-            </Center>
-            <Center>
-              <Text color="#003380" fontSize="sm" fontWeight="700">
-                {i.title}
-              </Text>
-            </Center>
-            <Center>
-              <Text fontSize="10px" color="gray.600">
-                {i.desc}
-              </Text>
-            </Center>
+            <Link to="/">
+              <Center>
+                <Image boxSize="40px" src={`${i.img}`} alt={i.name} />
+              </Center>
+              <Center>
+                <Text color="#003380" fontSize="sm" fontWeight="700">
+                  {i.title}
+                </Text>
+              </Center>
+              <Center>
+                <Text fontSize="10px" color="gray.600">
+                  {i.desc}
+                </Text>
+              </Center>
+            </Link>
           </Flex>
         ))}
       </Grid>

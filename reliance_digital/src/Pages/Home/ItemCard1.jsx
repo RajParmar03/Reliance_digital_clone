@@ -10,7 +10,7 @@ const ItemCard1 = ({ type }) => {
         <Slide>
           {type.map((i, index) => (
             <Box key={index}>
-              <Image src={`${i.url}`} alt={i.caption} w="100%" />
+              <Image src={`${i.img}`} alt={i.caption} w="100%" />
             </Box>
           ))}
         </Slide>
