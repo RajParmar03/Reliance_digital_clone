@@ -47,9 +47,9 @@ function Login() {
         navigate("/")
         toast({
           title: 'Account created.',
-          description: "We've login your account for you.",
+          description: "We've login to your account for you.",
           status: 'success',
-          duration: 9000,
+          duration: 8000,
           isClosable: true,
         })
       }
