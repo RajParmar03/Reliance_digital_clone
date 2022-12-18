@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Product = (props) => {
 
   const { data ,typeOfProduct} = props;
-  const {  name, img, price, mrp } = data;
+  const { id, name, img, price, mrp } = data;
 
 
   return (
