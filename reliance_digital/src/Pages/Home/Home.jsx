@@ -38,6 +38,7 @@ const Home = () => {
       <hr />
       <ItemCard2
         type={ItemDetails3}
+        linked={"/personalcare"}
         heading="PRICE DROP ON APPLE SMARTWATCHES | "
         src="https://i.imgur.com/8pxYJUB.png"
       />

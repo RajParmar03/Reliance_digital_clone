@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import { Link } from "react-router-dom";
+import uuid from "react-uuid";
 
 const ItemCard8 = ({ type, heading }) => {
   return (
@@ -54,12 +55,12 @@ const ItemCard8 = ({ type, heading }) => {
           }}
         >
           <Grid templateColumns="repeat(5, 1fr)" gap={6} w="90%" m="auto">
-            {type.map((i, index) => (
-              <Box key={i + 1}>
-                <Link to="/">
-                  <SwiperSlide>
-                    <Box key={index}>
-                      <Square key={index} m="auto">
+            {type.map((i) => (
+              <Box key={uuid()}>
+                <SwiperSlide>
+                  <Box>
+                    <Link to={i.linked}>
+                      <Square m="auto">
                         <Image
                           src={`${i.img}`}
                           alt={i.caption}
@@ -73,9 +74,9 @@ const ItemCard8 = ({ type, heading }) => {
                           {i.categories}
                         </Text>
                       </Center>
-                    </Box>
-                  </SwiperSlide>
-                </Link>
+                    </Link>
+                  </Box>
+                </SwiperSlide>
               </Box>
             ))}
           </Grid>

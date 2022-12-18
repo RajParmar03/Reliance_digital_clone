@@ -1,28 +1,9 @@
 import { Box, Button, Flex, Grid, GridItem, Heading, Image, Input, ListItem, Text, UnorderedList } from '@chakra-ui/react';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSingleProduct } from '../../Redux/SingleProduct/SingleProduct.action';
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  GridItem,
-  Heading,
-  Image,
-  Input,
-  ListItem,
-  Text,
-  UnorderedList,
-} from "@chakra-ui/react";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getSingleProduct } from "../../Redux/SingleProduct/SingleProduct.action";
-
 
 const getSingleData = async (type, id) => {
   let response = await axios.get(

@@ -8,13 +8,22 @@ const ItemCard7 = ({ type, heading, src }) => {
     <Box justifyContent="left" w="95%" m="auto" mt="6" cursor="pointer">
       <Heading heading={heading} />
       <Flex mt="7">
-        <Box w={{ sm: "100%", md: "100%", lg: "100%", xl: "70%" }}>
-          <Slider type={type}/>
+        <Box
+          w={{ sm: "100%", md: "100%", lg: "100%", xl: "70%", base: "100%" }}
+        >
+          <Slider type={type} />
         </Box>
         <Spacer />
         <Box
           boxSize="sm"
-          w={{ xs: "none", sm: "none", md: "none", lg: "none", xl: "30%" }}
+          w={{
+            xs: "none",
+            sm: "none",
+            md: "none",
+            lg: "none",
+            xl: "30%",
+            base: "none",
+          }}
         >
           <Image
             src={src}
