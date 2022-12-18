@@ -3,18 +3,19 @@ import { Box, Heading, Flex, useToast } from "@chakra-ui/react";
 import { GetData } from "./MainCartPage";
 import { useState } from "react";
 
-const MyCartLength = () => {
+const MyCartLength = ({item}) => {
   const toast = useToast();
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-
+ 
   useEffect(() => {
     setLoading(true);
     GetData()
       .then((res) => {
         setData(res);
-        console.log("running");
+
         setLoading(false);
+       
       })
       .catch((err) => {
         toast({
@@ -43,7 +44,7 @@ const MyCartLength = () => {
       >
         <Box>
           <Heading fontWeight={600} fontSize="16px">
-            My Cart ({data.length} Items)
+            My Cart ({item} Items)
           </Heading>
         </Box>
         <Box>

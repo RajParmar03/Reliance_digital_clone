@@ -7,6 +7,9 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { RotatingLines } from "react-loader-spinner";
+import { store } from "../../Redux/store";
+import { useSelector } from "react-redux";
+
 export const GetData = async () => {
   try {
     let response = await axios.get(
@@ -22,9 +25,35 @@ export const GetData = async () => {
 const MainCartPage = () => {
   const toast = useToast();
   const [count, setCount] = useState(1);
+  let totalPrice = 0;
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const amount = useSelector((store) => store.cart.count);
+
+  const DeleteRequest = async (id) => {
+    try {
+      let response = await axios.delete(
+        `https://rus-digital-televisions.onrender.com/cart/${id}`
+      );
+      GetData().then((res) => {
+        return setData(res);
+      });
+    } catch (err) {
+      return err;
+    }
+  };
+
+  let newTotalPrice = data && data.reduce((acc,elem) => {
+    return Number(elem.price) + acc;
+  },0);
+  console.log("this is the newTotal",newTotalPrice);
+
+  let newA = data.map((elem) => {
+    console.log("this is from map and price is",Number(elem.price));
+  })
+
+
 
   useEffect(() => {
     setLoading(true);
@@ -32,7 +61,7 @@ const MainCartPage = () => {
       .then((res) => {
         setData(res);
         setLoading(false);
-        console.log(res);
+       
       })
       .catch((err) => {
         toast({
@@ -46,7 +75,7 @@ const MainCartPage = () => {
         });
       });
   }, []);
-  console.log(data);
+ 
   return (
     <div>
       {/* <Box border={"0px solid black"} height="140px"></Box> */}
@@ -77,7 +106,7 @@ const MainCartPage = () => {
           }}
           gap={"4"}
         >
-          <MyCartLength />
+          <MyCartLength item={data.length} />
           {loading && (
             <Center>
               <RotatingLines
@@ -92,15 +121,21 @@ const MainCartPage = () => {
           {data &&
             data.map(({ name, img, price, id }) => {
               return (
-                <CartItem
-                  key={id}
-                  name={name}
-                  img={img}
-                  price={price}
-                  id={id}
-                  setCount={setCount}
-                  count={count}
-                />
+                <>
+                  <CartItem
+                    key={id}
+                    name={name}
+                    img={img}
+                    price={price}
+                    id={id}
+                    DeleteRequest={DeleteRequest}
+                  />
+                  <Box display={"none"}>
+                    {(totalPrice = totalPrice + price)}
+                    
+                  
+                  </Box>
+                </>
               );
             })}
         </Flex>
@@ -115,7 +150,7 @@ const MainCartPage = () => {
             "2xl": "30%",
           }}
         >
-          <CheckoutBox items={data.length} />
+          <CheckoutBox items={data.length} totalPrice={totalPrice} />
         </Flex>
       </Flex>
     </div>
