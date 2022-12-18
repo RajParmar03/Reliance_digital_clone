@@ -6,9 +6,8 @@ import { INC, DEC } from "../../Redux/Cart/cart.types";
 import { useDispatch, useSelector } from "react-redux";
 import { store } from "../../Redux/store";
 import axios from "axios";
-import {Blocks} from "react-loader-spinner"
 
-const CartItem = ({ name, img, price, id }) => {
+const CartItem = ({ name, img, price, id, DeleteRequest }) => {
   const toast = useToast();
 
   const [count, setCount] = useState(1);
@@ -25,18 +24,44 @@ const CartItem = ({ name, img, price, id }) => {
     //dispatch({type:DEC})
   };
 
-  const DeleteRequest = async (id) => {
+  const PostData = async (data) => {
     try {
-      let response = await axios.delete(
-        `https://rus-digital-televisions.onrender.com/cart/${id}`
+      let response = await axios.post(
+        `https://rus-digital-televisions.onrender.com/whishlist`,
+        data
       );
 
-    
-
-      return response;
+      return await response.data;
     } catch (err) {
       return err;
     }
+  };
+
+  const handleWishlist = () => {
+    PostData({ name, img, price, id })
+      .then((res) => {
+        
+        toast({
+          title: "Successfully aded to wishlist",
+          description: "Product Added",
+          status: "success",
+          duration: 3000,
+          isClosable: true,
+          variant: "top-accent",
+          position: "top",
+        });
+      })
+      .catch((err) => {
+        toast({
+          title: "Something Went Wrong",
+          description: `${err.message}`,
+          status: "error",
+          duration: 3000,
+          isClosable: true,
+          variant: "top-accent",
+          position: "top",
+        });
+      });
   };
 
   var months = [
@@ -265,6 +290,7 @@ const CartItem = ({ name, img, price, id }) => {
             backgroundColor={"white"}
             color=" rgb(23, 116, 239)"
             _hover={"backgroundColor:white"}
+            onClick={handleWishlist}
           >
             Move to Wishlist
           </Button>

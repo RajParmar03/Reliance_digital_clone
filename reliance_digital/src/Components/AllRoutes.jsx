@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import MainCartPage from '../pages/cartPage/MainCartPage';
 import Home from "../pages/Home/Home";
 import Login from '../pages/Login/Login';
-import Products from '../pages/Products/Product';
+import Products from '../pages/Products/Products';
 import SingleProduct from '../pages/SingleProduct/SingleProduct';
 import Wishlist from '../pages/Wishlist/Wishlist';
 
