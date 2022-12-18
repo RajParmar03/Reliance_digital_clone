@@ -1,13 +1,16 @@
 import {Center, Box, Button, Flex, Grid, GridItem, Heading, Image, Input, ListItem, Text, UnorderedList, useToast } from '@chakra-ui/react';
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getSingleProduct } from '../../Redux/SingleProduct/SingleProduct.action';
+<<<<<<< HEAD
 import { RotatingLines } from "react-loader-spinner";
 
 
 
+=======
+>>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
 
 const getSingleData = async (type, id) => {
   let response = await axios.get(

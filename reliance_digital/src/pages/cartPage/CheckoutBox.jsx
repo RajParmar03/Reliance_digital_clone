@@ -14,7 +14,11 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+<<<<<<< HEAD
 const CheckoutBox = ({ items, totalPrice ,handleApply}) => {
+=======
+const CheckoutBox = ({ items, totalPrice }) => {
+>>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
   const [item, setItem] = useState([]);
 
   const navigate = useNavigate();
@@ -23,7 +27,15 @@ const CheckoutBox = ({ items, totalPrice ,handleApply}) => {
   const [val, setVal] = useState("");
   let sum = 0;
 
+<<<<<<< HEAD
   
+=======
+  const handleApply = () => {
+    totalPrice >= 1000 && val === "MASAI40"
+      ? (sum = totalPrice - 500)
+      : (sum = 0);
+  };
+>>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
   // console.log(sum);
   const handleCheckout = () => {
     if (items === 0) {
@@ -101,7 +113,11 @@ const CheckoutBox = ({ items, totalPrice ,handleApply}) => {
                     backgroundColor="white"
                     borderLeft={"4px solid rgb(54,129,240)"}
                     borderRight={"1px solid rgb(224, 224, 225)"}
+<<<<<<< HEAD
                     onClick={() => handleApply(totalPrice,val)}
+=======
+                    onClick={handleApply}
+>>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
                   >
                     Apply
                   </Button>

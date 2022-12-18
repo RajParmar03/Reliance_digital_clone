@@ -24,14 +24,22 @@ export const GetData = async () => {
 
 const MainCartPage = () => {
   const toast = useToast();
+<<<<<<< HEAD
   // const [count, setCount] = useState(1);
+=======
+  const [count, setCount] = useState(1);
+>>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
   let totalPrice = 0;
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+<<<<<<< HEAD
   const [extremelyfinalPrice, setExtremelyfinalPrice] = useState(0);
 
   // const amount = useSelector((store) => store.cart.count);
+=======
+  const amount = useSelector((store) => store.cart.count);
+>>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
 
   const DeleteRequest = async (id) => {
     try {
@@ -46,6 +54,7 @@ const MainCartPage = () => {
     }
   };
 
+<<<<<<< HEAD
   
   let finallyTotalArray = data.map((elem) => {
     let newArray = elem.price.split(".");
@@ -81,6 +90,16 @@ const MainCartPage = () => {
       : setExtremelyfinalPrice(totalPrice);
   };
 
+=======
+  let newTotalPrice = data && data.reduce((acc,elem) => {
+    return Number(elem.price) + acc;
+  },0);
+  console.log("this is the newTotal",newTotalPrice);
+
+  let newA = data.map((elem) => {
+    console.log("this is from map and price is",Number(elem.price));
+  })
+>>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
 
 
 
@@ -104,7 +123,10 @@ const MainCartPage = () => {
         });
       });
   }, []);
+<<<<<<< HEAD
   console.log("this is data",data);
+=======
+>>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
  
   return (
     <div>
@@ -180,7 +202,11 @@ const MainCartPage = () => {
             "2xl": "30%",
           }}
         >
+<<<<<<< HEAD
           <CheckoutBox items={data.length} totalPrice={extremelyfinalPrice} handleApply={handleApply} />
+=======
+          <CheckoutBox items={data.length} totalPrice={totalPrice} />
+>>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
         </Flex>
       </Flex>
     </div>

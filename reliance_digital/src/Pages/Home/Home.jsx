@@ -26,16 +26,19 @@ import {
   ItemDetails17,
   ItemDetails18,
 } from "./CardDetails";
+import { Box } from "@chakra-ui/react";
+
 const Home = () => {
   return (
-    <div>
+    <Box>
       <ItemCard1 type={ItemDetails1} />
       <ItemCard1 type={ItemDetails2} />
-      <ItemCard5 type={ItemDetails8} heading="DIGITAL MIDNIGHT SALE | " />
+      <ItemCard5 type={ItemDetails8} heading="TRENDING LAPTOPS | " />
       <br />
       <hr />
       <ItemCard2
         type={ItemDetails3}
+        linked={"/personalcare"}
         heading="PRICE DROP ON APPLE SMARTWATCHES | "
         src="https://i.imgur.com/8pxYJUB.png"
       />
@@ -43,7 +46,7 @@ const Home = () => {
       <ItemCard4 type={ItemDetails4} heading="ENTERTAINMENT FEST" />
       <ItemCard5
         type={ItemDetails5}
-        heading="BIGGEST PRICE DROP ON ROOM HEATERS | "
+        heading="BIGGEST PRICE DROP ON  MICROWAVE OVEN | "
       />
       <br />
       <hr />
@@ -99,11 +102,11 @@ const Home = () => {
       <hr />
       <ItemCard7
         type={ItemDetails17}
-        heading="UP TO 75% ON STORAGE | "
+        heading="UP TO 75% ON CAMERA ACCESSORIES | "
         src="https://i.imgur.com/EGk9huk.png"
       />
       <ItemCard8 type={ItemDetails18} heading="EXPLORE OUR RANGE OF PRODUCTS" />
-    </div>
+    </Box>
   );
 };
 

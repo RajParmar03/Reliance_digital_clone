@@ -1,102 +1,115 @@
 import React from "react";
-import { Box, Flex, Text, Image, Square, Center } from "@chakra-ui/react";
-import { Slide } from "react-slideshow-image";
-import "react-slideshow-image/dist/styles.css";
+import { Box, Flex, Text, Image, Square } from "@chakra-ui/react";
+import { Navigation, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+import Heading from "./Heading";
+import { Link } from "react-router-dom";
+import uuid from "react-uuid";
 
 const ItemCard5 = ({ type, heading }) => {
   return (
     <Box justifyContent="left" w="95%" m="auto" mt="6" cursor="pointer">
-      <Flex>
-        <Center>
-          <Text fontSize="2xl">
-            {heading}
-            <a
-              href=""
-              style={{
-                fontSize: "14px",
-                fontWeight: "500",
-                color: "#505d83",
-              }}
-            >
-              VIEW ALL
-            </a>
-          </Text>
-        </Center>
-      </Flex>
+      <Heading heading={heading} />
       <Box mt="1">
-        <Slide>
-          <Flex>
-            {type.map((i, index) => (
-              <Box>
-                <Square
-                  key={index}
-                  m="auto"
-                  _hover={{ transform: "scale(1.1)" }}
-                >
-                  <Image src={`${i.url}`} alt={i.caption} boxSize="160px" />
-                </Square>
-                <Box p="2" mt="4">
-                  <Text
-                    color="#275293"
-                    noOfLines={2}
-                    textAlign="left"
-                    fontSize="15px"
-                    _hover={{ color: "red" }}
-                  >
-                    Orient Convector HC2004D Fan-based Room Heater with
-                    Twin-Fans, Black
-                  </Text>
-                  <Box mt="2.5">
-                    <Flex>
-                      <Square>
-                        <Text color="gray.600" fontSize="14px">
-                          Offer Price:{" "}
-                        </Text>
-                      </Square>
-                      <Square>
-                        <Text fontWeight="600" fontSize="18px" ml="1">
-                          ₹2,299.00
-                        </Text>
-                      </Square>
-                    </Flex>
-                    <Flex>
-                      <Text color="gray.600" fontSize="14px">
-                        MRP:{" "}
-                      </Text>
-                      {"  "}
-                      <Text as="s" color="gray.600" fontSize="14px" ml="1">
-                        ₹32,900.00
-                      </Text>
-                    </Flex>
-                    <Flex>
-                      <Text color="gray.600" fontSize="14px">
-                        You Save:{" "}
-                      </Text>
-                      {"  "}
-                      <Text color="gray.600" fontSize="14px" ml="1">
-                        42% (₹1,691.00)
-                      </Text>
-                    </Flex>
-                    <Box
-                      borderRadius="xl"
-                      border="1px"
-                      borderColor="green.900"
-                      w="40%"
-                      color="green.500"
-                      bg="green.50"
-                      mt="2"
-                      textAlign="center"
+        <Swiper
+          modules={[Navigation, Autoplay]}
+          navigation
+          autoplay={{ delay: 4000 }}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+              spaceBetween: 10,
+            },
+            480: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 15,
+            },
+            1024: {
+              slidesPerView: 4,
+              spaceBetween: 15,
+            },
+            1280: {
+              slidesPerView: 5,
+              spaceBetween: 30,
+            },
+          }}
+        >
+          {type.map((i) => (
+            <Box key={uuid()}>
+              <SwiperSlide>
+                <Link to={i.linked}>
+                  <Square m="auto" _hover={{ transform: "scale(1.1)" }}>
+                    <Image src={`${i.img}`} alt={i.name} boxSize="160px" />
+                  </Square>
+                  <Box p="2" mt="4">
+                    <Text
+                      color="#275293"
+                      noOfLines={2}
+                      textAlign="left"
+                      fontSize="15px"
+                      _hover={{ color: "red" }}
                     >
-                      <Text fontSize="10px" fontWeight="500">
-                        OFFERS AVAILABLE
-                      </Text>
+                      {i.name}
+                    </Text>
+                    <Box mt="2.5">
+                      <Flex>
+                        <Square>
+                          <Text color="gray.600" fontSize="14px">
+                            Deal Price:{" "}
+                          </Text>
+                        </Square>
+                        <Square>
+                          <Text fontWeight="600" fontSize="18px" ml="1">
+                            ₹{i.price}
+                          </Text>
+                        </Square>
+                      </Flex>
+                      <Flex>
+                        <Text color="gray.600" fontSize="14px">
+                          MRP:{" "}
+                        </Text>
+                        {"  "}
+                        <Text as="s" color="gray.600" fontSize="14px" ml="1">
+                          ₹{i.mrp}
+                        </Text>
+                      </Flex>
+                      <Flex>
+                        <Text color="gray.600" fontSize="14px">
+                          You Save:{" "}
+                        </Text>
+                        {"  "}
+                        <Text color="gray.600" fontSize="14px" ml="1">
+                          {i.discount}
+                        </Text>
+                      </Flex>
+                      <Box
+                        borderRadius="xl"
+                        border="1px"
+                        borderColor="green.900"
+                        w="40%"
+                        color="green.500"
+                        bg="green.50"
+                        mt="2"
+                        textAlign="center"
+                      >
+                        <Text fontSize="10px" fontWeight="500">
+                          OFFERS AVAILABLE
+                        </Text>
+                      </Box>
                     </Box>
                   </Box>
-                </Box>
-              </Box>
-            ))}
-          </Flex>
-        </Slide>
+                </Link>
+              </SwiperSlide>
+            </Box>
+          ))}
+        </Swiper>
       </Box>
     </Box>
   );
