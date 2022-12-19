@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Home from '../Pages/Home/Home';
 import Login from '../Pages/Login/Login';
@@ -7,6 +7,9 @@ import SingleProduct from '../Pages/SingleProduct/SingleProduct';
 import Wishlist from '../Pages/Wishlist/Wishlist';
 import MainCartPage from  "../Pages/cartPage/MainCartPage"
 import SearchPage from '../Pages/SearchPage/SearchPage';
+import Payments from '../Pages/payment/Payments';
+import Checkout from '../Pages/checkout/Checkout';
+
 const AllRoutes = () => {
   return (
     <div>
@@ -34,8 +37,8 @@ const AllRoutes = () => {
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/whishlist" element={<Wishlist typeOfProduct={"whishlist"}/>}></Route>
             <Route path="/searchpage" element={<SearchPage/>}></Route>
-            {/* <Route path="/checkout" element={<Checkout/>}></Route> */}
-            {/* <Route path="/payments" element={<Payments/>}></Route> */}
+            <Route path="/checkout" element={<Checkout/>}></Route>
+            <Route path="/payments" element={<Payments/>}></Route>
             {/* <Route path="/order" element={<Products typeOfProduct={"order"}/>}></Route>
             <Route path="/contactus" element={<Products typeOfProduct={"contactus"}/>}></Route>
             <Route path="/profile" element={<Products typeOfProduct={"profile"}/>}></Route> */}

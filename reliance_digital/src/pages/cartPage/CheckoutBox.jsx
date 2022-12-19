@@ -10,9 +10,9 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 
-const CheckoutBox = ({items}) => {
-
+const CheckoutBox = ({ items }) => {
   return (
     <div>
       <Flex
@@ -21,16 +21,18 @@ const CheckoutBox = ({items}) => {
         gap={"5"}
         padding={"16px"}
       >
-        <Flex>
-          <Button
-            width={"100%"}
-            color="white"
-            backgroundColor={"red"}
-            textAlign="center"
-          >
-            CHECKOUT
-          </Button>
-        </Flex>
+        <Link to="/checkout">
+          <Flex>
+            <Button
+              width={"100%"}
+              color="white"
+              backgroundColor={"red"}
+              textAlign="center"
+            >
+              CHECKOUT
+            </Button>
+          </Flex>
+        </Link>
         <Flex
           flexDirection={"column"}
           border={"1px solid rgb(224, 224, 225)"}

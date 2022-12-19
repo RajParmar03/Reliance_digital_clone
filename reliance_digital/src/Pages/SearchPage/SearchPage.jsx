@@ -1,8 +1,10 @@
+import { Heading } from '@chakra-ui/react'
 import React from 'react'
 
 const SearchPage = ({text}) => {
+
   return (
-    <div>{text}</div>
+    <Heading>Hiii{text}</Heading>
   )
 }
 

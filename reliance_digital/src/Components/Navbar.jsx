@@ -23,7 +23,7 @@ import {
   Button,
   useToast,
 } from "@chakra-ui/react";
-import React from "react";
+import React, { useContext, useState } from "react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { FcSearch } from "react-icons/fc";
 import { ImLocation2 } from "react-icons/im";
@@ -36,6 +36,7 @@ import { GrLogin, GrReturn, GrServices } from "react-icons/gr";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../Redux/Auth/auth.action";
+import { PageContext } from "../Pages/context/PageContext";
 function Navbar() {
   const [isLargerThan1100] = useMediaQuery("(min-width: 1100px)");
   const [isLargerThan750px] = useMediaQuery("(min-width: 750px)");
@@ -46,10 +47,7 @@ function Navbar() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const toast = useToast()
-  const [text,setText]=React.useState("")
-  const handleSearch=()=>{
-    console.log(text)
-  }
+  const [text,setText]=useState("")
   const handleLogout = () => {
     dispatch(logout());
     navigate("/login");
@@ -185,7 +183,7 @@ function Navbar() {
               placeholder="Find Your Favorite Product"
               onChange={(e)=>setText(e.target.value)}
             />
-            <FcSearch onClick={handleSearch} fontSize={"42px"} />
+            <FcSearch fontSize={"42px"} />
           </Flex>
           <Flex cursor={"pointer"}>
             <ImLocation2 color="white" fontSize="20px" />
@@ -2508,7 +2506,7 @@ function Navbar() {
             placeholder="Find Your Favorite Product"
             onChange={(e)=>setText(e.target.value)}
           />
-          <FcSearch onClick={handleSearch} fontSize={"42px"} />
+          <FcSearch  fontSize={"42px"} />
         </Flex>
         <Link to="/cart">
           <Flex cursor={"pointer"}>
@@ -2703,7 +2701,7 @@ function Navbar() {
             placeholder="Find Your Favorite Product"
             onChange={(e)=>setText(e.target.value)}
           />
-          <FcSearch onClick={handleSearch} fontSize={"42px"} />
+          <FcSearch  fontSize={"42px"} />
         </Flex>
         <Box mx="20px">
           <Box ref={btnRef} colorScheme="teal" onClick={onOpen}>
