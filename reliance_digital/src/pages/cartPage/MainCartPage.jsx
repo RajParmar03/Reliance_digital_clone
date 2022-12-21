@@ -1,15 +1,19 @@
 import React from "react";
-import { Box, Center, Flex, useToast } from "@chakra-ui/react";
+import {  Center, Flex, useToast } from "@chakra-ui/react";
 import MyCartLength from "./MyCartLength";
 import CartItem from "./CartItem";
 import CheckoutBox from "./CheckoutBox";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+// <<<<<<< fw20_last
+// import  {RotatingLines}  from "react-loader-spinner";
+// =======
 import { RotatingLines } from "react-loader-spinner";
 import { store } from "../../Redux/store";
 import { useSelector } from "react-redux";
 
+// >>>>>>> main
 export const GetData = async () => {
   try {
     let response = await axios.get(
@@ -24,22 +28,19 @@ export const GetData = async () => {
 
 const MainCartPage = () => {
   const toast = useToast();
-<<<<<<< HEAD
+// <<<<<<< HEAD
   // const [count, setCount] = useState(1);
-=======
+// =======
   const [count, setCount] = useState(1);
->>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
   let totalPrice = 0;
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-<<<<<<< HEAD
+// <<<<<<< HEAD
   const [extremelyfinalPrice, setExtremelyfinalPrice] = useState(0);
-
-  // const amount = useSelector((store) => store.cart.count);
-=======
   const amount = useSelector((store) => store.cart.count);
->>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
 
   const DeleteRequest = async (id) => {
     try {
@@ -54,7 +55,7 @@ const MainCartPage = () => {
     }
   };
 
-<<<<<<< HEAD
+
   
   let finallyTotalArray = data.map((elem) => {
     let newArray = elem.price.split(".");
@@ -90,7 +91,7 @@ const MainCartPage = () => {
       : setExtremelyfinalPrice(totalPrice);
   };
 
-=======
+
   let newTotalPrice = data && data.reduce((acc,elem) => {
     return Number(elem.price) + acc;
   },0);
@@ -99,7 +100,6 @@ const MainCartPage = () => {
   let newA = data.map((elem) => {
     console.log("this is from map and price is",Number(elem.price));
   })
->>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
 
 
 
@@ -123,10 +123,10 @@ const MainCartPage = () => {
         });
       });
   }, []);
-<<<<<<< HEAD
-  console.log("this is data",data);
-=======
->>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+// <<<<<<< HEAD
+//   console.log("this is data",data);
+// =======
+// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
  
   return (
     <div>
@@ -202,11 +202,11 @@ const MainCartPage = () => {
             "2xl": "30%",
           }}
         >
-<<<<<<< HEAD
+// <<<<<<< HEAD
           <CheckoutBox items={data.length} totalPrice={extremelyfinalPrice} handleApply={handleApply} />
-=======
-          <CheckoutBox items={data.length} totalPrice={totalPrice} />
->>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+// =======
+//           <CheckoutBox items={data.length} totalPrice={totalPrice} />
+// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
         </Flex>
       </Flex>
     </div>

@@ -13,13 +13,13 @@ const Payments = () => {
     const handleclick=()=>{
         setyes(true);
         setTimeout(() => {
-          navigate("/final")  
+          navigate("/")  
         }, 3000);
     }
     const handleclick1=()=>{
         setCvv(card.current.code.value);
         if(cvv!=="")
-        navigate("/final")  
+        navigate("/")  
         else
         setbad(true)
     }

@@ -6,10 +6,8 @@ import { INC, DEC } from "../../Redux/Cart/cart.types";
 import { useDispatch, useSelector } from "react-redux";
 import { store } from "../../Redux/store";
 import axios from "axios";
-<<<<<<< HEAD
 import { useNavigate } from "react-router-dom";
-=======
->>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+
 
 const CartItem = ({ name, img, price, id, DeleteRequest }) => {
   const toast = useToast();
@@ -56,12 +54,10 @@ const CartItem = ({ name, img, price, id, DeleteRequest }) => {
           variant: "top-accent",
           position: "top",
         });
-<<<<<<< HEAD
+
         setTimeout(() => {
           navigate("/wishlist")
         }, 1000);
-=======
->>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
       })
       .catch((err) => {
         toast({
