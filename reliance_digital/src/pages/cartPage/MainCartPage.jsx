@@ -6,7 +6,14 @@ import CheckoutBox from "./CheckoutBox";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-import  {RotatingLines}  from "react-loader-spinner";
+// <<<<<<< fw20_last
+// import  {RotatingLines}  from "react-loader-spinner";
+// =======
+import { RotatingLines } from "react-loader-spinner";
+import { store } from "../../Redux/store";
+import { useSelector } from "react-redux";
+
+// >>>>>>> main
 export const GetData = async () => {
   try {
     let response = await axios.get(
@@ -21,10 +28,80 @@ export const GetData = async () => {
 
 const MainCartPage = () => {
   const toast = useToast();
+// <<<<<<< HEAD
+  // const [count, setCount] = useState(1);
+// =======
   const [count, setCount] = useState(1);
+// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+  let totalPrice = 0;
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+// <<<<<<< HEAD
+  const [extremelyfinalPrice, setExtremelyfinalPrice] = useState(0);
+  const amount = useSelector((store) => store.cart.count);
+// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+
+  const DeleteRequest = async (id) => {
+    try {
+      let response = await axios.delete(
+        `https://rus-digital-televisions.onrender.com/cart/${id}`
+      );
+      GetData().then((res) => {
+        return setData(res);
+      });
+    } catch (err) {
+      return err;
+    }
+  };
+
+
+  
+  let finallyTotalArray = data.map((elem) => {
+    let newArray = elem.price.split(".");
+    newArray.pop();
+    let finalArray = newArray[0].split(",");
+    
+    
+    let finalPrice = ""; 
+    for(let i=0;i<finalArray.length;i++){
+      finalPrice += finalArray[i];
+    }
+    
+   finalPrice = Number(finalPrice);
+   return finalPrice;
+
+  });
+  console.log("this is finaly total Array",finallyTotalArray);
+
+  let finallyTotal = finallyTotalArray.reduce((acc,elem) => {
+    return elem + acc;
+  },0);
+  console.log("this is the finally total",finallyTotal);
+  
+  useEffect(() => {
+      setExtremelyfinalPrice(finallyTotal);
+  },[finallyTotal]);
+  console.log("this is extrew",extremelyfinalPrice);
+
+
+  const handleApply = (totalPrice,val) => {
+    totalPrice >= 1000 && val === "MASAI40"
+      ? setExtremelyfinalPrice(totalPrice - 500)
+      : setExtremelyfinalPrice(totalPrice);
+  };
+
+
+  let newTotalPrice = data && data.reduce((acc,elem) => {
+    return Number(elem.price) + acc;
+  },0);
+  console.log("this is the newTotal",newTotalPrice);
+
+  let newA = data.map((elem) => {
+    console.log("this is from map and price is",Number(elem.price));
+  })
+
+
 
   useEffect(() => {
     setLoading(true);
@@ -32,7 +109,7 @@ const MainCartPage = () => {
       .then((res) => {
         setData(res);
         setLoading(false);
-        console.log(res);
+       
       })
       .catch((err) => {
         toast({
@@ -46,7 +123,11 @@ const MainCartPage = () => {
         });
       });
   }, []);
-  console.log(data);
+// <<<<<<< HEAD
+//   console.log("this is data",data);
+// =======
+// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+ 
   return (
     <div>
       {/* <Box border={"0px solid black"} height="140px"></Box> */}
@@ -77,7 +158,7 @@ const MainCartPage = () => {
           }}
           gap={"4"}
         >
-          <MyCartLength />
+          <MyCartLength item={data.length} />
           {loading && (
             <Center>
               <RotatingLines
@@ -92,15 +173,21 @@ const MainCartPage = () => {
           {data &&
             data.map(({ name, img, price, id }) => {
               return (
-                <CartItem
-                  key={id}
-                  name={name}
-                  img={img}
-                  price={price}
-                  id={id}
-                  setCount={setCount}
-                  count={count}
-                />
+                <>
+                  <CartItem
+                    key={id}
+                    name={name}
+                    img={img}
+                    price={price}
+                    id={id}
+                    DeleteRequest={DeleteRequest}
+                  />
+                  <Box display={"none"}>
+                    {(totalPrice = totalPrice + price)}
+                    
+                  
+                  </Box>
+                </>
               );
             })}
         </Flex>
@@ -115,7 +202,11 @@ const MainCartPage = () => {
             "2xl": "30%",
           }}
         >
-          <CheckoutBox items={data.length} />
+// <<<<<<< HEAD
+          <CheckoutBox items={data.length} totalPrice={extremelyfinalPrice} handleApply={handleApply} />
+// =======
+//           <CheckoutBox items={data.length} totalPrice={totalPrice} />
+// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
         </Flex>
       </Flex>
     </div>

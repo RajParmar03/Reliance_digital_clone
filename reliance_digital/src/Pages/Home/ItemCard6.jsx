@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Grid, Flex, Text, Image, Center } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import uuid from "react-uuid";
 
 const ItemCard6 = ({ type, heading }) => {
   return (
@@ -22,9 +22,9 @@ const ItemCard6 = ({ type, heading }) => {
         w="98%"
         m="auto"
       >
-        {type.map((i, index) => (
+        {type.map((i) => (
           <Flex
-            key={i + 1}
+            key={uuid()}
             border="1px"
             borderColor="gray.200"
             flexDirection="column"
@@ -32,21 +32,19 @@ const ItemCard6 = ({ type, heading }) => {
             borderRadius="md"
             p="1"
           >
-            <Link to="/">
-              <Center>
-                <Image boxSize="40px" src={`${i.img}`} alt={i.name} />
-              </Center>
-              <Center>
-                <Text color="#003380" fontSize="sm" fontWeight="700">
-                  {i.title}
-                </Text>
-              </Center>
-              <Center>
-                <Text fontSize="10px" color="gray.600">
-                  {i.desc}
-                </Text>
-              </Center>
-            </Link>
+            <Center>
+              <Image boxSize="40px" src={`${i.img}`} alt={i.name} />
+            </Center>
+            <Center>
+              <Text color="#003380" fontSize="sm" fontWeight="700">
+                {i.title}
+              </Text>
+            </Center>
+            <Center>
+              <Text fontSize="10px" color="gray.600">
+                {i.desc}
+              </Text>
+            </Center>
           </Flex>
         ))}
       </Grid>

@@ -56,6 +56,7 @@ export const ItemDetails3 = [
     mrp: "85,405.00",
     price: "89,900.00",
     discount: "5%(₹4,495)",
+    linked: "personalcare",
   },
   {
     name: "Apple Watch SE GPS + Cellular - 40 mm Silver Aluminium Case with White 2nd Generation Sport Band",
@@ -64,6 +65,7 @@ export const ItemDetails3 = [
     mrp: "33,155.00",
     price: "34,900.00",
     discount: "5%(₹1,745)",
+    linked: "personalcare",
   },
   {
     name: "Apple Watch Ultra GPS + Cellular - 49 mm Titanium Case with Orange Alpine Loop - Medium",
@@ -72,6 +74,7 @@ export const ItemDetails3 = [
     mrp: "36,005.00",
     price: "37,900.00",
     discount: "5%(₹1,895)",
+    linked: "personalcare",
   },
   {
     name: "Apple Watch SE GPS + Cellular - 44 mm Silver Aluminium Case with White 2nd Generation Sport Band",
@@ -80,6 +83,7 @@ export const ItemDetails3 = [
     mrp: "85,405.00",
     price: "89,900.00",
     discount: "5%(₹4,495)",
+    linked: "personalcare",
   },
   {
     name: "Apple Watch Ultra GPS + Cellular - 49 mm Titanium Case with Blue and Gray Trail Loop - M/L",
@@ -88,6 +92,7 @@ export const ItemDetails3 = [
     mrp: "85,405.00",
     price: "89,900.00",
     discount: "5%(₹4,495)",
+    linked: "personalcare",
   },
 ];
 
@@ -95,18 +100,22 @@ export const ItemDetails4 = [
   {
     img: "https://www.reliancedigital.in/medias/43-inch-UHD-TV-Small-Banner-05-12-2022.jpg?context=bWFzdGVyfGltYWdlc3w2MTc5NXxpbWFnZS9qcGVnfGltYWdlcy9oZDcvaGM2Lzk5MjgxNjcyNjAxOTAuanBnfDg4MjdjN2IwZWViMTNlNmM2ODdiOWZjNzU2M2RkZmVlZTMxMmM4ODRlZWQ3MWNhMWIwYWI3NmNhMDcxNjkxY2M",
     caption: "Slide 1",
+    linked: "televisions",
   },
   {
     img: "https://www.reliancedigital.in/medias/Headphones-and-Earphones-Entertainment-Fest-Small-Banner-02-12-2022.jpg?context=bWFzdGVyfGltYWdlc3w0MDQzNHxpbWFnZS9qcGVnfGltYWdlcy9oYTAvaDU0Lzk5MjY3ODEzMzc2MzAuanBnfGI1Y2Q4MDExYTAwOGEzYzhlNWQxOTI0MzU2ZWIyY2YyYWQ5NDE1M2EwYzNmMTNjNjA4MGZiMTU2Y2VlZGNlZDQ",
     caption: "Slide 2",
+    linked: "headphones",
   },
   {
     img: "https://www.reliancedigital.in/medias/OnePlus-Smart-TV-Small-Banner-13-12-2022.jpg?context=bWFzdGVyfGltYWdlc3w1NjMwMXxpbWFnZS9qcGVnfGltYWdlcy9oYmYvaDk5Lzk5MzExODY3MDAzMTguanBnfDAxYmI1YmI5OGE3NzIxNmY3MTMxODBiZTEyYmQ4N2RmOGM4OWE3ZmM1NzFiYWIzYjNjYmE0YmFmZDhlYWZhNDQ",
     caption: "Slide 3",
+    linked: "televisions",
   },
   {
     img: "https://www.reliancedigital.in/medias/Soundbars-Entertainment-Fest-Small-Banner-02-12-2022.jpg?context=bWFzdGVyfGltYWdlc3wzMTg3NHxpbWFnZS9qcGVnfGltYWdlcy9oMzYvaGQ1Lzk5MjY3ODE0MDMxNjYuanBnfDY5ODQ2ZDU3NDFlMjgxYTY2YTViZmQ1ZTA4Y2U5ZTMwYjVlNjYzNTk3YzJjNzkyMDUwY2VkY2ZlZTViODQ1NjQ",
     caption: "Slide 4",
+    linked: "homeappliances",
   },
 ];
 
@@ -118,6 +127,7 @@ export const ItemDetails5 = [
     price: "17,140.00",
     discount: "29%(₹6,859)",
     id: 1,
+    linked: "kitchen",
   },
   {
     name: "LG 28 litres Convection Microwave Oven, MC2846BV",
@@ -126,6 +136,7 @@ export const ItemDetails5 = [
     price: "15,990.00",
     discount: "6%(₹1,009)",
     id: 2,
+    linked: "kitchen",
   },
   {
     name: "IFB 30 litres Rotisserie Convection Microwave Oven, 30BRC2",
@@ -134,6 +145,7 @@ export const ItemDetails5 = [
     price: "15,990.00",
     discount: "22%(₹4,400)",
     id: 3,
+    linked: "kitchen",
   },
   {
     name: "LG 20 litres Solo Microwave Oven, MS2043DB",
@@ -142,6 +154,7 @@ export const ItemDetails5 = [
     price: "6,499.00",
     discount: "18%(₹1,400)",
     id: 4,
+    linked: "kitchen",
   },
   {
     name: "Samsung 23 Litre Solo Microwave Oven with Indian Auto cook Menu, (MS23A3513AK/TL, Black)",
@@ -150,6 +163,7 @@ export const ItemDetails5 = [
     price: "6,600.00",
     discount: "12%(₹900)",
     id: 5,
+    linked: "kitchen",
   },
   {
     name: "LG 28 litres Convection Microwave Oven, MJ2886BWUM",
@@ -158,6 +172,7 @@ export const ItemDetails5 = [
     price: "19,490.00",
     discount: "20%(₹4,809)",
     id: 6,
+    linked: "kitchen",
   },
   {
     name: "LG 21 litres Convection Microwave Oven, MC2146BG",
@@ -166,6 +181,7 @@ export const ItemDetails5 = [
     price: "11,590.00",
     discount: "17%(₹2,409)",
     id: 7,
+    linked: "kitchen",
   },
   {
     name: "Samsung 23 Litre Grill Microwave Oven with Grill Fry, Browning Plus (MG23A3515AK/TL, Black)",
@@ -174,6 +190,7 @@ export const ItemDetails5 = [
     price: "8,500.00",
     discount: "27%(₹3,100)",
     id: 8,
+    linked: "kitchen",
   },
   {
     name: "LG 32 litres Convection Microwave Oven, MJEN326UH",
@@ -182,6 +199,7 @@ export const ItemDetails5 = [
     price: "24,490.00",
     discount: "22%(₹7,009)",
     id: 9,
+    linked: "kitchen",
   },
   {
     name: "Samsung 28 litres SlimFry Convection Microwave Oven, MC28A5033CK Black",
@@ -190,12 +208,14 @@ export const ItemDetails5 = [
     price: "14,990.00",
     discount: "17%(₹3,000)",
     id: 10,
+    linked: "kitchen",
   },
   {
     name: "LG 21 litres Convection Microwave Oven, MC2146BV",
     img: "https://www.reliancedigital.in/medias/LG-MC2146BV-Microwave-Ovens-581107299-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wzODc1OHxpbWFnZS9qcGVnfGltYWdlcy9oYjEvaDhmLzk4MDU4NTIxODA1MTAuanBnfGE0MzU1N2Y1NjZkNjYzOTYzYjc5MDVjOTAyNzVkZTI3MzJmZTIwZTVkMDkyZmYyZTY3ZTkyMDE3NGFiMzIwM2M",
     price: "14,499.00",
     id: 11,
+    linked: "kitchen",
   },
   {
     name: "Samsung 28 Litres MC28A5145VK Convection Microwave Oven with Moisture Sensor",
@@ -204,6 +224,7 @@ export const ItemDetails5 = [
     price: "16,590.00",
     discount: "12%(₹2,210)",
     id: 12,
+    linked: "kitchen",
   },
 ];
 
@@ -211,34 +232,42 @@ export const ItemDetails6 = [
   {
     img: "https://www.reliancedigital.in/medias/Smartwatches-Small-Banners-01.jpg?context=bWFzdGVyfGltYWdlc3w0NDA0MnxpbWFnZS9qcGVnfGltYWdlcy9oNTAvaGRiLzk5MjgzNzA5MTMzMTAuanBnfGYwOWU2ZjQ3Y2Y0OWI2NmVhZGVkYWM2M2ZiMzQ4YTlhODRkZDY4ODZmODA1OGQyZWNiYWVhODNmNWM2YWMwMmY",
     caption: "Slide 1",
+    linked: "personalcare",
   },
   {
     img: "https://www.reliancedigital.in/medias/Realme-Smart-TV-Great-Deals-Banner-13-12-2022.jpg?context=bWFzdGVyfGltYWdlc3w3NzY3MHxpbWFnZS9qcGVnfGltYWdlcy9oNzUvaDg2Lzk5MzExODY3NjU4NTQuanBnfDA5YzNlMTkwNmM0ZWI3ZGJlYjI5Y2E0ZmQ5M2M5YjNkZmZjZmVlMjBmOGU1ZGIwNDY3NjFhNTcwMWM4ZmFlOWI",
     caption: "Slide 2",
+    linked: "televisions",
   },
   {
     img: "https://www.reliancedigital.in/medias/Printers-Small-Banners-01-1-.jpg?context=bWFzdGVyfGltYWdlc3w0MDAwNHxpbWFnZS9qcGVnfGltYWdlcy9oNGYvaGQxLzk5Mjg3MzAzNDU1MDIuanBnfGMyNTg3NWQyZWRmMGU2M2EzZmEwM2U2MWNlMTA3ZWQzYjk4MmRhM2EzYjY0N2FiZGM4OGFlYWQ2NjBlZjE4YWE",
     caption: "Slide 3",
+    linked: "homeappliances",
   },
   {
     img: "https://www.reliancedigital.in/medias/Washing-Machines-Small-Banners.jpg?context=bWFzdGVyfGltYWdlc3w0NDcwMHxpbWFnZS9qcGVnfGltYWdlcy9oNWIvaDUwLzk5MTM3Nzc3MTcyNzguanBnfGMyNWJhNDNiMTFkMjE4YmQ2OGRiMzdkMGIxNmZmZDhiYzViMTBjY2I1ZDllYzAyMWFjN2FlZTU1ZGVmMDk4MmU",
     caption: "Slide 4",
+    linked: "homeappliances",
   },
   {
     img: "https://www.reliancedigital.in/medias/Smart-Home-Products-Great-Deals-Banner-22-11-2022.jpg?context=bWFzdGVyfGltYWdlc3wzOTAxM3xpbWFnZS9qcGVnfGltYWdlcy9oMDYvaDMxLzk5MzExOTE5NDMxOTguanBnfDhiY2ZkOWE5YmQ3OWFkYmM2OWUwNjIwODQ4NGFkMWI4MDExZGQ5ZTIyNzkyMmZiMDM2ZDcyYjRkM2M4NmQ0MTA",
     caption: "Slide 5",
+    linked: "homeappliances",
   },
   {
     img: "https://www.reliancedigital.in/medias/True-Wireless-Small-Banners.jpg?context=bWFzdGVyfGltYWdlc3w0NjcyOXxpbWFnZS9qcGVnfGltYWdlcy9oODAvaDljLzk5MTM3NzcyNTg1MjYuanBnfGY3MDIxZDZlYTBhMjEwYjQ4NGIzMmQwZjdjMzQ2M2FhYzIwYWE0NGE4MzFmYjRlZjQwNzFlZjk2NWMwMzYxN2Y",
     caption: "Slide 6",
+    linked: "headphones",
   },
   {
     img: "https://www.reliancedigital.in/medias/Samsung-M13-5G-Great-Deals-Banner-22-11-2022.jpg?context=bWFzdGVyfGltYWdlc3wzNDUzN3xpbWFnZS9qcGVnfGltYWdlcy9oNDgvaGY3Lzk5MjM5MDIzNDExNTAuanBnfDdiZjliNDZlOWUxZDFjZDQ2MDkzYjdjZDZhNDVlNWI0MGYwNTAwOWJkOWM4MWUzMTUyYmNmZmRmZjk3NjIwYjk",
     caption: "Slide 7",
+    linked: "mobilesandtablets",
   },
   {
     img: "https://www.reliancedigital.in/medias/MackBook-Appliances-Small-banners.jpg?context=bWFzdGVyfGltYWdlc3w0Mjc0NXxpbWFnZS9qcGVnfGltYWdlcy9oNTYvaDkyLzk5MTkwODgzMjg3MzQuanBnfDcxYmMyMDMxMjdiMzUxYzE2NmJkYTU4ZDBlNTQxNjBkZWViYjQ1Mzc2Y2IyOWYwNTllODhkNmRlZjA0NjM3NmI",
     caption: "Slide 8",
+    linked: "computers",
   },
 ];
 
@@ -265,6 +294,7 @@ export const ItemDetails8 = [
     mrp: "37,000.00",
     discount: "11%(₹4,001)",
     id: 1,
+    linked: "computers",
   },
   {
     name: "HP 15s-er1501AU Standard Laptop (AMD Ryzen 3 3250U/8 GB/256 GB SSD/Radeon Graphics/Windows 11 Home/MSO/HD), 39.62 cm (15.6 Inch)",
@@ -273,6 +303,7 @@ export const ItemDetails8 = [
     mrp: "41,204.00",
     discount: "30%(₹12,214)",
     id: 2,
+    linked: "computers",
   },
   {
     name: "Lenovo L2IN IdeaPad 3 Laptop (11th Gen Intel Core i3-1115G4 /8GB/256GB SSD/Intel UHD Graphics/Windows 11/MSO/Full HD), 39.62 cm (15.6 inch)",
@@ -281,6 +312,7 @@ export const ItemDetails8 = [
     mrp: "59,390.00",
     discount: "40%(₹23,891)",
     id: 3,
+    linked: "computers",
   },
   {
     name: "HP 15s-fq2670TU Laptop (11th Gen Intel Core i3-1115G4/8 GB RAM/256 GB SSD/Windows 11 Home/MSO/FHD), 39.6 cm (15.6 inch)",
@@ -289,6 +321,7 @@ export const ItemDetails8 = [
     mrp: "45,409.00",
     discount: "9%(₹4,009)",
     id: 4,
+    linked: "computers",
   },
   {
     name: "Lenovo LJIN IdeaPad 3 Laptop (11th Gen Intel Core i3-1115G4/8GB/512GB SSD/Intel UHD Graphics/Windows 11/MSO/Full HD), 39.62 cm (15.6 inch)",
@@ -297,6 +330,7 @@ export const ItemDetails8 = [
     mrp: "65,690.00",
     discount: "38%(₹25,191)",
     id: 5,
+    linked: "computers",
   },
   {
     name: "Lenovo IdeaPad 3 Thin and Light Laptop (11th Gen Intel Core i3-1115G4/8 GB/512 GB SSD/Windows 11 Home/MSO/FHD), 39.62 cm (15.6 Inch)",
@@ -305,6 +339,7 @@ export const ItemDetails8 = [
     mrp: "67,090.00",
     discount: "42%(₹28,100)",
     id: 6,
+    linked: "computers",
   },
   {
     name: "HP 15s-fq2672TU Laptop (11th Gen Intel Core i3-1115G4/8GB RAM/512GB SSD/UHD Graphics/Windows 11 Home/MSO/FHD), 39.6 cm (15.6 Inch), Natural Silver",
@@ -313,6 +348,7 @@ export const ItemDetails8 = [
     mrp: "49,977.00",
     discount: "12%(₹6,228)",
     id: 7,
+    linked: "computers",
   },
   {
     name: "HP 15s-fq2671TU Laptop (11th Gen Intel Core i3-1115G4/8 GB RAM/512 GB SSD/Windows 11 Home/MSO/FHD), 39.6 cm (15.6 inch)",
@@ -321,6 +357,7 @@ export const ItemDetails8 = [
     mrp: "47,833.00",
     discount: "16%(₹7,834)",
     id: 8,
+    linked: "computers",
   },
   {
     name: "Asus EK522WS Laptop (11th Gen Intel Core i5-1135G7/8 GB/512 GB SSD/Iris Xe Graphics/Windows 11 Home/MSO/FHD), 35.56 cm (14 Inch)",
@@ -329,6 +366,7 @@ export const ItemDetails8 = [
     mrp: "70,990.00",
     discount: "30%(₹20,991)",
     id: 9,
+    linked: "computers",
   },
   {
     name: "HP 15s-fq5111TU Laptop (12th Gen Intel Core i5-1235U/8 GB RAM/512 GB SSD/Windows 11 Home/MSO/FHD), 39.6 cm (15.6 inch)",
@@ -337,6 +375,7 @@ export const ItemDetails8 = [
     mrp: "67,831.00",
     discount: "15%(₹9,903)",
     id: 10,
+    linked: "computers",
   },
   {
     name: "HP 15s-fr5007TU Laptop (12th Gen Intel Core i5-1235U/8GB RAM/512GB SSD/Iris Xe Graphics/Windows 11 Home/MSO/FHD), 39.6 cm (15.6 Inch), Natural Silver",
@@ -345,6 +384,7 @@ export const ItemDetails8 = [
     mrp: "68,000.00",
     discount: "11%(₹7,501)",
     id: 11,
+    linked: "computers",
   },
   {
     name: "Asus EK562WS Laptop (11th Gen Intel Core i5-1135G7/8GB+32GB Intel Optane/512GB SSD/Intel Iris Xe Graphics/Windows 11/MSO/Full HD), 35.56 cm (14 inch)",
@@ -353,6 +393,7 @@ export const ItemDetails8 = [
     mrp: "69,990.00",
     discount: "30%(₹21,000)",
     id: 12,
+    linked: "computers",
   },
 ];
 
@@ -391,6 +432,7 @@ export const ItemDetails10 = [
     mrp: "2,799.00",
     discount: "64%(₹1,800)",
     id: 1,
+    linked: "personalcare",
   },
   {
     name: "Lifelong LLPCM13 Men's Beard Trimmer, Black",
@@ -399,6 +441,7 @@ export const ItemDetails10 = [
     mrp: "1,200.00",
     discount: "53%(₹641)",
     id: 2,
+    linked: "personalcare",
   },
   {
     name: "Philips BT3102/15 cordless rechargeable Beard Trimmer - 10 length settings, 60 min run time",
@@ -407,6 +450,7 @@ export const ItemDetails10 = [
     mrp: "1,495.00",
     discount: "16%(₹246)",
     id: 3,
+    linked: "personalcare",
   },
   {
     name: "Misfit by boAt T30 RTL Men's Trimmer, Active Black",
@@ -415,6 +459,7 @@ export const ItemDetails10 = [
     mrp: "1,499.00",
     discount: "70%(₹1,050)",
     id: 4,
+    linked: "personalcare",
   },
   {
     name: "Wahl Cordless Trimmer Mini Groomsman 3 in 1 Grooming Kit, 05608-524 Black",
@@ -423,6 +468,7 @@ export const ItemDetails10 = [
     mrp: "1,000.00",
     discount: "80%(₹801)",
     id: 5,
+    linked: "personalcare",
   },
   {
     name: "Philips Beard Trimmer BT1230/15 with USB Charging",
@@ -431,6 +477,7 @@ export const ItemDetails10 = [
     mrp: "945.00",
     discount: "26%(₹246)",
     id: 6,
+    linked: "personalcare",
   },
   {
     name: "Wahl Grooming Kit Mini T Pro, White and Black",
@@ -439,6 +486,7 @@ export const ItemDetails10 = [
     mrp: "1,649.00",
     discount: "52%(₹850)",
     id: 7,
+    linked: "personalcare",
   },
   {
     name: "Phillips 7000 13-in-1 Multigroom Trimmer with Self-sharpening Blades, MG7715/65",
@@ -447,6 +495,7 @@ export const ItemDetails10 = [
     mrp: "4,595.00",
     discount: "24%(₹1,103)",
     id: 8,
+    linked: "personalcare",
   },
   {
     name: "Philips MG5740/15 Grooming Kit with Self-sharpening blades & 12 tools",
@@ -455,6 +504,7 @@ export const ItemDetails10 = [
     mrp: "2,995.00",
     discount: "20%(₹596)",
     id: 9,
+    linked: "personalcare",
   },
   {
     name: "Wahl Quickstyle Men's Trimmer, Grey",
@@ -463,6 +513,7 @@ export const ItemDetails10 = [
     mrp: "1,095.00",
     discount: "59%(₹646)",
     id: 10,
+    linked: "personalcare",
   },
   {
     name: "Reconnect Iron Man Beard Trimmer with Easy to Clean Detachable Head, Laser Guided for Sharp Precision, 2 Precision Combs 0.5-20mm, 90mins Usage Time, Battery Charging Indicator, 2 Years Warranty",
@@ -471,6 +522,7 @@ export const ItemDetails10 = [
     mrp: "2,799.00",
     discount: "88%(₹2,450)",
     id: 11,
+    linked: "personalcare",
   },
   {
     name: "Reconnect Black Panther 7-in-1 Multi Grooming Kit with 45-degree Precision Blade, Washable Heads, 1hr Usage Time, Battery Charging Indicator, 2 Years Warranty",
@@ -479,6 +531,7 @@ export const ItemDetails10 = [
     mrp: "3,299.00",
     discount: "89%(₹2,950)",
     id: 12,
+    linked: "personalcare",
   },
 ];
 
@@ -490,6 +543,7 @@ export const ItemDetails11 = [
     mrp: "19,999.00",
     discount: "18%(₹3,500)",
     id: 1,
+    linked: "televisions",
   },
   {
     name: "IFFALCON 139.7 cm (55 Inch) Ultra HD (4K) Smart LED TV, 55U71",
@@ -498,6 +552,7 @@ export const ItemDetails11 = [
     mrp: "70,990.00",
     discount: "63%(₹45,000)",
     id: 2,
+    linked: "televisions",
   },
   {
     name: "Samsung Wondertainment 80 cm (32 Inch) Smart HD Ready TV, UA32T4340BKXXL",
@@ -506,6 +561,7 @@ export const ItemDetails11 = [
     mrp: "22,900.00",
     discount: "41%(₹9,410)",
     id: 3,
+    linked: "televisions",
   },
   {
     name: "Kodak 139 cm (55 inch) Ultra HD (4K) LED Smart TV, 7XPRO Series 55UHDX7XPRO, Quad Core Processor, Built-In Chromecast",
@@ -514,6 +570,7 @@ export const ItemDetails11 = [
     mrp: "46,999.00",
     discount: "47%(₹22,000)",
     id: 4,
+    linked: "televisions",
   },
   {
     name: "Sansui 80 cm (32 Inch) HD Ready Smart TV, Neo Series JSW32CSHD",
@@ -522,6 +579,7 @@ export const ItemDetails11 = [
     mrp: "19,990.00",
     discount: "55%(₹10,991)",
     id: 5,
+    linked: "televisions",
   },
   {
     name: "Kodak 80 cm (32 inch) HD Ready LED Smart TV, 7XPRO Series 32HDX7XPRO, Quad Core Processor, Built-in Chromecast",
@@ -530,6 +588,7 @@ export const ItemDetails11 = [
     mrp: "18,499.00",
     discount: "46%(₹8,500)",
     id: 6,
+    linked: "televisions",
   },
   {
     name: "Hisense 108 cm (43 inch) 2Yr Warranty 4K Ultra HD Smart Certified Android LED TV 43A6GE (Black) with Dolby Vision and ATMOS",
@@ -538,6 +597,7 @@ export const ItemDetails11 = [
     mrp: "44,990.00",
     discount: "56%(₹25,000)",
     id: 7,
+    linked: "televisions",
   },
   {
     name: "Hisense Vivid 80 cm(32 inch) HD Ready Smart LED TV, E4G, 32E4G",
@@ -546,6 +606,7 @@ export const ItemDetails11 = [
     mrp: "24,990.00",
     discount: "56%(₹14,000)",
     id: 8,
+    linked: "televisions",
   },
 ];
 
@@ -557,6 +618,7 @@ export const ItemDetails12 = [
     price: "999.00",
     mrp: "3,499.00",
     discount: "71%(₹2,500)",
+    linked: "personalcare",
   },
   {
     name: "Hammer Pulse Ace Smart Watch with Bluetooth Calling Multiple Sports Mode, 4.29 cm (1.69 inch) display, 7 Days without Bluetooth Calling, Up to 6 Hours with Bluetooth Calling",
@@ -565,6 +627,7 @@ export const ItemDetails12 = [
     price: "10,99.00",
     mrp: "3,990.00",
     discount: "73%(₹2,900)",
+    linked: "personalcare",
   },
   {
     name: "Noise ColorFit Caliber Go Smart Watch with 4.29 cm (1.69 inch) HD Display, 40 Sports Modes, 150+ Watch Faces, & IP68 Waterproof (Jet Black)",
@@ -573,6 +636,7 @@ export const ItemDetails12 = [
     price: "1,349.00",
     mrp: "3,999.00",
     discount: "66%(₹2,650)",
+    linked: "personalcare",
   },
   {
     name: "Fire-Boltt Ninja Smart Watch with Touch to Wake Feature, IP67 Water Resistant (Black)",
@@ -581,6 +645,7 @@ export const ItemDetails12 = [
     price: "1,399.00",
     mrp: "4,999.00",
     discount: "72%(₹3,600)",
+    linked: "personalcare",
   },
   {
     name: "pTron Pulsefit F21 Plus Smart Watch with 1-year warranty, 4.31 cm (1.7 inch) Full Touch Color Display, 10-12 Days Runtime,Up to 20 days Battery Standby Life, Compatible with Android (4.4 plus) & iOS (9.0 plus)",
@@ -589,6 +654,7 @@ export const ItemDetails12 = [
     price: "999.00",
     mrp: "3,499.00",
     discount: "71%(₹2,500)",
+    linked: "personalcare",
   },
 ];
 
@@ -600,6 +666,7 @@ export const ItemDetails13 = [
     mrp: "65,990.00",
     discount: "44%(₹29,000)",
     id: 1,
+    linked: "homeappliances",
   },
   {
     name: "Hisense 1.5 Ton 4 Star, 4 in 1 Convertible Intelligent Inverter Split AC, AS-18TC4RAM0 (100 Percent Copper, PM 2.5 Filter + 3 in 1 Vitacarb Filter, Eco Friendly R-32 gas)",
@@ -608,6 +675,7 @@ export const ItemDetails13 = [
     mrp: "47,990.00",
     discount: "38%(₹18,000)",
     id: 2,
+    linked: "homeappliances",
   },
   {
     name: "LG 1.5 Ton 5 Star AI 6 in 1 Super Convertible Smart WiFi Inverter Split AC, PS-Q19GWZF (Copper Condenser, 4 Way Swing, Anti-Allergy Filter, Ocean Black Fins, 2022 Launch)",
@@ -616,6 +684,7 @@ export const ItemDetails13 = [
     mrp: "77,990.00",
     discount: "38%(₹30,000)",
     id: 3,
+    linked: "homeappliances",
   },
   {
     name: "Samsung 1.5 Ton 4 Star Hot & Cold Series AR18BX4ZAWK Inverter Split AC",
@@ -624,6 +693,7 @@ export const ItemDetails13 = [
     mrp: "53,890.00",
     discount: "26%(₹13,900)",
     id: 4,
+    linked: "homeappliances",
   },
   {
     name: "LLOYD 1.5 Ton 5 Star Inverter Split AC, GLS18I5FWGEL (100 Percent Copper,Rapid Cooling,Golden fin condenser,Valve protection cover,2022 Launched)",
@@ -632,6 +702,7 @@ export const ItemDetails13 = [
     mrp: "60,990.00",
     discount: "31%(₹19,000)",
     id: 5,
+    linked: "homeappliances",
   },
   {
     name: "Haier 1.5 Ton 3 Star Triple Inverter+ Split AC, HSU18C-NBS3B (100 percent Copper, 50 Feet Airflow, Hyper PCB, Cools even at 60‚C Ambient Temperature,Self Clean technology)",
@@ -640,6 +711,7 @@ export const ItemDetails13 = [
     mrp: "65,490.00",
     discount: "45%(₹29,500)",
     id: 6,
+    linked: "homeappliances",
   },
   {
     name: "Samsung 1.5 Ton 3 Star AR18BY3YATA Inverter, Split AC, HD Filter, 2 Way Swing, Floral Design, 5 in 1 Convertible (2022 Launch)",
@@ -648,6 +720,7 @@ export const ItemDetails13 = [
     mrp: "58,990.00",
     discount: "35%(₹20,500)",
     id: 7,
+    linked: "homeappliances",
   },
   {
     name: "HAIER 1.5 Ton 3 Star Split AC, TurboCool HSU18T-TQS3B (Copper Condenser, Micro Dust Filter, Cools even at 54C, R32 Eco friendly Gas, 2022 Launched)",
@@ -656,6 +729,7 @@ export const ItemDetails13 = [
     mrp: "60,890.00",
     discount: "46%(₹27,900)",
     id: 8,
+    linked: "homeappliances",
   },
   {
     name: "Kelvinator 1.5 Ton 3 Star K600+ Series KAS-X18320P Inverter Split AC with Single Rotary Compressor",
@@ -664,6 +738,7 @@ export const ItemDetails13 = [
     mrp: "50,490.00",
     discount: "37%(₹18,500)",
     id: 9,
+    linked: "homeappliances",
   },
   {
     name: "Samsung 1.5 Ton 5 Star AR18BY5YATZ Inverter Split AC, Wi-Fi, Tri Care Filter, 4 way Swing, Floral Design, 5 in 1 Convertible (2022 Launch)",
@@ -672,6 +747,7 @@ export const ItemDetails13 = [
     mrp: "70,990.00",
     discount: "32%(₹23,000)",
     id: 10,
+    linked: "homeappliances",
   },
   {
     name: "Panasonic 1.5 Ton 4 Star WiFi Smart Inverter Split AC, WU18YKYXF (Copper Condenser,Nanoe-G, AQI (PM2.5) Sensor,Jetstream Air flow, Anti Corrosive Shield Blu Plus)",
@@ -680,6 +756,7 @@ export const ItemDetails13 = [
     mrp: "61,900.00",
     discount: "27%(₹16,910)",
     id: 11,
+    linked: "homeappliances",
   },
 ];
 
@@ -691,6 +768,7 @@ export const ItemDetails14 = [
     mrp: "37,000.00",
     discount: "11%(₹4,001)",
     id: 1,
+    linked: "accessories",
   },
   {
     name: "HP 15s-er1501AU Standard Laptop (AMD Ryzen 3 3250U/8 GB/256 GB SSD/Radeon Graphics/Windows 11 Home/MSO/HD), 39.62 cm (15.6 Inch)",
@@ -699,6 +777,7 @@ export const ItemDetails14 = [
     mrp: "41,204.00",
     discount: "30%(₹12,214)",
     id: 2,
+    linked: "accessories",
   },
   {
     name: "Lenovo L2IN IdeaPad 3 Laptop (11th Gen Intel Core i3-1115G4 /8GB/256GB SSD/Intel UHD Graphics/Windows 11/MSO/Full HD), 39.62 cm (15.6 inch)",
@@ -707,6 +786,7 @@ export const ItemDetails14 = [
     mrp: "59,390.00",
     discount: "40%(₹23,891)",
     id: 3,
+    linked: "accessories",
   },
   {
     name: "HP 15s-fq2670TU Laptop (11th Gen Intel Core i3-1115G4/8 GB RAM/256 GB SSD/Windows 11 Home/MSO/FHD), 39.6 cm (15.6 inch)",
@@ -715,6 +795,7 @@ export const ItemDetails14 = [
     mrp: "45,409.00",
     discount: "9%(₹4,009)",
     id: 4,
+    linked: "accessories",
   },
   {
     name: "Lenovo LJIN IdeaPad 3 Laptop (11th Gen Intel Core i3-1115G4/8GB/512GB SSD/Intel UHD Graphics/Windows 11/MSO/Full HD), 39.62 cm (15.6 inch)",
@@ -723,6 +804,7 @@ export const ItemDetails14 = [
     mrp: "65,690.00",
     discount: "38%(₹25,191)",
     id: 5,
+    linked: "accessories",
   },
   {
     name: "Lenovo IdeaPad 3 Thin and Light Laptop (11th Gen Intel Core i3-1115G4/8 GB/512 GB SSD/Windows 11 Home/MSO/FHD), 39.62 cm (15.6 Inch)",
@@ -731,6 +813,7 @@ export const ItemDetails14 = [
     mrp: "67,090.00",
     discount: "42%(₹28,100)",
     id: 6,
+    linked: "accessories",
   },
   {
     name: "HP 15s-fq2672TU Laptop (11th Gen Intel Core i3-1115G4/8GB RAM/512GB SSD/UHD Graphics/Windows 11 Home/MSO/FHD), 39.6 cm (15.6 Inch), Natural Silver",
@@ -739,6 +822,7 @@ export const ItemDetails14 = [
     mrp: "49,977.00",
     discount: "12%(₹6,228)",
     id: 7,
+    linked: "accessories",
   },
   {
     name: "HP 15s-fq2671TU Laptop (11th Gen Intel Core i3-1115G4/8 GB RAM/512 GB SSD/Windows 11 Home/MSO/FHD), 39.6 cm (15.6 inch)",
@@ -747,6 +831,7 @@ export const ItemDetails14 = [
     mrp: "47,833.00",
     discount: "16%(₹7,834)",
     id: 8,
+    linked: "accessories",
   },
 ];
 
@@ -758,6 +843,7 @@ export const ItemDetails15 = [
     price: "1,09,900.00",
     mrp: "1,10,999.00",
     discount: "1%(₹1,099)",
+    linked: "mobilesandtablets",
   },
   {
     name: "Apple iPhone 14 Plus 128 GB, Starlight",
@@ -766,6 +852,7 @@ export const ItemDetails15 = [
     price: "89,990.00",
     mrp: "90,889.00",
     discount: "1%(₹8,99)",
+    linked: "mobilesandtablets",
   },
   {
     name: "Apple iPhone 14 Plus 128 GB, Blue",
@@ -774,6 +861,7 @@ export const ItemDetails15 = [
     price: "89,990.00",
     mrp: "90,889.00",
     discount: "1%(₹8,99)",
+    linked: "mobilesandtablets",
   },
   {
     name: "Apple iPhone 14 Plus 128 GB, Blue",
@@ -782,6 +870,7 @@ export const ItemDetails15 = [
     price: "89,990.00",
     mrp: "90,889.00",
     discount: "1%(₹8,99)",
+    linked: "mobilesandtablets",
   },
   {
     name: "Apple iPhone 14 Plus 512 GB, Midnight",
@@ -790,6 +879,7 @@ export const ItemDetails15 = [
     price: "1,09,900.00",
     mrp: "1,10,999.00",
     discount: "1%(₹1,099)",
+    linked: "mobilesandtablets",
   },
 ];
 
@@ -801,6 +891,7 @@ export const ItemDetails16 = [
     mrp: "3,499.00",
     discount: "69%(₹2,400)",
     id: 1,
+    linked: "headphones",
   },
   {
     name: "boAt Airdopes 131 RTL Twin Wireless Earbuds with IWP Technology, Bluetooth V5.0, Immersive Audio, Up to 15H Total Playback, Instant Voice Assistant and Type-C Charging",
@@ -809,12 +900,14 @@ export const ItemDetails16 = [
     mrp: "2,990.00",
     discount: "63%(₹1,891)",
     id: 2,
+    linked: "headphones",
   },
   {
     name: "Apple MME73HN/A 3rd Generation Airpods with Mic and Wireless Charging Case, White",
     img: "https://www.reliancedigital.in/medias/Apple-Airpods-492571632-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wxMTQ1NnxpbWFnZS9qcGVnfGltYWdlcy9oMjgvaGU2Lzk4MjU2MDg5OTA3NTAuanBnfGU0MjZmMjM3YjYwMDhkYmUxOWIwYjllNTczODI0YzdjY2EyYTMyYjY5MTQ3ZTE4Y2I2YzEwNGMyN2Q1N2MwMzU",
     price: "18,500.00",
     id: 3,
+    linked: "headphones",
   },
   {
     name: "boAt Airdopes 148 True Wireless Airdopes, Active Black",
@@ -823,6 +916,7 @@ export const ItemDetails16 = [
     mrp: "4,490.00",
     discount: "71%(₹3,191)",
     id: 4,
+    linked: "headphones",
   },
   {
     name: "OnePlus Nord Buds Wireless Earbuds with 4 Mics and AI Noise Reduction, Black Slate",
@@ -831,6 +925,7 @@ export const ItemDetails16 = [
     mrp: "2,999.00",
     discount: "17%(₹500)",
     id: 5,
+    linked: "headphones",
   },
   {
     name: "boAt Airdopes 131 RTL Twin Wireless Earbuds with IWP Technology, Bluetooth V5.0, Immersive Audio, Up to 15H Total Playback, Instant Voice Assistant and Type-C Charging, Black",
@@ -839,6 +934,7 @@ export const ItemDetails16 = [
     mrp: "2,990.00",
     discount: "63%(₹1,891)",
     id: 6,
+    linked: "headphones",
   },
   {
     name: "OnePlus Bullets Z2 Wireless Neckband Earphone with AI Noise Cancellation, Magico Black",
@@ -847,6 +943,7 @@ export const ItemDetails16 = [
     mrp: "2,290.00",
     discount: "26%(₹591)",
     id: 7,
+    linked: "headphones",
   },
   {
     name: "pTron InTunes Classic Bluetooth 5.2 Wireless Neckband Earphones with 24Hrs Playback Time, Made in India, Hi-Fi Stereo Audio, Deep Bass, Type-C Fast Charging, Voice Assistant, IPX4 & In-line Music & Call Controls (Black)",
@@ -855,6 +952,7 @@ export const ItemDetails16 = [
     mrp: "1,899.00",
     discount: "74%(₹1,400)",
     id: 8,
+    linked: "headphones",
   },
   {
     name: "pTron Basspods P181 Bluetooth 5.1 Wireless Headphones, 32Hrs Total Playtime, Immersive Stereo Sound, Stereo Calls, Snug-fit TWS Earbuds, Touch Controls, Voice Assistance, Type-C Fast Charging & IPX4 (Black)",
@@ -863,6 +961,7 @@ export const ItemDetails16 = [
     mrp: "2,999.00",
     discount: "78%(₹2,350)",
     id: 9,
+    linked: "headphones",
   },
   {
     name: "Apple MLWK3HN/A Airpods Pro with Magsafe Charging Case, White",
@@ -871,6 +970,7 @@ export const ItemDetails16 = [
     mrp: "26,300.00",
     discount: "20%(₹5,310)",
     id: 10,
+    linked: "headphones",
   },
 ];
 
@@ -882,6 +982,7 @@ export const ItemDetails17 = [
     mrp: "53,950.00",
     discount: "9%(₹4,960)",
     id: 1,
+    linked: "cameras",
   },
   {
     name: "Nikon COOLPIX P1000 Prosumer Camera 16 MP, Black",
@@ -890,6 +991,7 @@ export const ItemDetails17 = [
     mrp: "69,950.00",
     discount: "7%(₹4,960)",
     id: 2,
+    linked: "cameras",
   },
   {
     name: "Nikon Z 50 mm Prime Lens",
@@ -898,6 +1000,7 @@ export const ItemDetails17 = [
     mrp: "50,950.00",
     discount: "6%(₹2,960)",
     id: 3,
+    linked: "cameras",
   },
   {
     name: "Nikon Z 35 mm Prime Lens",
@@ -906,6 +1009,7 @@ export const ItemDetails17 = [
     mrp: "66,950.00",
     discount: "6%(₹3,960)",
     id: 4,
+    linked: "cameras",
   },
   {
     name: "Nikon Z7 Mirrorless Camera with Mount Adapter",
@@ -914,6 +1018,7 @@ export const ItemDetails17 = [
     mrp: "2,96,049.00",
     discount: "5%(₹14,099)",
     id: 5,
+    linked: "cameras",
   },
   {
     name: "Nikon Z7 Mount Adapter for Nikon Mirrorless Cameras",
@@ -922,6 +1027,7 @@ export const ItemDetails17 = [
     mrp: "20,948.00",
     discount: "5%(₹998)",
     id: 6,
+    linked: "cameras",
   },
   {
     name: "Nikon JAA830DA 70-200 mm Camera Lens",
@@ -930,6 +1036,7 @@ export const ItemDetails17 = [
     mrp: "1,69,950.00",
     discount: "4%(₹6,960)",
     id: 7,
+    linked: "cameras",
   },
   {
     name: "Nikon Z7 Mirrorless Camera with 24-70 mm Lens Kit and Mount Adapter",
@@ -938,6 +1045,7 @@ export const ItemDetails17 = [
     mrp: "2,82,950.00",
     discount: "8%(₹22,960)",
     id: 8,
+    linked: "cameras",
   },
   {
     name: "Nikon Z7 Mirrorless Camera with 24-70 mm Lens Kit",
@@ -946,6 +1054,7 @@ export const ItemDetails17 = [
     mrp: "2,71,450.00",
     discount: "7%(₹18,951)",
     id: 9,
+    linked: "cameras",
   },
   {
     name: "GoPro Hero 7 Action Camera with 12MP Photos + 4K60 Video and Rugged, Waterproof Design, Black",
@@ -954,12 +1063,14 @@ export const ItemDetails17 = [
     mrp: "30,500.00",
     discount: "2%(₹501)",
     id: 10,
+    linked: "cameras",
   },
   {
     name: "Olympus Mirrorless OM-D E-M1X Camera Body, Black",
     img: "https://www.reliancedigital.in/medias/Olympus-EM1XINBLK-CAMERA-492571618-i-1-1200Wx1200H-300Wx300H?context=bWFzdGVyfGltYWdlc3wzNDUxNXxpbWFnZS9qcGVnfGltYWdlcy9oMTIvaDRiLzk3Mjc4MjY3ODgzODIuanBnfDViMGQ3NjMzZGRmMzFlZjljNmRhN2YwYzliZTExNmU1ZTgxNzMwM2RkZTkyN2Q4NDM4MjA3Mzk2MWM4MjNlNTY",
     price: "1,34,990.00",
     id: 11,
+    linked: "cameras",
   },
   {
     name: "Insta 360 One R 2.54 cm (1 Inch) Edition Action Camera with Night Shot, Voice Control",
@@ -968,6 +1079,7 @@ export const ItemDetails17 = [
     mrp: "54,990.00",
     discount: "17%(₹9,490)",
     id: 12,
+    linked: "cameras",
   },
 ];
 
@@ -976,30 +1088,36 @@ export const ItemDetails18 = [
     img: "https://www.reliancedigital.in/medias/iphone-pro-11-01.png?context=bWFzdGVyfGltYWdlc3wyOTc3NnxpbWFnZS9wbmd8aW1hZ2VzL2gxNi9oNWUvOTI3NjA1OTkxMDE3NC5wbmd8MzdkYzljODgzMDcyM2ZjMjJmZDI2ZjMwNjhkZmU5YjFmOTJmMGRmOTFiYzc4ZjcyMDRhMjQ5MWMyNjYwOTgxYg",
     caption: "Slide 1",
     categories: "Smartphone",
+    linked: "personalcare",
   },
   {
     img: "https://www.reliancedigital.in/medias/Washing-Machine-180x180-15-01-2019.png?context=bWFzdGVyfGltYWdlc3wzNDU4MXxpbWFnZS9wbmd8aW1hZ2VzL2gzOC9oM2UvOTI1MTA1MDg4MTA1NC5wbmd8ZDAyZGNkMzU1MzE3N2E2OGFlOTliMzUyODZkYzlkNTc0NzFmODllY2JiZDVlNzdhYjg3MTgyMTc4ZGVhODA3ZA",
     caption: "Slide 2",
     categories: "Washing Machines",
+    linked: "homeappliances",
   },
   {
     img: "https://www.reliancedigital.in/medias/Laptop-180x180-15-01-2019.png?context=bWFzdGVyfGltYWdlc3wyOTAwOXxpbWFnZS9wbmd8aW1hZ2VzL2g0Mi9oNTYvOTI1MTA1MDYxODkxMC5wbmd8N2ZjYTg0ZDAyOTZmMmQ5OTZhZDNiM2M4NDg0ZDgxY2UyNzNjMmJiYzMwZTZiOGQwOWE5N2JlZDI4M2ViMGZjNw",
     caption: "Slide 3",
     categories: "Laptops",
+    linked: "computers",
   },
   {
     img: "https://www.reliancedigital.in/medias/TV-180x180-15-01-2019.png?context=bWFzdGVyfGltYWdlc3w0OTM4M3xpbWFnZS9wbmd8aW1hZ2VzL2g1ZC9oMTEvOTI1MTA1MDU1MzM3NC5wbmd8MThiNmU4NTZiNWI5MTE1ZGVjYjA4ZjIwM2QwZjUyMzFlOGExZTY0YmQ0MTRkYTkyN2M2MDZiYzUzZDY1ZjM4Ng",
     caption: "Slide 4",
     categories: "Televisions",
+    linked: "televisions",
   },
   {
     img: "https://www.reliancedigital.in/medias/Watch-180x180-27-02-2020.png?context=bWFzdGVyfGltYWdlc3w2Njk2fGltYWdlL3BuZ3xpbWFnZXMvaGQ1L2g2My85MjUzNTA3NTk2MzE4LnBuZ3w4NmEwODU5NDI5YzVlMzJjNzRlNzNlYmJkMmJmYTZjMTI2OWY0YTUxYWU3YzMzM2E3YTc5YjljZmU4ZGMyNGQ2",
     caption: "Slide 5",
     categories: "Smart Wearables",
+    linked: "personalcare",
   },
   {
     img: "https://www.reliancedigital.in/medias/Speaker-Headset-180x180-15-01-2019.png?context=bWFzdGVyfGltYWdlc3wyNzUzN3xpbWFnZS9wbmd8aW1hZ2VzL2g1YS9oODAvOTI1MTA1MDY4NDQ0Ni5wbmd8YmMyYWJiNzRhMzk4NjMxMDRmOWRlZGI1MzVjZDk2Y2IxYTkxOGNlNjlmZjA2YTgwMGIwMjhmYTJlYmNhYjIwOA",
     caption: "Slide 5",
     categories: "Speakers & Headsets",
+    linked: "homeappliances",
   },
 ];

@@ -37,8 +37,10 @@ const ItemCard2 = ({ type, heading, src }) => {
           />
         </Box>
         <Spacer />
-        <Box w={{ sm: "100%", md: "100%", lg: "100%", xl: "75%" }}>
-          <Slider type={type} num={4} />
+        <Box
+          w={{ sm: "100%", md: "100%", lg: "100%", xl: "75%", base: "100%" }}
+        >
+          <Slider type={type} />
         </Box>
       </Flex>
     </Box>

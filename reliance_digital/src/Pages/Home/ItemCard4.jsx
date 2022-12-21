@@ -1,12 +1,13 @@
 import React from "react";
 import { Box, Grid, Image, Text } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import uuid from 'react-uuid';
 
-const ItemCard4 = ({ type, heading }) => {
+const ItemCard4 = ({ type, heading}) => {
   return (
     <Box>
       <Box justifyContent="left" w="95%" m="auto" mt="6">
-        <Text fontSize="2xl" borderColor="black.900" textAlign={"left"}>
+        <Text fontSize="2xl" textAlign={"left"}>
           {heading}
         </Text>
       </Box>
@@ -25,9 +26,9 @@ const ItemCard4 = ({ type, heading }) => {
         m="auto"
         cursor="pointer"
       >
-        {type.map((i, index) => (
-          <Box key={i + 1}>
-            <Link to="/">
+        {type.map((i) => (
+          <Box key={uuid()}>
+            <Link to={i.linked}>
               <Image src={`${i.img}`} alt={i.caption} w="100%" />
             </Link>
           </Box>

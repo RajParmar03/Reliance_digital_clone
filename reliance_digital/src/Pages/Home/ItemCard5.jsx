@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import Heading from "./Heading";
 import { Link } from "react-router-dom";
+import uuid from "react-uuid";
 
 const ItemCard5 = ({ type, heading }) => {
   return (
@@ -40,10 +41,10 @@ const ItemCard5 = ({ type, heading }) => {
             },
           }}
         >
-          {type.map((i, index) => (
-            <Box key={index + 1}>
-              <Link to="/">
-                <SwiperSlide>
+          {type.map((i) => (
+            <Box key={uuid()}>
+              <SwiperSlide>
+                <Link to={i.linked}>
                   <Square m="auto" _hover={{ transform: "scale(1.1)" }}>
                     <Image src={`${i.img}`} alt={i.name} boxSize="160px" />
                   </Square>
@@ -104,8 +105,8 @@ const ItemCard5 = ({ type, heading }) => {
                       </Box>
                     </Box>
                   </Box>
-                </SwiperSlide>
-              </Link>
+                </Link>
+              </SwiperSlide>
             </Box>
           ))}
         </Swiper>

@@ -1,21 +1,15 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  GridItem,
-  Heading,
-  Image,
-  Input,
-  ListItem,
-  Text,
-  UnorderedList,
-} from "@chakra-ui/react";
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { getSingleProduct } from "../../Redux/SingleProduct/SingleProduct.action";
+
+import {Center, Box, Button, Flex, Grid, GridItem, Heading, Image, Input, ListItem, Text, UnorderedList, useToast } from '@chakra-ui/react';
+import axios from 'axios';
+import React, { useEffect} from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { getSingleProduct } from '../../Redux/SingleProduct/SingleProduct.action';
+import { RotatingLines } from "react-loader-spinner";
+
+
+
+
 
 const getSingleData = async (type, id) => {
   let response = await axios.get(
@@ -64,6 +58,8 @@ const SingleProduct = (props) => {
   const { typeOfProduct } = props;
 
   const params = useParams();
+  const toast = useToast();
+
 
   // const [singleData, setSingleData] = useState({});
 
@@ -86,9 +82,19 @@ const SingleProduct = (props) => {
     }
     // console.log("newData is :-", newData);
     // console.log("in the handlePost function and viewing the data before the post request", data);
-    postSingleData(newData).then((res) =>
+    postSingleData(newData).then((res) =>{
       // console.log("in the handlePost function and viewing the data after the post request", res)
-      navigate("/cart")
+      toast({
+        title: "Added Item Successfully",
+        status: "success",
+        duration: 3000,
+        isClosable: true,
+        position: "bottom",
+      })
+      setTimeout(() => {
+        navigate("/cart")
+      }, 1000);
+    }
     );
   };
 
@@ -133,16 +139,16 @@ const SingleProduct = (props) => {
   return (
     <>
       {loading ? (
-        <Heading
-          size="3xl"
-          textAlign="center"
-          color="blue.400"
-          marginTop={10}
-          marginBottom="200px"
-        >
-          Loading...
-        </Heading>
-      ) : (
+        <Center>
+          <RotatingLines
+            strokeColor="grey"
+            strokeWidth="5"
+            animationDuration="0.75"
+            width="96"
+            visible={true}
+          />
+        </Center>
+      ): (
         <Box marginTop={12}>
           <Grid
             h={["1300px", "1100px", "600px"]}
