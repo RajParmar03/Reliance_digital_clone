@@ -36,7 +36,7 @@ Visit: https://rus-digital-televisions.onrender.com/
 
 <img src="https://i.imgur.com/HiCKKVs.png" alt="homepage_image" />
 
-- ### User login in
+- ### User sign in Page
 
 <img src="https://i.imgur.com/0cz1Ho7.png" alt="homepage_image" />
 
