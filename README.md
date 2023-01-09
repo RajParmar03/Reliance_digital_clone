@@ -106,7 +106,6 @@ Visit: https://rus-digital-televisions.onrender.com/
         <li><a href="https://github.com/souravpl8092">Sourav Paul (Team Member)</a></li>
         <li><a href="https://github.com/sumit6675">Sumit Chimkar(Team Member)</a> </li>
         <li><a href="https://github.com/raveenakale475">Raveena Ramesh Kale (Team Member)</a></li>
-        <li><a href="https://github.com/raveenakale475">Raveena Ramesh Kale (Team Member)</a></li>
         <li><a href="https://github.com/utkarshj212">Utkarsh Jain (Team Member)</a></li>
 </ul>
 
