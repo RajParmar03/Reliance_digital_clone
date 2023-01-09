@@ -24,7 +24,7 @@ Visit: https://rus-digital-televisions.onrender.com/
 - User Cart
 - Wishlist Page
 
-## Glimps of project
+## Glimps of Project
 
 ---
 
