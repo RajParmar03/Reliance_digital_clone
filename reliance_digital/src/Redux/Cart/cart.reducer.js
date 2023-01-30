@@ -1,34 +1,93 @@
-import { INC, DEC, TOTALPRICE } from "./cart.types";
+import { CartError, CartLoading, CartSuccess } from "./cart.types";
 
-const initialValue = {
-  count: 1,
+let initialData = {
+  loading: false,
+  data: [],
+  error: false,
+  dataLength: 0,
   totalPrice: 0,
+  paybalPrice: 0,
+  coupon: 0,
 };
 
-export const cartReducer = (state = initialValue, { type, payload }) => {
+const CartReducer = (state = initialData, { type, payload }) => {
   switch (type) {
-    case INC:{
-        return {
-            ...state,
-            count:state.count+1
-        }
+    case CartLoading: {
+      return {
+        ...state,
+        loading: true,
+      };
     }
-    case DEC:{
-        return {
-            ...state,
-            count:state.count-1
+    case CartSuccess: {
+      let finallyTotalArray = payload.map((elem) => {
+        let newArray = elem.price.split(".");
+        newArray.pop();
+        let finalArray = newArray[0].split(",");
+
+        let finalPrice = "";
+        for (let i = 0; i < finalArray.length; i++) {
+          finalPrice += finalArray[i];
         }
+
+        finalPrice = Number(finalPrice);
+        return finalPrice;
+      });
+      console.log("this is finaly total Array", finallyTotalArray);
+
+      let finallyTotal = finallyTotalArray.reduce((acc, elem) => {
+        return elem + acc;
+      }, 0);
+
+      return {
+        ...state,
+        loading: false,
+        data: payload,
+        error: false,
+        dataLength: payload.length,
+        totalPrice: finallyTotal,
+        paybalPrice: finallyTotal,
+      };
     }
-    case TOTALPRICE:{
-        return{
-            ...state,
-            totalPrice:state.totalPrice+(state.count*payload)
-        }
+    case CartError: {
+      return {
+        ...state,
+        loading: false,
+        data: [],
+        error: true,
+        dataLength: 0,
+        totalPrice: 0,
+      };
     }
-    
+    case "code": {
+      let finalprice = 0;
+      if (state.paybalPrice >= 1000 && payload === "MASAI40") {
+        finalprice = state.paybalPrice - 500;
+      }
+      return {
+        ...state,
+        paybalPrice: finalprice,
+        coupon: 500,
+      };
+    }
+    case "priceIncrease": {
+      return {
+        ...state,
+        totalPrice: state.paybalPrice + payload,
+        paybalPrice: state.paybalPrice + payload,
+      };
+    }
+    case "priceDecrease": {
+      return {
+        ...state,
+        totalPrice: state.paybalPrice - payload,
+        paybalPrice: state.paybalPrice - payload,
+      };
+    }
+
     default: {
       return state;
     }
   }
 };
 
+export default CartReducer;

@@ -1,4 +1,3 @@
-
 import {Center, Box, Button, Flex, Grid, GridItem, Heading, Image, Input, ListItem, Text, UnorderedList, useToast } from '@chakra-ui/react';
 import axios from 'axios';
 import React, { useEffect} from 'react';
@@ -36,7 +35,7 @@ const postSingleData = async (data) => {
     );
   }
 };
-const postSingleDataWish = async (data) => {
+ export const postSingleDataWish = async (data) => {
   try {
     let response = await axios.post(
       `https://rus-digital-televisions.onrender.com/whishlist`,
