@@ -30,7 +30,7 @@ function Wishlist({ typeOfProduct }) {
   const toast = useToast();
   const handleDelete=(id,name)=>{
     axios.delete(`https://rus-digital-televisions.onrender.com/whishlist/${id}`)
-    .then((res)=>dispatch(getProducts(typeOfProduct)))
+    .then((res)=>console.log(res))
     .catch((err)=>console.log(err))
     toast({
       title: "Product Deleted.",
@@ -39,6 +39,7 @@ function Wishlist({ typeOfProduct }) {
       duration: 9000,
       isClosable: true,
     });
+    navigate("/whishlist")
   }
   useEffect(() => {
     // getData(typeOfProduct).then((res) => setProductArr(res));

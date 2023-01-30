@@ -10,10 +10,10 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
-const CheckoutBox = ({ items }) => {
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { LastPage } from "./LastPage";
 
 // <<<<<<< HEAD
 const CheckoutBox = ({ items, totalPrice ,handleApply}) => {
@@ -31,11 +31,11 @@ const CheckoutBox = ({ items, totalPrice ,handleApply}) => {
 // <<<<<<< HEAD
   
 // =======
-  const handleApply = () => {
-    totalPrice >= 1000 && val === "MASAI40"
-      ? (sum = totalPrice - 500)
-      : (sum = 0);
-  };
+  // handleApply = () => {
+  //   totalPrice >= 1000 && val === "MASAI40"
+  //     ? (sum = totalPrice - 500)
+  //     : (sum = 0);
+  // };
 // >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
   // console.log(sum);
   const handleCheckout = () => {
@@ -59,7 +59,7 @@ const CheckoutBox = ({ items, totalPrice ,handleApply}) => {
         isClosable: true,
       });
       setTimeout(() => {
-        navigate("/checkout");
+        navigate("/LastPage");
       }, 1500);
     }
   };
@@ -70,7 +70,6 @@ const CheckoutBox = ({ items, totalPrice ,handleApply}) => {
     //    console.log(item.length)
   }, []);
 
-// >>>>>>> main
   return (
     <div>
       <Flex
@@ -79,32 +78,17 @@ const CheckoutBox = ({ items, totalPrice ,handleApply}) => {
         gap={"5"}
         padding={"16px"}
       >
-// <<<<<<< fw20_last
-        <Link to="/checkout">
-          <Flex>
-            <Button
-              width={"100%"}
-              color="white"
-              backgroundColor={"red"}
-              textAlign="center"
-            >
-              CHECKOUT
-            </Button>
-          </Flex>
-        </Link>
-// =======
-//         <Flex>
-//           <Button
-//             width={"100%"}
-//             color="white"
-//             backgroundColor={"red"}
-//             textAlign="center"
-//             onClick={handleCheckout}
-//           >
-//             CHECKOUT
-//           </Button>
-//         </Flex>
-// >>>>>>> main
+        <Flex>
+          <Button
+            width={"100%"}
+            color="white"
+            backgroundColor={"red"}
+            textAlign="center"
+            onClick={handleCheckout}
+          >
+            CHECKOUT
+          </Button>
+        </Flex>
         <Flex
           flexDirection={"column"}
           border={"1px solid rgb(224, 224, 225)"}
@@ -114,12 +98,13 @@ const CheckoutBox = ({ items, totalPrice ,handleApply}) => {
         >
           <Flex>
             <Box marginTop={"20px"} width={"100%"}>
+            <Box mb={4}>To avail discount use coupon code : MASAI40</Box>
               <InputGroup size="md">
                 <Input
                   pr="4.5rem"
                   placeholder="Coupon Code"
                   value={val}
-                  onChange={(e) => setVal(e.target.value)}
+                  onChange={(e) => setVal(e.target.value)} 
                 />
                 <InputRightElement width="4rem">
                   <Button
@@ -133,8 +118,8 @@ const CheckoutBox = ({ items, totalPrice ,handleApply}) => {
 // <<<<<<< HEAD
                     onClick={() => handleApply(totalPrice,val)}
 // =======
-//                     onClick={handleApply}
-// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+                    // onClick={handleApply}
+// {/* >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48 */}
                   >
                     Apply
                   </Button>
@@ -164,7 +149,7 @@ const CheckoutBox = ({ items, totalPrice ,handleApply}) => {
               <Flex justifyContent="space-between">
                 <Text>Discount</Text>
 
-                <Text>{sum}</Text>
+                <Text>500</Text>
               </Flex>
 
               <Divider />
@@ -199,4 +184,3 @@ const CheckoutBox = ({ items, totalPrice ,handleApply}) => {
 };
 
 export default CheckoutBox;
-//
