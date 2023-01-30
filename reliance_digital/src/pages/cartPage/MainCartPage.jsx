@@ -1,19 +1,15 @@
 import React from "react";
-import {  Center, Flex, useToast } from "@chakra-ui/react";
+import { Box, Center, Flex, useToast } from "@chakra-ui/react";
 import MyCartLength from "./MyCartLength";
 import CartItem from "./CartItem";
 import CheckoutBox from "./CheckoutBox";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-// <<<<<<< fw20_last
-// import  {RotatingLines}  from "react-loader-spinner";
-// =======
 import { RotatingLines } from "react-loader-spinner";
 import { store } from "../../Redux/store";
 import { useSelector } from "react-redux";
 
-// >>>>>>> main
 export const GetData = async () => {
   try {
     let response = await axios.get(
@@ -28,19 +24,16 @@ export const GetData = async () => {
 
 const MainCartPage = () => {
   const toast = useToast();
-// <<<<<<< HEAD
-  // const [count, setCount] = useState(1);
-// =======
+
   const [count, setCount] = useState(1);
-// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
   let totalPrice = 0;
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-// <<<<<<< HEAD
+  // <<<<<<< HEAD
   const [extremelyfinalPrice, setExtremelyfinalPrice] = useState(0);
   const amount = useSelector((store) => store.cart.count);
-// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+  // >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
 
   const DeleteRequest = async (id) => {
     try {
@@ -55,53 +48,47 @@ const MainCartPage = () => {
     }
   };
 
-
-  
   let finallyTotalArray = data.map((elem) => {
     let newArray = elem.price.split(".");
     newArray.pop();
     let finalArray = newArray[0].split(",");
-    
-    
-    let finalPrice = ""; 
-    for(let i=0;i<finalArray.length;i++){
+
+    let finalPrice = "";
+    for (let i = 0; i < finalArray.length; i++) {
       finalPrice += finalArray[i];
     }
-    
-   finalPrice = Number(finalPrice);
-   return finalPrice;
 
+    finalPrice = Number(finalPrice);
+    return finalPrice;
   });
-  console.log("this is finaly total Array",finallyTotalArray);
+  console.log("this is finaly total Array", finallyTotalArray);
 
-  let finallyTotal = finallyTotalArray.reduce((acc,elem) => {
+  let finallyTotal = finallyTotalArray.reduce((acc, elem) => {
     return elem + acc;
-  },0);
-  console.log("this is the finally total",finallyTotal);
-  
+  }, 0);
+  console.log("this is the finally total", finallyTotal);
+
   useEffect(() => {
-      setExtremelyfinalPrice(finallyTotal);
-  },[finallyTotal]);
-  console.log("this is extrew",extremelyfinalPrice);
+    setExtremelyfinalPrice(finallyTotal);
+  }, [finallyTotal]);
+  console.log("this is extrew", extremelyfinalPrice);
 
-
-  const handleApply = (totalPrice,val) => {
+  const handleApply = (totalPrice, val) => {
     totalPrice >= 1000 && val === "MASAI40"
       ? setExtremelyfinalPrice(totalPrice - 500)
       : setExtremelyfinalPrice(totalPrice);
   };
 
-
-  let newTotalPrice = data && data.reduce((acc,elem) => {
-    return Number(elem.price) + acc;
-  },0);
-  console.log("this is the newTotal",newTotalPrice);
+  let newTotalPrice =
+    data &&
+    data.reduce((acc, elem) => {
+      return Number(elem.price) + acc;
+    }, 0);
+  console.log("this is the newTotal", newTotalPrice);
 
   let newA = data.map((elem) => {
-    console.log("this is from map and price is",Number(elem.price));
-  })
-
-
+    console.log("this is from map and price is", Number(elem.price));
+  });
 
   useEffect(() => {
     setLoading(true);
@@ -109,7 +96,6 @@ const MainCartPage = () => {
       .then((res) => {
         setData(res);
         setLoading(false);
-       
       })
       .catch((err) => {
         toast({
@@ -123,11 +109,11 @@ const MainCartPage = () => {
         });
       });
   }, []);
-// <<<<<<< HEAD
-//   console.log("this is data",data);
-// =======
-// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
- 
+  // <<<<<<< HEAD
+  //   console.log("this is data",data);
+  // =======
+  // >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+
   return (
     <div>
       {/* <Box border={"0px solid black"} height="140px"></Box> */}
@@ -184,8 +170,6 @@ const MainCartPage = () => {
                   />
                   <Box display={"none"}>
                     {(totalPrice = totalPrice + price)}
-                    
-                  
                   </Box>
                 </>
               );
@@ -202,11 +186,11 @@ const MainCartPage = () => {
             "2xl": "30%",
           }}
         >
-// <<<<<<< HEAD
-          <CheckoutBox items={data.length} totalPrice={extremelyfinalPrice} handleApply={handleApply} />
-// =======
-//           <CheckoutBox items={data.length} totalPrice={totalPrice} />
-// >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+          <CheckoutBox
+            items={data.length}
+            totalPrice={extremelyfinalPrice}
+            handleApply={handleApply}
+          />
         </Flex>
       </Flex>
     </div>
