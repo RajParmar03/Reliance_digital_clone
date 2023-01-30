@@ -49,7 +49,7 @@ const MyCartLength = ({item}) => {
         </Box>
         <Box>
           <Heading fontWeight={600} fontSize="16px">
-            Shipping to: 400022
+            Shipping to: 400001
           </Heading>
         </Box>
       </Flex>

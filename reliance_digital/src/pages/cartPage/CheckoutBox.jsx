@@ -13,22 +13,20 @@ import {
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
-const CheckoutBox = ({ items, totalPrice }) => {
-  const [item, setItem] = useState([]);
-
+const CheckoutBox = ({
+  items,
+  totalPrice,
+  paybalPrice,
+  discount,
+  setVal,
+  handleApply,
+}) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const toast = useToast();
 
-  const [val, setVal] = useState("");
-  let sum = 0;
-
-  const handleApply = () => {
-    totalPrice >= 1000 && val === "MASAI40"
-      ? (sum = totalPrice - 500)
-      : (sum = 0);
-  };
-  // console.log(sum);
   const handleCheckout = () => {
     if (items === 0) {
       toast({
@@ -50,16 +48,10 @@ const CheckoutBox = ({ items, totalPrice }) => {
         isClosable: true,
       });
       setTimeout(() => {
-        navigate("/checkout");
+        navigate("/lastpage");
       }, 1500);
     }
   };
-
-  useEffect(() => {
-    setItem(JSON.parse(localStorage.getItem("cart")) || []);
-
-    //    console.log(item.length)
-  }, []);
 
   return (
     <div>
@@ -87,13 +79,13 @@ const CheckoutBox = ({ items, totalPrice }) => {
           borderRadius="4px"
           padding={"16px"}
         >
+          <Box>To avail discount use coupon code : MASAI40</Box>
           <Flex>
             <Box marginTop={"20px"} width={"100%"}>
               <InputGroup size="md">
                 <Input
                   pr="4.5rem"
                   placeholder="Coupon Code"
-                  value={val}
                   onChange={(e) => setVal(e.target.value)}
                 />
                 <InputRightElement width="4rem">
@@ -135,7 +127,7 @@ const CheckoutBox = ({ items, totalPrice }) => {
               <Flex justifyContent="space-between">
                 <Text>Discount</Text>
 
-                <Text>{sum}</Text>
+                <Text>{discount}</Text>
               </Flex>
 
               <Divider />
@@ -146,7 +138,7 @@ const CheckoutBox = ({ items, totalPrice }) => {
                 marginBottom={"20px"}
               >
                 <Text>AMOUNT PAYABLE</Text>
-                <Text>₹{totalPrice}</Text>
+                <Text>₹{paybalPrice}</Text>
               </Flex>
               <Divider />
             </Box>

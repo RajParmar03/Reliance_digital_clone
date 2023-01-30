@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Flex, Box, Image, Button, Heading, useToast } from "@chakra-ui/react";
 import { FcPlus } from "react-icons/fc";
 import { TbTruckDelivery } from "react-icons/tb";
@@ -7,46 +7,49 @@ import { useDispatch, useSelector } from "react-redux";
 import { store } from "../../Redux/store";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { postSingleDataWish } from "../SingleProduct/SingleProduct";
 
 const CartItem = ({ name, img, price, id, DeleteRequest }) => {
+  const singleData = {
+    name,
+    img,
+    price,
+  };
   const toast = useToast();
 
   const [count, setCount] = useState(1);
   const dispatch = useDispatch();
   var navigate = useNavigate();
 
-
-  // const count = useSelector(store => store.cart.count)
-
   const handleInc = () => {
     setCount(count + 1);
-    //dispatch({type:INC})
+    let number = parseFloat(price.replace(/,/g, ""));
+    console.log(number);
+    dispatch({ type: "priceIncrease", payload: number });
   };
   const handleDec = () => {
-    count > 1 && setCount(count - 1);
-    //dispatch({type:DEC})
-  };
-
-  const PostData = async (data) => {
-    try {
-      let response = await axios.post(
-        `https://rus-digital-televisions.onrender.com/whishlist`,
-        data
-      );
-
-      return await response.data;
-    } catch (err) {
-      return err;
+    if (count > 1) {
+      let number = parseFloat(price.replace(/,/g, ""));
+      console.log(number);
+      setCount(count - 1);
+      dispatch({ type: "priceDecrease", payload: number });
     }
   };
 
-  const handleWishlist = () => {
-    PostData({ name, img, price, id })
+  const handleWish = (data) => {
+    let newData = {};
+    for (let i in data) {
+      if (i === "id") {
+        continue;
+      }
+      newData[i] = data[i];
+    }
+
+    postSingleDataWish(newData)
       .then((res) => {
-        
+        navigate("/whishlist");
         toast({
-          title: "Successfully aded to wishlist",
+          title: "Successfully added to wishlist",
           description: "Product Added",
           status: "success",
           duration: 3000,
@@ -54,10 +57,6 @@ const CartItem = ({ name, img, price, id, DeleteRequest }) => {
           variant: "top-accent",
           position: "top",
         });
-
-        setTimeout(() => {
-          navigate("/wishlist")
-        }, 1000);
       })
       .catch((err) => {
         toast({
@@ -298,7 +297,7 @@ const CartItem = ({ name, img, price, id, DeleteRequest }) => {
             backgroundColor={"white"}
             color=" rgb(23, 116, 239)"
             _hover={"backgroundColor:white"}
-            onClick={handleWishlist}
+            onClick={() => handleWish(singleData)}
           >
             Move to Wishlist
           </Button>

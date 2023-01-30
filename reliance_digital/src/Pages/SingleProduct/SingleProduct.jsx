@@ -36,7 +36,7 @@ const postSingleData = async (data) => {
     );
   }
 };
-const postSingleDataWish = async (data) => {
+ export const postSingleDataWish = async (data) => {
   try {
     let response = await axios.post(
       `https://rus-digital-televisions.onrender.com/whishlist`,
