@@ -9,6 +9,7 @@ import Wishlist from "../Pages/Wishlist/Wishlist";
 import SearchPage from "../Pages/SearchPage/SearchPage";
 import Payments from "../Pages/payment/Payments";
 import Checkout from "../Pages/checkout/checkout";
+import { LastPage } from "../Pages/cartPage/LastPage";
 
 const AllRoutes = () => {
   return (
@@ -96,6 +97,7 @@ const AllRoutes = () => {
         <Route path="/searchpage" element={<SearchPage />}></Route>
         <Route path="/checkout" element={<Checkout />}></Route>
         <Route path="/payments" element={<Payments />}></Route>
+        <Route path="/lastpage" element={<LastPage />}></Route>
         {/* <Route path="/order" element={<Products typeOfProduct={"order"}/>}></Route>
             <Route path="/contactus" element={<Products typeOfProduct={"contactus"}/>}></Route>
             <Route path="/profile" element={<Products typeOfProduct={"profile"}/>}></Route> */}

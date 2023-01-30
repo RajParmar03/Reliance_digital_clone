@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Center, Flex, useToast } from "@chakra-ui/react";
+import { Center, Flex, useToast } from "@chakra-ui/react";
 import MyCartLength from "./MyCartLength";
 import CartItem from "./CartItem";
 import CheckoutBox from "./CheckoutBox";
@@ -7,9 +7,8 @@ import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
 import { RotatingLines } from "react-loader-spinner";
-import { store } from "../../Redux/store";
-import { useSelector } from "react-redux";
-
+import { useSelector, useDispatch } from "react-redux";
+import { getData } from "../../Redux/Cart/cart.action";
 export const GetData = async () => {
   try {
     let response = await axios.get(
@@ -23,100 +22,51 @@ export const GetData = async () => {
 };
 
 const MainCartPage = () => {
+  const dispatch = useDispatch();
+  const { loading, data, error, dataLength, totalPrice, paybalPrice, coupon } =
+    useSelector((store) => store.cart);
+  const [val, setVal] = useState("");
   const toast = useToast();
-
-  const [count, setCount] = useState(1);
-  let totalPrice = 0;
-
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  // <<<<<<< HEAD
-  const [extremelyfinalPrice, setExtremelyfinalPrice] = useState(0);
-  const amount = useSelector((store) => store.cart.count);
-  // >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
-
+  const [change, setChange] = useState(false);
   const DeleteRequest = async (id) => {
     try {
       let response = await axios.delete(
         `https://rus-digital-televisions.onrender.com/cart/${id}`
       );
-      GetData().then((res) => {
-        return setData(res);
-      });
+      setChange(!change);
     } catch (err) {
       return err;
     }
   };
 
-  let finallyTotalArray = data.map((elem) => {
-    let newArray = elem.price.split(".");
-    newArray.pop();
-    let finalArray = newArray[0].split(",");
-
-    let finalPrice = "";
-    for (let i = 0; i < finalArray.length; i++) {
-      finalPrice += finalArray[i];
+  const handleApply = () => {
+    if (val === "MASAI40") {
+      dispatch({ type: "code", payload: val });
+      setVal("");
+      toast({
+        title: "Successful",
+        description: "Coupon Applied Successfully",
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        title: "Error",
+        description: "Invalid Coupon",
+        status: "warning",
+        duration: 9000,
+        isClosable: true,
+      });
     }
-
-    finalPrice = Number(finalPrice);
-    return finalPrice;
-  });
-  console.log("this is finaly total Array", finallyTotalArray);
-
-  let finallyTotal = finallyTotalArray.reduce((acc, elem) => {
-    return elem + acc;
-  }, 0);
-  console.log("this is the finally total", finallyTotal);
-
-  useEffect(() => {
-    setExtremelyfinalPrice(finallyTotal);
-  }, [finallyTotal]);
-  console.log("this is extrew", extremelyfinalPrice);
-
-  const handleApply = (totalPrice, val) => {
-    totalPrice >= 1000 && val === "MASAI40"
-      ? setExtremelyfinalPrice(totalPrice - 500)
-      : setExtremelyfinalPrice(totalPrice);
   };
 
-  let newTotalPrice =
-    data &&
-    data.reduce((acc, elem) => {
-      return Number(elem.price) + acc;
-    }, 0);
-  console.log("this is the newTotal", newTotalPrice);
-
-  let newA = data.map((elem) => {
-    console.log("this is from map and price is", Number(elem.price));
-  });
-
   useEffect(() => {
-    setLoading(true);
-    GetData()
-      .then((res) => {
-        setData(res);
-        setLoading(false);
-      })
-      .catch((err) => {
-        toast({
-          title: "Something Went Wrong",
-          description: `${err.message}`,
-          status: "error",
-          duration: 3000,
-          isClosable: true,
-          variant: "top-accent",
-          position: "top",
-        });
-      });
-  }, []);
-  // <<<<<<< HEAD
-  //   console.log("this is data",data);
-  // =======
-  // >>>>>>> f243dacd25c578a500e44fa45db3a4bbe01f2b48
+    dispatch(getData());
+  }, [change]);
 
   return (
     <div>
-      {/* <Box border={"0px solid black"} height="140px"></Box> */}
       <Flex
         border={"0px solid red"}
         margin="auto"
@@ -144,7 +94,7 @@ const MainCartPage = () => {
           }}
           gap={"4"}
         >
-          <MyCartLength item={data.length} />
+          <MyCartLength item={dataLength} />
           {loading && (
             <Center>
               <RotatingLines
@@ -168,9 +118,6 @@ const MainCartPage = () => {
                     id={id}
                     DeleteRequest={DeleteRequest}
                   />
-                  <Box display={"none"}>
-                    {(totalPrice = totalPrice + price)}
-                  </Box>
                 </>
               );
             })}
@@ -187,9 +134,12 @@ const MainCartPage = () => {
           }}
         >
           <CheckoutBox
-            items={data.length}
-            totalPrice={extremelyfinalPrice}
+            items={dataLength}
+            totalPrice={totalPrice}
+            paybalPrice={paybalPrice}
+            setVal={setVal}
             handleApply={handleApply}
+            discount={coupon}
           />
         </Flex>
       </Flex>
