@@ -6,7 +6,7 @@ Reliance Digital Retail Ltd. sells electronic products. The Company retails a wi
 
 ## Netlify Link
 
-Visit : https://reliancedigitalrrk.netlify.app/
+Visit : https://russdigital.netlify.app/
 
 ## Reliance Digital-Api
 
