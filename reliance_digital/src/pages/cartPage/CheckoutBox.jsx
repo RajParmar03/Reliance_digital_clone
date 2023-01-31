@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 const CheckoutBox = ({
@@ -50,7 +50,7 @@ const CheckoutBox = ({
         position: "top",
       });
       setTimeout(() => {
-        navigate("/lastpage");
+        navigate("/checkout");
       }, 1500);
     }
   };
@@ -64,6 +64,7 @@ const CheckoutBox = ({
         padding={"16px"}
       >
         <Flex>
+         
           <Button
             width={"100%"}
             color="white"
@@ -73,6 +74,7 @@ const CheckoutBox = ({
           >
             CHECKOUT
           </Button>
+       
         </Flex>
         <Flex
           flexDirection={"column"}
