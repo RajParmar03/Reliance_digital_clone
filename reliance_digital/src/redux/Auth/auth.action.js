@@ -9,7 +9,7 @@ import {
 export const login = (creds) => async (dispatch) => {
   dispatch({ type: LOGIN_LOADING });
   try {
-    let res = await axios.post("https://reqres.in/api/login", creds);
+    let res = await axios.post("https://cheerful-lime-firefly.cyclic.app/users/login", creds);
     dispatch({ type: LOGIN_SUCCESS, payload: res.data });
     console.log(res.data);
   } catch (e) {

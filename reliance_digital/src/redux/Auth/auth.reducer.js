@@ -3,8 +3,10 @@ import { LOGIN_ERROR, LOGIN_LOADING, LOGIN_SUCCESS, LOGOUT } from "./auth.types"
 const init={
     isAuth:false,
     token:"",
+    name:"",
+    email:"",
     loading:false,
-    error:false,
+    error:false
 };
 export const Authreducer=(state=init,{type,payload})=>{
     switch(type){
@@ -29,14 +31,18 @@ export const Authreducer=(state=init,{type,payload})=>{
                 loading:false,
                 error:false,
                 token:payload.token,
-                isAuth:true
+                isAuth:true,
+                name:payload.name,
+                email:payload.email
             }
         }
         case LOGOUT:{
             return{
                 ...state,
                 isAuth:false,
-                token:""
+                token:"",
+                name:"",
+                email:""
             }
         }
 

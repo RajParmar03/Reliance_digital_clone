@@ -22,6 +22,7 @@ const getData = async (typeOfProduct) => {
   return response.data;
 };
 function Wishlist({ typeOfProduct }) {
+  const { name,email } = useSelector((store) => store.AuthManager);
   const productsList = useSelector((store) => store.product.data);
   const loading = useSelector((store) => store.product.loading);
   const error = useSelector((store) => store.product.error);
@@ -79,8 +80,8 @@ function Wishlist({ typeOfProduct }) {
           cursor="pointer"
           border="1px solid black"
         >
-          <Heading size={"lg"}>Sumit Chimkar</Heading>
-          <Text size={"lg"}>sumitchimkar0@gmail.com</Text>
+          <Heading size={"lg"}>{name}</Heading>
+          <Text size={"lg"}>{email}</Text>
           <Heading size={"md"}>My Account</Heading>
           <Text _hover={{ color: "blue", fontWeight: "bold" }}>My Profile</Text>
           <Text _hover={{ color: "blue", fontWeight: "bold" }}>My Order</Text>

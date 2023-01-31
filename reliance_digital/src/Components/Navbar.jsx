@@ -23,7 +23,7 @@ import {
   Button,
   useToast,
 } from "@chakra-ui/react";
-import React, { useContext, useState } from "react";
+import React from "react";
 import { ChevronDownIcon } from "@chakra-ui/icons";
 import { FcSearch } from "react-icons/fc";
 import { ImLocation2 } from "react-icons/im";
@@ -36,7 +36,7 @@ import { GrLogin, GrReturn, GrServices } from "react-icons/gr";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../Redux/Auth/auth.action";
-import { PageContext } from "../Pages/context/PageContext";
+
 function Navbar() {
   const [isLargerThan1100] = useMediaQuery("(min-width: 1100px)");
   const [isLargerThan750px] = useMediaQuery("(min-width: 750px)");
@@ -44,22 +44,22 @@ function Navbar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   const { isAuth } = useSelector((store) => store.AuthManager);
+  const { name } = useSelector((store) => store.AuthManager);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const toast = useToast()
-  const [text,setText]=useState("")
+  const toast = useToast();
   const handleLogout = () => {
     dispatch(logout());
     navigate("/login");
     toast({
-      title: 'Logout  success.',
+      title: "Logout  success.",
       description: "We will miss you 😭",
-      status: 'success',
+      status: "success",
       duration: 9000,
       isClosable: true,
-    })
+    });
   };
-
+  console.log(name);
   if (isLargerThan1100) {
     return (
       <Box>
@@ -181,7 +181,6 @@ function Navbar() {
               borderRadius="full"
               fontWeight="bold"
               placeholder="Find Your Favorite Product"
-              onChange={(e)=>setText(e.target.value)}
             />
             <FcSearch fontSize={"42px"} />
           </Flex>
@@ -231,7 +230,7 @@ function Navbar() {
                 as={Button}
                 rightIcon={<ChevronDownIcon />}
               >
-                Hi Sumit
+                Hi {name}
               </MenuButton>
               <MenuList>
                 <MenuItem>My Profile</MenuItem>
@@ -2504,9 +2503,8 @@ function Navbar() {
             borderRadius="full"
             fontWeight="bold"
             placeholder="Find Your Favorite Product"
-            onChange={(e)=>setText(e.target.value)}
           />
-          <FcSearch  fontSize={"42px"} />
+          <FcSearch fontSize={"42px"} />
         </Flex>
         <Link to="/cart">
           <Flex cursor={"pointer"}>
@@ -2542,7 +2540,7 @@ function Navbar() {
               as={Button}
               rightIcon={<ChevronDownIcon />}
             >
-              Hi Sumit
+              Hi {name}
             </MenuButton>
             <MenuList>
               <MenuItem>My Profile</MenuItem>
@@ -2699,9 +2697,8 @@ function Navbar() {
             borderRadius="full"
             fontWeight="bold"
             placeholder="Find Your Favorite Product"
-            onChange={(e)=>setText(e.target.value)}
           />
-          <FcSearch  fontSize={"42px"} />
+          <FcSearch fontSize={"42px"} />
         </Flex>
         <Box mx="20px">
           <Box ref={btnRef} colorScheme="teal" onClick={onOpen}>
@@ -2735,7 +2732,7 @@ function Navbar() {
                         color="black"
                         mt="35px"
                       >
-                        Sumit
+                        Hi {name}
                       </Heading>
                     </Link>
                   ) : (

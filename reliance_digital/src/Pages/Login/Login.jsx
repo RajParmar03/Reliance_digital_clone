@@ -18,7 +18,7 @@ import {
 } from "@chakra-ui/react";
 import React, {  useEffect, useState } from "react";
 import { useDispatch,useSelector } from "react-redux";
-import {  useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate } from "react-router-dom";
 import { login } from "../../Redux/Auth/auth.action";
 
 function Login() {
@@ -46,7 +46,7 @@ function Login() {
       if(isAuth){
         navigate("/")
         toast({
-          title: 'Account created.',
+          title: 'Login Sucsess',
 
           description: "We've login to your account for you.",
 
@@ -80,10 +80,12 @@ function Login() {
             <Stack spacing={8} mx={"auto"} maxW={"lg"} py={12} px={6}>
               <Stack align={"center"}>
                 <Heading fontSize={"4xl"}>Sign in to your account</Heading>
+                <NavLink to="/signup">
                 <Text fontSize={"lg"} color={"gray.600"}>
-                  to enjoy your shopping
-                  <Link color={"blue.400"}> experience</Link> ✌️
+                  New To Website Please
+                  <Link color={"blue.400"}> Signup</Link> ✌️
                 </Text>
+                </NavLink>
               </Stack>
               <Box
                 rounded={"lg"}
