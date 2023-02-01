@@ -17,7 +17,7 @@ Visit: https://rus-digital-televisions.onrender.com/
 ---
 
 - Authentication
-  - Using reqres.in authentication
+  - Using private route authentication
 - Landing Page
 - Product Page
 - Single Product Page
