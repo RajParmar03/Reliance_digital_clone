@@ -1,7 +1,7 @@
 # Reliance Digital Clone
 
 <p>
-Reliance Digital Retail Ltd. sells electronic products. The Company retails a wide variety of electronics including televisions, cameras, appliances, mobile phones, printers, and many more electronics. Reliance Digital retails electronics to customers throughout India.
+Reliance Digital Retail Ltd. sells electronic products. It is an E-Commerce website which consist of electronics including televisions, cameras, appliances, mobile phones, printers, and many more electronics. Reliance Digital retails electronics to customers throughout India.
 </p>
 
 ## Netlify Link
