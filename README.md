@@ -34,31 +34,31 @@ Visit: https://rus-digital-televisions.onrender.com/
 
 - ### Navbar
 
-<img src="https://i.imgur.com/HiCKKVs.png" alt="homepage_image" />
+<img src="https://i.imgur.com/HiCKKVs.png" alt="navbarpage_image" />
 
 - ### User sign in Page
 
-<img src="https://i.imgur.com/0cz1Ho7.png" alt="homepage_image" />
+<img src="https://i.imgur.com/0cz1Ho7.png" alt="signinpage_image" />
 
 - ### Footer Page
 
-  <img src="https://i.imgur.com/DSNoyG3.png" alt="homepage_image" />
+  <img src="https://i.imgur.com/DSNoyG3.png" alt="footerpage_image" />
 
 - ### Product page
 
-<img src="https://i.imgur.com/JcYxDUL.png" alt="homepage_image" />
+<img src="https://i.imgur.com/JcYxDUL.png" alt="productpage_image" />
 
 - ### Single Product Page
 
-<img src="https://i.imgur.com/yxu4fJ7.png" alt="homepage_image" />
+<img src="https://i.imgur.com/yxu4fJ7.png" alt="singleproductpage_image" />
 
 - ### Cart Page
 
-<img src="https://imagizer.imageshack.com/img924/9636/u5oB0y.png" alt="homepage_image" />
+<img src="https://imagizer.imageshack.com/img924/9636/u5oB0y.png" alt="cartpage_image" />
 
 - ### Wishlist Page
 
-  <img src="https://imagizer.imageshack.com/img924/6580/5es93b.png" alt="homepage_image" />
+  <img src="https://imagizer.imageshack.com/img924/6580/5es93b.png" alt="wishlistpage_image" />
 
   # Languages Used
 
