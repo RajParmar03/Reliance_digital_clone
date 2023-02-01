@@ -73,9 +73,14 @@ Visit: https://rus-digital-televisions.onrender.com/
  
 - ### Payment Page
 
-  <img src="https://imagizer.imageshack.com/img922/8506/PkcLHj.png" alt="paymentpage_image" />
+  <img src="https://imagizer.imageshack.com/img922/8506/PkcLHj.png" alt="paymentpage_image" /> <br/>
   
   <img src="https://imagizer.imageshack.com/img923/6870/7OEWN1.png" alt="paymentpage_image" />
+  
+- ### Success Page
+
+  <img src="https://imagizer.imageshack.com/img924/6091/nIWtKX.png" alt="successpage_image" />
+   
 
   # Languages Used
 
