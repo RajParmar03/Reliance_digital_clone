@@ -36,6 +36,10 @@ Visit: https://rus-digital-televisions.onrender.com/
 
 <img src="https://i.imgur.com/HiCKKVs.png" alt="navbarpage_image" />
 
+- ### User sign up Page
+
+<img src="https://imagizer.imageshack.com/img922/8695/ugXdAm.png" alt="signuppage_image" />
+
 - ### User sign in Page
 
 <img src="https://imagizer.imageshack.com/img922/6743/9kW2Lt.png" alt="signinpage_image" />
