@@ -23,6 +23,9 @@ Visit: https://rus-digital-televisions.onrender.com/
 - Single Product Page
 - Cart Page
 - Wishlist Page
+- Checkout Page
+- Payment Page
+- Success PAge
 
 ## Glimps of Project
 
