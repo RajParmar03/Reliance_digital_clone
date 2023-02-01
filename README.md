@@ -66,6 +66,16 @@ Visit: https://rus-digital-televisions.onrender.com/
 - ### Wishlist Page
 
   <img src="https://imagizer.imageshack.com/img924/6580/5es93b.png" alt="wishlistpage_image" />
+  
+- ### Checkout Page
+
+  <img src="https://imagizer.imageshack.com/img922/1464/ItPYXI.png" alt="checkoutpage_image" />
+ 
+- ### Payment Page
+
+  <img src="https://imagizer.imageshack.com/img922/8506/PkcLHj.png" alt="paymentpage_image" />
+  
+  <img src="https://imagizer.imageshack.com/img923/6870/7OEWN1.png" alt="paymentpage_image" />
 
   # Languages Used
 
