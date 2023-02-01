@@ -58,7 +58,7 @@ Visit: https://rus-digital-televisions.onrender.com/
 
 - ### Wishlist Page
 
-  <img src="c" alt="homepage_image" />
+  <img src="https://imagizer.imageshack.com/img924/6580/5es93b.png" alt="homepage_image" />
 
   # Languages Used
 
