@@ -53,7 +53,7 @@ Visit: https://rus-digital-televisions.onrender.com/
 
 - ### Product page
 
-<img src="https://i.imgur.com/JcYxDUL.png" alt="productpage_image" />
+<img src="https://imagizer.imageshack.com/img924/9185/zUGyLP.png" alt="productpage_image" />
 
 - ### Single Product Page
 
