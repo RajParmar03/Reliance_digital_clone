@@ -54,11 +54,11 @@ Visit: https://rus-digital-televisions.onrender.com/
 
 - ### Cart Page
 
-<img src="https://i.imgur.com/XXpytEm.png" alt="homepage_image" />
+<img src="https://imagizer.imageshack.com/img924/9636/u5oB0y.png" alt="homepage_image" />
 
 - ### Wishlist Page
 
-  <img src="https://i.imgur.com/5g5DR7C.png" alt="homepage_image" />
+  <img src="c" alt="homepage_image" />
 
   # Languages Used
 
